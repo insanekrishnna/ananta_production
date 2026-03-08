@@ -15,35 +15,87 @@ const FeaturesSection = () => {
             Features
           </span>
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center max-w-[560px] leading-[1.2]">
-            Everything you need to build internal tools
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {FEATURES.map((feat, index) => {
-            const Icon = iconMap[feat.icon];
-            return <FeatureCard key={feat.title} feat={feat} Icon={Icon} delay={index * 150} />;
-          })}
+          {FEATURES.map((feat, index) => {const Icon = iconMap[feat.icon];return <FeatureCard key={feat.title} feat={feat} Icon={Icon} delay={index * 150} />;})}
         </div>
       </div>
-    </section>
-  );
-};
-
-const FeatureCard = ({ feat, Icon, delay }: { feat: typeof FEATURES[number]; Icon: any; delay: number }) => {
-  const reveal = useScrollReveal(delay);
-  return (
-    <div
-      ref={reveal.ref}
-      className={`bg-canvas border border-input rounded-card p-8 shadow-card hover:shadow-float-hover hover:-translate-y-1 transition-all duration-200 ${reveal.className}`}
-    >
+    </section>);};const FeatureCard = ({ feat, Icon, delay }: {feat: typeof FEATURES[number];Icon: any;delay: number;}) => {const reveal = useScrollReveal(delay);return <div ref={reveal.ref} className={`bg-canvas border border-input rounded-card p-8 shadow-card hover:shadow-float-hover hover:-translate-y-1 transition-all duration-200 ${reveal.className}`}>
       <div className="w-12 h-12 rounded-[12px] bg-muted/50 flex items-center justify-center mb-4">
         <Icon size={24} strokeWidth={1.5} className="text-text-primary" />
       </div>
       <h3 className="text-xl font-semibold text-text-primary mb-2">{feat.title}</h3>
       <p className="text-[15px] text-text-secondary leading-[1.65]">{feat.body}</p>
-    </div>
-  );
-};
-
-export default FeaturesSection;
+    </div>;};export default FeaturesSection;
