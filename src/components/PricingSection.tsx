@@ -2,14 +2,16 @@ import { PRICING_PLANS } from "@/data/content";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useState } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const PricingSection = () => {
   const [annual, setAnnual] = useState(false);
+  const header = useScrollReveal(0);
 
   return (
     <section className="py-24 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div className="flex flex-col items-center mb-16">
+        <div ref={header.ref} className={`flex flex-col items-center mb-16 ${header.className}`}>
           <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
             Pricing
           </span>
@@ -35,10 +37,21 @@ const PricingSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {PRICING_PLANS.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-card p-8 border transition-all duration-200 ${
+          {PRICING_PLANS.map((plan, index) => (
+            <PricingCard key={plan.name} plan={plan} delay={index * 150} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const PricingCard = ({ plan, delay }: { plan: typeof PRICING_PLANS[number]; delay: number }) => {
+  const reveal = useScrollReveal(delay);
+  return (
+    <div
+      ref={reveal.ref}
+      className={`rounded-card p-8 border transition-all duration-200 ${reveal.className} ${
                 plan.highlighted
                   ? "bg-primary text-primary-foreground border-primary scale-[1.02] shadow-[0_16px_48px_rgba(79,70,229,0.25)]"
                   : "bg-canvas text-text-primary border-input shadow-card"
@@ -77,11 +90,7 @@ const PricingSection = () => {
               >
                 {plan.cta}
               </Button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 

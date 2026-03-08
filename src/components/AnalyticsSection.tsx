@@ -1,26 +1,5 @@
 import { Users, CheckCircle2, Video, ChevronDown } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
-
-const useScrollReveal = (delay = 0) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => setIsVisible(true), delay);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.15 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [delay]);
-
-  return { ref, style: `transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}` };
-};
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const barData = {
   labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -51,7 +30,7 @@ const AnalyticsSection = () => {
   return (
     <section className="py-24 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div ref={header.ref} className={`flex flex-col items-center mb-16 ${header.style}`}>
+        <div ref={header.ref} className={`flex flex-col items-center mb-16 ${header.className}`}>
           <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
             Analytics
           </span>
@@ -66,7 +45,7 @@ const AnalyticsSection = () => {
         {/* Dashboard Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1080px] mx-auto">
           {/* Card 1: Project Statistic */}
-          <div ref={card1.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card1.style}`}>
+          <div ref={card1.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card1.className}`}>
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-[14px] font-bold text-text-primary">Project Statistic</h3>
               <button className="flex items-center gap-1 text-[11px] text-text-secondary">
@@ -110,7 +89,7 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 2: Usability Testing (highlight) */}
-          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(263,100%,62%)] to-[hsl(253,100%,56%)] text-primary-foreground rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.style}`}>
+          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(263,100%,62%)] to-[hsl(253,100%,56%)] text-primary-foreground rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
             <div className="flex items-center justify-between mb-1">
               <h3 className="text-[16px] font-bold">Usability testing</h3>
               <span className="text-primary-foreground/50 text-xl leading-none">•••</span>
@@ -141,7 +120,7 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 3: 165+ Tasks Bar Chart */}
-          <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.style}`}>
+          <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
             <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">165+</p>
             <p className="text-[13px] text-text-secondary mt-1">
               Selected period: <span className="font-semibold text-text-primary">39 Tasks</span>
@@ -168,7 +147,7 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 4: Design System + Team Meeting stacked */}
-          <div ref={card4.ref} className={`flex flex-col gap-6 ${card4.style}`}>
+          <div ref={card4.ref} className={`flex flex-col gap-6 ${card4.className}`}>
             {/* Design System */}
             <div className="bg-canvas border border-input rounded-[16px] p-5 shadow-float flex-1">
               <div className="flex items-center justify-between mb-2">
