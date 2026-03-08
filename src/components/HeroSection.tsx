@@ -32,19 +32,17 @@ const FloatingIcon = ({
 
   return (
     <div
-      className="absolute hidden md:flex w-16 h-16 rounded-float-icon bg-canvas shadow-float items-center justify-center animate-float"
+      className="absolute hidden md:flex w-12 h-12 rounded-[12px] bg-canvas/80 shadow-sm items-center justify-center animate-float"
       style={posStyle}
       aria-label={icon.name}
     >
-      <div className="w-10 h-10 rounded-[10px] flex items-center justify-center font-bold text-sm bg-canvas text-text-primary border border-input">
-        {icon.name === "Twitter" ? (
-          <TwitterIcon />
-        ) : LucideIcon ? (
-          <LucideIcon size={20} className="text-text-primary" />
-        ) : (
-          icon.letter
-        )}
-      </div>
+      {icon.name === "Twitter" ? (
+        <TwitterIcon />
+      ) : LucideIcon ? (
+        <LucideIcon size={18} strokeWidth={1.2} className="text-text-primary" />
+      ) : (
+        <span className="text-sm font-medium text-text-primary">{icon.letter}</span>
+      )}
     </div>
   );
 };
