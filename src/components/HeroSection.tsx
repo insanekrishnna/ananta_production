@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { HERO, FLOATING_ICONS } from "@/data/content";
-import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark, Heart } from "lucide-react";
+import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark, Heart, Sparkles, Monitor, PlayCircle, Box, Target } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import instagramLogo from "@/assets/instagram-logo.png";
 import linkedinLogo from "@/assets/linkedin-logo.png";
