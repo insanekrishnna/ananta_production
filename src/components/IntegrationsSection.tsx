@@ -1,11 +1,15 @@
 import { INTEGRATIONS } from "@/data/content";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const IntegrationsSection = () => {
+  const left = useScrollReveal(0);
+  const right = useScrollReveal(200);
+
   return (
     <section className="py-24 px-4 md:px-10">
       <div className="max-w-canvas mx-auto flex flex-col md:flex-row gap-16 items-center">
         {/* Left */}
-        <div className="flex-1">
+        <div ref={left.ref} className={`flex-1 ${left.className}`}>
           <span className="bg-primary/10 text-primary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] inline-block mb-4">
             {INTEGRATIONS.tag}
           </span>
