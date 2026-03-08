@@ -114,7 +114,7 @@ const InteractiveHeadline = () => {
                   transition: "all 0.25s ease",
                 }}
               >
-                <div className="bg-canvas border border-input rounded-[14px] shadow-float p-2 min-w-[200px]">
+                <div className="bg-background border border-input rounded-[14px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-2 min-w-[200px] backdrop-blur-none">
                   {everyoneItems.map((item) => {
                     const Icon = item.icon;
                     return (
