@@ -16,7 +16,7 @@ export const HERO = {
 };
 
 export const FLOATING_ICONS = [
-  { name: "Salesforce", letter: "S", bg: "#0070D2", top: "8%", left: "4%", delay: "0s" },
+  { name: "Instagram", letter: "📷", bg: "#E1306C", top: "8%", left: "4%", delay: "0s" },
   { name: "QuickBooks", letter: "QB", bg: "#2CA01C", top: "36%", left: "2%", delay: "0.4s" },
   { name: "Shopify", letter: "🛍", bg: "#96BF48", top: "62%", left: "6%", delay: "0.8s" },
   { name: "Excel", letter: "X", bg: "#217346", top: "8%", right: "4%", delay: "1.2s" },
