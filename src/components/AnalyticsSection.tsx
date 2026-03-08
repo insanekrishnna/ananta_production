@@ -28,7 +28,7 @@ const AnalyticsSection = () => {
   const card4 = useScrollReveal(450);
 
   return (
-    <section id="analytics" className="py-24 px-4 md:px-10">
+    <section id="analytics" className="py-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
         <div ref={header.ref} className={`flex flex-col items-center mb-16 ${header.className}`}>
           <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
