@@ -37,11 +37,8 @@ const FeatureCard = ({ feat, Icon, delay }: { feat: typeof FEATURES[number]; Ico
       ref={reveal.ref}
       className={`bg-canvas border border-input rounded-card p-8 shadow-card hover:shadow-float-hover hover:-translate-y-1 transition-all duration-200 ${reveal.className}`}
     >
-      <div
-        className="w-12 h-12 rounded-[12px] flex items-center justify-center mb-4"
-        style={{ backgroundColor: feat.iconBg }}
-      >
-        <Icon size={24} strokeWidth={1.5} style={{ color: feat.iconColor }} />
+      <div className="w-12 h-12 rounded-[12px] bg-muted/50 flex items-center justify-center mb-4">
+        <Icon size={24} strokeWidth={1.5} className="text-text-primary" />
       </div>
       <h3 className="text-xl font-semibold text-text-primary mb-2">{feat.title}</h3>
       <p className="text-[15px] text-text-secondary leading-[1.65]">{feat.body}</p>
