@@ -96,28 +96,28 @@ const ExpertiseMapSection = () => {
             <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-[480px]">
               {/* Row 0: single centered */}
               <div className="col-span-2 flex justify-center">
-                <CorePill emoji="🟡" label="design systems" />
+                <CorePill emoji="🟡" label="client portals" />
               </div>
               {/* Row 1 */}
               <div className="flex justify-end">
-                <CorePill emoji="🔵" label="branding" />
+                <CorePill emoji="🔵" label="CRM tools" />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="🟪" label="app design" />
+                <CorePill emoji="🟪" label="internal dashboards" />
               </div>
               {/* Row 2 */}
               <div className="flex justify-end">
-                <CorePill emoji="❤️" label="brand strategy" />
+                <CorePill emoji="❤️" label="data integrations" />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="▶️" label="ui/ux design" />
+                <CorePill emoji="▶️" label="workflow automation" />
               </div>
               {/* Row 3 */}
               <div className="flex justify-end">
-                <CorePill emoji="🟩" label="web design" />
+                <CorePill emoji="🟩" label="no-code apps" />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="🟪" label="web app development" />
+                <CorePill emoji="🟪" label="custom permissions" />
               </div>
             </div>
           </div>
