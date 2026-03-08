@@ -85,10 +85,10 @@ const ExpertiseMapSection = () => {
 
           {/* Axis labels */}
           <span className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-text-primary">
-            Brand
+            Data
           </span>
           <span className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-text-primary">
-            Product
+            Tools
           </span>
 
           {/* Core service pills — positioned in center grid */}
