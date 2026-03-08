@@ -1,4 +1,4 @@
-export const NAV_LINKS = ["Home", "Solutions", "Product", "Resources", "Pricing"] as const;
+export const NAV_LINKS = ["Home", "Services", "Product", "Resources", "Pricing"] as const;
 
 export const HERO = {
   heading: {
