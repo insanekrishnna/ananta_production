@@ -28,10 +28,13 @@ const AnalyticsSection = () => {
   return (
     <section id="analytics" className="pt-4 pb-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div ref={header.ref} className="">
-          <p className="text-base text-text-secondary leading-[1.65] max-w-[440px] font-medium text-left">
-            Monitor design sprints, brand deliverables, and team performance from one unified creative dashboard.
-          </p>
+        <div ref={header.ref} className={`mb-10 ${header.className}`}>
+          <span className="bg-primary/10 text-primary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] inline-block mb-4">
+            Analytics
+          </span>
+          <h2 className="text-[32px] md:text-[42px] font-bold text-text-primary leading-[1.15] tracking-tight max-w-[560px]">
+            Monitor design sprints from one <span className="text-primary">unified dashboard</span>
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1080px] mx-auto">
