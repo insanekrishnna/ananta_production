@@ -120,8 +120,8 @@ const AnalyticsSection = () => {
 
           {/* Card 3: 165+ Tasks Bar Chart */}
           <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
-            <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">20+ Tasks </p>
-            <p className="text-[13px] text-text-secondary mt-1">
+            <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">​64%  </p>
+            <p className="text-text-secondary mt-1 font-sans text-sm font-medium">
               Selected period: <span className="font-semibold text-text-primary">39 Tasks</span>
             </p>
             <div className="flex items-end gap-[6px] h-[96px] mt-5">
