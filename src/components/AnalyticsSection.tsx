@@ -32,7 +32,7 @@ const AnalyticsSection = () => {
       <div className="max-w-canvas mx-auto">
         <div ref={header.ref} className={`flex flex-col items-center mb-10 ${header.className}`}>
           <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-3">
-            Dashboard
+            
           </span>
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center max-w-[560px] leading-[1.2]">
             ​
@@ -186,7 +186,7 @@ const AnalyticsSection = () => {
         </div>
 
         <p className="text-center text-[14px] text-primary font-medium mt-12">
-          200+ Brand Projects Delivered Worldwide
+          Trusted by 20+ Brands Worldwide
         </p>
       </div>
     </section>);
