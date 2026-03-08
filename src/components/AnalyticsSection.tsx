@@ -1,4 +1,4 @@
-import { Users, CheckCircle2, Video, ChevronDown } from "lucide-react";
+import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const barData = {
