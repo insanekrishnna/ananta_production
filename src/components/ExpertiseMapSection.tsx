@@ -50,6 +50,11 @@ const ExpertiseMapSection = () => {
             <circle cx="462" cy="150" r="2.5" fill="#1a1a1a" />
           </svg>
 
+          {/* Center logo */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <img src={brandLogo} alt="Brand logo" className="w-10 h-10 object-contain" />
+          </div>
+
           {/* Axis labels */}
           <span className="absolute left-0 md:left-1 top-1/2 -translate-y-1/2 text-xs font-semibold text-text-primary">
             Data
