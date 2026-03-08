@@ -1,4 +1,4 @@
-import { Users, CheckCircle2, Video, ChevronDown } from "lucide-react";
+import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const barData = {
@@ -112,18 +112,24 @@ const AnalyticsSection = () => {
             <p className="text-text-secondary mt-1 font-sans text-sm font-medium">
               client satisfaction rate
             </p>
-            <div className="flex items-end gap-[6px] h-[96px] mt-5">
-              {barData.labels.map((_, i) => (
-                <div key={i} className="flex-1 flex items-end gap-[2px]">
-                  <div className="flex-1 rounded-t-[4px] bg-primary" style={{ height: `${barData.purple[i]}%` }} />
-                  <div className="flex-1 rounded-t-[4px]" style={{ height: `${barData.green[i]}%`, backgroundColor: "hsl(160 84% 39%)" }} />
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-between mt-2">
-              {barData.labels.map((label) => (
-                <span key={label} className="flex-1 text-center text-[10px] text-text-secondary">{label}</span>
-              ))}
+            <div className="flex flex-col gap-3 mt-5">
+              {[
+                { icon: ThumbsUp, label: "Happy clients", value: "240+" },
+                { icon: Repeat, label: "Repeat rate", value: "78%" },
+                { icon: Clock, label: "Avg. delivery", value: "12 days" },
+                { icon: TrendingUp, label: "YoY growth", value: "+34%" },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <Icon size={15} strokeWidth={1.5} className="text-text-secondary" />
+                      <span className="text-[13px] text-text-secondary">{item.label}</span>
+                    </div>
+                    <span className="text-[13px] font-semibold text-text-primary">{item.value}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
