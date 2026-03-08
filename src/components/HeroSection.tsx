@@ -21,7 +21,7 @@ const FloatingIcon = ({
     >
       <div
         className="w-10 h-10 rounded-[10px] flex items-center justify-center text-primary-foreground font-bold text-sm"
-        style={{ backgroundColor: icon.bg, color: icon.bg === "#FFFFFF" ? "#000" : "#fff" }}
+        style={{ background: icon.bg, color: icon.bg === "#FFFFFF" ? "#000" : "#fff" }}
       >
         {icon.letter}
       </div>
