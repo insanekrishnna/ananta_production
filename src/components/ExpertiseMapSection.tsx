@@ -36,15 +36,14 @@ const ExpertiseMapSection = () => {
 
         {/* Map container */}
         <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
-          {/* SVG rings and axis */}
           <svg
             className="absolute inset-0 w-full h-full"
             viewBox="0 0 800 450"
             fill="none"
             preserveAspectRatio="xMidYMid meet"
           >
-            <ellipse cx="400" cy="225" rx="320" ry="200" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
-            <ellipse cx="400" cy="225" rx="185" ry="120" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
+            <circle cx="400" cy="225" r="210" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
+            <circle cx="400" cy="225" r="130" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
             <line x1="60" y1="225" x2="740" y2="225" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" />
             <circle cx="70" cy="225" r="3" fill="#1a1a1a" />
             <circle cx="730" cy="225" r="3" fill="#1a1a1a" />
