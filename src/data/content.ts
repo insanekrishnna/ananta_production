@@ -17,13 +17,13 @@ export const HERO = {
 
 export const FLOATING_ICONS = [
   { name: "Instagram", letter: "IG", bg: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)", top: "8%", left: "4%", delay: "0s" },
-  { name: "Browser", letter: "🌐", bg: "#4285F4", top: "36%", left: "2%", delay: "0.4s" },
-  { name: "Pinterest", letter: "P", bg: "#E60023", top: "62%", left: "6%", delay: "0.8s" },
-  { name: "Twitter", letter: "𝕏", bg: "#000000", top: "8%", right: "4%", delay: "1.2s" },
-  { name: "LinkedIn", letter: "in", bg: "#0A66C2", top: "36%", right: "2%", delay: "1.6s" },
-  { name: "Dribbble", letter: "🏀", bg: "#EA4C89", top: "62%", right: "6%", delay: "2.0s" },
-  { name: "Behance", letter: "Bē", bg: "#1769FF", top: "82%", left: "4%", delay: "2.4s" },
-  { name: "Figma", letter: "F", bg: "#A259FF", top: "82%", right: "4%", delay: "2.8s" },
+  { name: "Pinterest", letter: "P", bg: "#E60023", top: "28%", left: "2%", delay: "0.4s" },
+  { name: "Browser", letter: "🌐", bg: "#4285F4", top: "48%", left: "5%", delay: "0.8s" },
+  { name: "Behance", letter: "Bē", bg: "#1769FF", top: "68%", left: "3%", delay: "1.2s" },
+  { name: "Twitter", letter: "𝕏", bg: "#000000", top: "8%", right: "4%", delay: "1.4s" },
+  { name: "LinkedIn", letter: "in", bg: "#0A66C2", top: "28%", right: "2%", delay: "1.8s" },
+  { name: "Dribbble", letter: "🏀", bg: "#EA4C89", top: "48%", right: "5%", delay: "2.0s" },
+  { name: "Figma", letter: "F", bg: "#A259FF", top: "68%", right: "3%", delay: "2.4s" },
 ] as const;
 
 export const LOGOS = ["Nike®", "Spotify", "Airbnb", "Stripe", "Dropbox"];
