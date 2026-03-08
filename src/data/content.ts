@@ -7,7 +7,7 @@ export const HERO = {
       { text: "companies", accent: true },
       { text: " through ", accent: false },
       { text: "", accent: false },
-      { text: "design innovation", accent: true },
+      { text: "design  & innovation", accent: true },
       { text: " ", accent: false },
     ],
   },
