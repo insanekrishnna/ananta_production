@@ -1,9 +1,9 @@
 import { HERO, FLOATING_ICONS } from "@/data/content";
-import { Play, Instagram, Globe, ShoppingBag, Linkedin, Sheet } from "lucide-react";
+import { Play, Globe, ShoppingBag, Linkedin, Sheet } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import instagramLogo from "@/assets/instagram-logo.png";
 
 const iconMap: Record<string, LucideIcon> = {
-  Instagram,
   Browser: Globe,
   Shopify: ShoppingBag,
   LinkedIn: Linkedin,
