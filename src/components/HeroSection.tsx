@@ -149,7 +149,7 @@ const HeroSection = () => {
                 </div>
               </span>
             ) : part.accent && part.text === "innovation" ? (
-              <span key={i} className="relative inline-block">
+              <span key={i} className={`relative inline-block ${openDropdown === "innovation" ? "z-[999]" : ""}`}>
                 <button
                   onClick={() => setOpenDropdown((prev) => prev === "innovation" ? null : "innovation")}
                   className="text-primary hover:text-primary/80 transition-colors duration-200 cursor-pointer focus:outline-none"
