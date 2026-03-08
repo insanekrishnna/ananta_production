@@ -1,4 +1,4 @@
-export const NAV_LINKS = ["Home", "Services", "Product", "Resources", "Pricing"] as const;
+export const NAV_LINKS = ["Home", "Services", "Work", "Process", "Pricing"] as const;
 
 export const HERO = {
   heading: {
@@ -12,7 +12,7 @@ export const HERO = {
     ],
   },
   subheading: "A full-service creative studio crafting innovative digital experiences across every brand touchpoint.\n\n",
-  cta: { label: "Watch Demo", sub: "3mins" },
+  cta: { label: "Watch Showreel", sub: "2mins" },
 };
 
 export const FLOATING_ICONS = [
@@ -25,112 +25,112 @@ export const FLOATING_ICONS = [
   { name: "Dribbble", letter: "🏀", bg: "#EA4C89", top: "82%", left: "4%", delay: "2.4s" },
 ] as const;
 
-export const LOGOS = ["OpenPurpose®", "LaunchPad", "FinanceFlow", "ScaleUp", "VentureStudio"];
+export const LOGOS = ["Nike®", "Spotify", "Airbnb", "Stripe", "Dropbox"];
 
 export const FEATURES = [
   {
     icon: "Database" as const,
     iconBg: "rgba(79,70,229,0.08)",
     iconColor: "#4F46E5",
-    title: "Connect any data source",
-    body: "Integrate with Airtable, Google Sheets, SQL, REST APIs and more in seconds.",
+    title: "Brand Strategy & Identity",
+    body: "We define your brand's DNA — positioning, voice, visual identity — to create a foundation that resonates and endures.",
   },
   {
     icon: "Layers" as const,
     iconBg: "rgba(16,185,129,0.08)",
     iconColor: "#10B981",
-    title: "Drag-and-drop builder",
-    body: "Build portals and tools visually — no code required. Launch in minutes.",
+    title: "UI/UX & Product Design",
+    body: "Human-centered interfaces crafted for clarity and delight. From wireframes to pixel-perfect design systems.",
   },
   {
     icon: "Users" as const,
     iconBg: "rgba(245,158,11,0.08)",
     iconColor: "#F59E0B",
-    title: "Role-based permissions",
-    body: "Control exactly who sees and edits what with granular access controls.",
+    title: "Web & Motion Design",
+    body: "Award-winning websites, immersive animations, and interactive experiences that captivate your audience.",
   },
 ];
 
 export const INTEGRATIONS = {
-  tag: "Integrations",
-  heading: "Works with the tools your team already uses",
-  body: "Connect to 50+ data sources including Airtable, Salesforce, Google Sheets, HubSpot, and more — no engineering required.",
-  cta: "Explore integrations →",
+  tag: "Our Process",
+  heading: "A proven creative process that delivers results",
+  body: "From discovery to delivery, our cross-disciplinary team follows a battle-tested methodology — blending strategy, design, and technology at every stage.",
+  cta: "See our case studies →",
   apps: [
-    { name: "Airtable", letter: "A", bg: "#18BFFF" },
-    { name: "Notion", letter: "N", bg: "#000000" },
-    { name: "Salesforce", letter: "S", bg: "#0070D2" },
-    { name: "HubSpot", letter: "H", bg: "#FF7A59" },
-    { name: "Shopify", letter: "🛍", bg: "#96BF48" },
-    { name: "Sheets", letter: "≡", bg: "#0F9D58" },
-    { name: "Excel", letter: "X", bg: "#217346" },
-    { name: "QuickBooks", letter: "Q", bg: "#2CA01C" },
-    { name: "Stripe", letter: "S", bg: "#635BFF" },
-    { name: "PostgreSQL", letter: "P", bg: "#336791" },
-    { name: "MySQL", letter: "M", bg: "#4479A1" },
-    { name: "REST API", letter: "{}", bg: "#6B7280" },
+    { name: "Discovery", letter: "01", bg: "#4F46E5" },
+    { name: "Research", letter: "02", bg: "#7C3AED" },
+    { name: "Strategy", letter: "03", bg: "#2563EB" },
+    { name: "Wireframes", letter: "04", bg: "#0891B2" },
+    { name: "Design", letter: "05", bg: "#059669" },
+    { name: "Prototype", letter: "06", bg: "#D97706" },
+    { name: "Development", letter: "07", bg: "#DC2626" },
+    { name: "Testing", letter: "08", bg: "#9333EA" },
+    { name: "Launch", letter: "09", bg: "#EA580C" },
+    { name: "Iterate", letter: "10", bg: "#0D9488" },
+    { name: "Optimize", letter: "11", bg: "#4338CA" },
+    { name: "Scale", letter: "12", bg: "#1D4ED8" },
   ],
 };
 
 export const TESTIMONIALS = [
   {
-    quote: "Stacker saved us months of engineering time. We launched our client portal in a single afternoon.",
-    name: "Alex Chen",
-    role: "Head of Operations, FinanceFlow",
-    initials: "AC",
+    quote: "They completely reimagined our brand. The new identity drove a 40% increase in engagement within the first quarter.",
+    name: "Sarah Mitchell",
+    role: "CMO, Elevate Studios",
+    initials: "SM",
     avatarBg: "#4F46E5",
   },
   {
-    quote: "The best no-code tool we've found for internal tooling. Our team was up and running in under an hour.",
-    name: "Maria Lopez",
-    role: "Product Manager, ScaleUp Co",
-    initials: "ML",
+    quote: "The UI/UX redesign transformed our product. User retention jumped 65% and our NPS went through the roof.",
+    name: "David Kim",
+    role: "VP Product, NovaTech",
+    initials: "DK",
     avatarBg: "#10B981",
   },
   {
-    quote: "We replaced three different tools with one Stacker portal. It's transformed how our ops team works.",
-    name: "James Park",
-    role: "COO, Venture Studio",
-    initials: "JP",
+    quote: "Working with this team felt like having a world-class creative department in-house. Truly exceptional work.",
+    name: "Elena Vasquez",
+    role: "Founder, Lumina Brands",
+    initials: "EV",
     avatarBg: "#F59E0B",
   },
 ];
 
 export const PRICING_PLANS = [
   {
-    name: "Starter",
-    price: "$49",
-    period: "/month",
-    description: "Perfect for small teams getting started",
-    features: ["3 apps", "Up to 5 users", "1,000 records", "Email support"],
-    cta: "Get started",
+    name: "Sprint",
+    price: "$4,900",
+    period: "/project",
+    description: "Ideal for startups needing a strong visual foundation",
+    features: ["Brand identity design", "Logo & color system", "1 landing page", "Social media kit"],
+    cta: "Book a call",
     highlighted: false,
   },
   {
-    name: "Growth",
-    price: "$149",
+    name: "Studio",
+    price: "$12,500",
     period: "/month",
-    description: "For growing teams that need more power",
-    features: ["Unlimited apps", "Up to 25 users", "50,000 records", "Priority support", "Custom domain"],
-    cta: "Get started",
+    description: "For brands that need ongoing creative partnership",
+    features: ["Unlimited design requests", "Brand strategy", "UI/UX design", "Motion & animation", "Dedicated art director"],
+    cta: "Book a call",
     highlighted: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description: "For large organizations with custom needs",
-    features: ["Unlimited everything", "SSO / SAML", "SLA guarantee", "Dedicated support", "Custom contracts"],
-    cta: "Contact sales",
+    description: "For organizations with complex creative needs",
+    features: ["Full creative team", "Product design", "Brand campaigns", "Video production", "Dedicated account lead"],
+    cta: "Contact us",
     highlighted: false,
   },
 ];
 
 export const FOOTER = {
-  tagline: "Build internal tools without code.",
+  tagline: "Full-service creative studio for ambitious brands.",
   columns: [
-    { heading: "Product", links: ["Features", "Integrations", "Pricing", "Changelog", "Roadmap"] },
-    { heading: "Company", links: ["About", "Blog", "Careers", "Press", "Contact"] },
-    { heading: "Resources", links: ["Documentation", "API Reference", "Community", "Status", "Support"] },
+    { heading: "Services", links: ["Brand Strategy", "Identity Design", "UI/UX Design", "Web Development", "Motion Design"] },
+    { heading: "Company", links: ["About", "Careers", "Blog", "Press", "Contact"] },
+    { heading: "Resources", links: ["Case Studies", "Design Process", "Style Guides", "FAQ", "Support"] },
   ],
 };

@@ -41,7 +41,7 @@ const FooterSection = () => {
         </div>
 
         <div className="border-t border-input pt-8 flex flex-col sm:flex-row justify-between text-sm text-muted-foreground">
-          <span>© 2024 Stacker</span>
+          <span>© 2026 Craft Studio</span>
           <div className="flex gap-4">
             <a href="#" className="hover:text-text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-text-primary transition-colors">Terms of Service</a>
