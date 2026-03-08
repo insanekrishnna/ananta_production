@@ -100,10 +100,10 @@ const AnalyticsSection = () => {
               {tasks.map((task) =>
               <div key={task.title} className="flex items-center gap-2">
                   {task.completed ?
-                <CheckCircle2 className="w-4 h-4 text-white/40 flex-shrink-0" /> :
-                <Circle className="w-4 h-4 text-white/30 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" /> :
+                <Circle className="w-4 h-4 text-white flex-shrink-0" />
                 }
-                  <span className={`text-[13px] ${task.completed ? "line-through text-white/40" : "text-white/80"}`}>
+                  <span className="text-[13px] text-white/80">
                     {task.title}
                   </span>
                 </div>
