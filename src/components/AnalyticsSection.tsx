@@ -186,7 +186,7 @@ const AnalyticsSection = () => {
         </div>
 
         <p className="text-center text-[14px] text-primary font-medium mt-12">
-          200+ Brand Projects Delivered Worldwide
+          Trusted by 20+ Brands Worldwide
         </p>
       </div>
     </section>);
