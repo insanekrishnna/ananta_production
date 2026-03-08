@@ -116,8 +116,8 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 4: Active Campaign + Creative Sync */}
-          <div ref={card4.ref} className={`flex flex-col gap-6 ${card4.className}`}>
-            <div className="bg-canvas border border-input rounded-[16px] p-5 shadow-float flex-1">
+          <div ref={card4.ref} className={`flex flex-col gap-4 ${card4.className}`}>
+            <div className="bg-canvas border border-input rounded-[16px] p-4 shadow-float flex-1">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-[14px] font-bold text-text-primary">Rebrand Campaign</h3>
                 <span className="text-[11px] font-semibold text-destructive bg-destructive/10 rounded-pill px-2 py-0.5">
@@ -143,7 +143,7 @@ const AnalyticsSection = () => {
               </div>
             </div>
 
-            <div className="bg-canvas border border-input rounded-[16px] p-5 shadow-float">
+            <div className="bg-canvas border border-input rounded-[16px] p-4 shadow-float">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-[14px] font-bold text-text-primary">Creative Sync</h3>
                 <button className="flex items-center gap-1 text-[11px] font-semibold text-primary border border-primary/20 rounded-pill px-2.5 py-1 hover:bg-primary/5 transition-colors">
