@@ -1,20 +1,22 @@
 import { useState, useRef, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { Sparkles, Monitor, Play, Box, Target, Rocket, Building2, Zap, Palette, Heart } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const everythingItems = [
-  { label: "Branding", emoji: "✦" },
-  { label: "Digital", emoji: "◈" },
-  { label: "Motion", emoji: "▸" },
-  { label: "Product", emoji: "◉" },
-  { label: "Strategy", emoji: "△" },
+const everythingItems: { label: string; icon: LucideIcon }[] = [
+  { label: "Branding", icon: Sparkles },
+  { label: "Digital", icon: Monitor },
+  { label: "Motion", icon: Play },
+  { label: "Product", icon: Box },
+  { label: "Strategy", icon: Target },
 ];
 
-const everyoneItems = [
-  { label: "Startups", emoji: "🚀" },
-  { label: "Enterprises", emoji: "🏢" },
-  { label: "Agencies", emoji: "⚡" },
-  { label: "Creators", emoji: "🎨" },
-  { label: "Non-Profits", emoji: "💚" },
+const everyoneItems: { label: string; icon: LucideIcon }[] = [
+  { label: "Startups", icon: Rocket },
+  { label: "Enterprises", icon: Building2 },
+  { label: "Agencies", icon: Zap },
+  { label: "Creators", icon: Palette },
+  { label: "Non-Profits", icon: Heart },
 ];
 
 const InteractiveHeadline = () => {
