@@ -1,7 +1,23 @@
 import { NAV_LINKS } from "@/data/content";
 import { Button } from "@/components/ui/button";
 
+const sectionMap: Record<string, string> = {
+  Home: "hero",
+  Solutions: "analytics",
+  Product: "features",
+  Resources: "integrations",
+  Pricing: "pricing",
+};
+
 const Navbar = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    e.preventDefault();
+    const id = sectionMap[link];
+    if (id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="sticky top-0 z-50 h-18 flex items-center justify-between px-10 md:px-10 px-4 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
       <div className="flex items-center gap-2">
@@ -15,7 +31,8 @@ const Navbar = () => {
         {NAV_LINKS.map((link) => (
           <a
             key={link}
-            href="#"
+            href={`#${sectionMap[link]}`}
+            onClick={(e) => handleClick(e, link)}
             className="text-[15px] font-medium text-text-nav hover:text-primary transition-colors duration-150"
           >
             {link}
