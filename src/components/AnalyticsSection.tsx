@@ -11,7 +11,10 @@ const tasks = [
 { title: "Concept Sketching", completed: true },
 { title: "Vector Refinement", completed: true },
 { title: "Grid Alignment", completed: true },
-{ title: "Final Mark", completed: true }];
+{ title: "Final Mark", completed: true },
+{ title: "Brand Audit & Research", completed: true },
+{ title: "Moodboard & Direction", completed: true },
+{ title: "Final Identity Delivery", completed: true }];
 
 
 const AnalyticsSection = () => {
