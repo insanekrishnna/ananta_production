@@ -110,7 +110,7 @@ const AnalyticsSection = () => {
           <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
             <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">96%</p>
             <p className="text-text-secondary mt-1 font-sans text-sm font-medium">
-              client satisfaction rate
+              Client satisfaction rate
             </p>
             <div className="flex flex-col gap-3 mt-5">
               {[
