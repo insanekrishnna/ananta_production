@@ -89,7 +89,7 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 2: Usability Testing (highlight) */}
-          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(263,100%,62%)] to-[hsl(253,100%,56%)] text-primary-foreground rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.style}`}>
+          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(263,100%,62%)] to-[hsl(253,100%,56%)] text-primary-foreground rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
             <div className="flex items-center justify-between mb-1">
               <h3 className="text-[16px] font-bold">Usability testing</h3>
               <span className="text-primary-foreground/50 text-xl leading-none">•••</span>
