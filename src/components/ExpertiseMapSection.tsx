@@ -1,11 +1,15 @@
-const CORE_SERVICES = [
-{ label: "client portals", emoji: "🟡", row: 0, col: 1 },
-{ label: "CRM tools", emoji: "🔵", row: 1, col: 0 },
-{ label: "internal dashboards", emoji: "🟪", row: 1, col: 1 },
-{ label: "data integrations", emoji: "❤️", row: 2, col: 0 },
-{ label: "workflow automation", emoji: "▶️", row: 2, col: 1 },
-{ label: "no-code apps", emoji: "🟩", row: 3, col: 0 },
-{ label: "custom permissions", emoji: "🟪", row: 3, col: 1 }];
+import { Users, ContactRound, LayoutDashboard, Database, Workflow, Blocks, ShieldCheck } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const CORE_SERVICES: { label: string; icon: LucideIcon }[] = [
+  { label: "client portals", icon: Users },
+  { label: "CRM tools", icon: ContactRound },
+  { label: "internal dashboards", icon: LayoutDashboard },
+  { label: "data integrations", icon: Database },
+  { label: "workflow automation", icon: Workflow },
+  { label: "no-code apps", icon: Blocks },
+  { label: "custom permissions", icon: ShieldCheck },
+];
 
 
 const SECONDARY_SERVICES_LEFT = [
