@@ -10,9 +10,9 @@ const FooterSection = () => {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-9 h-9 rounded-[10px] bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-                S
+                C
               </div>
-              <span className="text-lg font-bold text-text-primary">stacker</span>
+              <span className="text-lg font-bold text-text-primary">Craft Studio</span>
             </div>
             <p className="text-sm text-muted-foreground mt-2">{FOOTER.tagline}</p>
             <div className="flex gap-4 mt-6">
