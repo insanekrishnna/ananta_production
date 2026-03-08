@@ -1,13 +1,7 @@
-import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette, ArrowDown } from "lucide-react";
+import { Users, CheckCircle2, Video, Palette, ArrowDown } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import samukOld from "@/assets/samuk-old-logo.png";
 import samukNew from "@/assets/samuk-new-logo.png";
-
-const barData = {
-  labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-  purple: [30, 45, 60, 35, 70, 90, 50],
-  green: [20, 35, 50, 30, 45, 65, 40]
-};
 
 const tasks = [
 { title: "Concept Sketching", completed: true },
@@ -21,10 +15,8 @@ const tasks = [
 
 const AnalyticsSection = () => {
   const header = useScrollReveal(0);
-  const card1 = useScrollReveal(0);
-  const card2 = useScrollReveal(150);
-  const card3 = useScrollReveal(300);
-  const card4 = useScrollReveal(450);
+  const card2 = useScrollReveal(0);
+  const card4 = useScrollReveal(150);
 
   return (
     <section id="analytics" className="py-16 px-4 md:px-10">
@@ -41,43 +33,10 @@ const AnalyticsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1080px] mx-auto auto-rows-auto">
-          {/* Card 1: Project Statistic */}
-          <div ref={card1.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card1.className}`}>
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[14px] font-bold text-text-primary">Brand Projects</h3>
-              <button className="flex items-center gap-1 text-[11px] text-text-secondary">
-                This quarter <ChevronDown className="w-3 h-3" />
-              </button>
-            </div>
-            <div className="flex justify-center my-4">
-              <div className="relative w-[120px] h-[120px]">
-                <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
-                  <circle cx="50" cy="50" r="38" fill="none" stroke="hsl(var(--secondary))" strokeWidth="12" />
-                  <circle cx="50" cy="50" r="38" fill="none" stroke="hsl(var(--primary))" strokeWidth="12" strokeDasharray={`${0.62 * 238.76} ${238.76}`} strokeLinecap="round" />
-                  <circle cx="50" cy="50" r="38" fill="none" stroke="hsl(200 80% 55%)" strokeWidth="12" strokeDasharray={`${0.12 * 238.76} ${238.76}`} strokeDashoffset={`${-0.62 * 238.76}`} strokeLinecap="round" />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center text-accent">
-                  <span className="text-[24px] font-bold text-text-primary leading-none text-card-foreground">84%</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-between text-center px-2">
-              <div>
-                <p className="text-[11px] text-text-secondary">Delivered</p>
-                <p className="text-[20px] font-bold text-text-primary">62%</p>
-              </div>
-              <div>
-                <p className="text-[11px] text-text-secondary">In progress</p>
-                <p className="text-[20px] font-bold text-text-primary">22%</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Brand Identity Design + Logo Evolution */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-[1080px] mx-auto auto-rows-auto">
+          {/* Brand Identity Design + Logo Evolution */}
           <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(220,10%,20%)] to-[hsl(220,10%,12%)] text-white rounded-[16px] p-6 shadow-float lg:col-span-2 lg:-rotate-[3deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
             <div className="flex gap-6">
-              {/* Left: Checklist */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-2">
@@ -90,17 +49,13 @@ const AnalyticsSection = () => {
                   {tasks.map((task) =>
                     <div key={task.title} className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
-                      <span className="text-[13px] text-white/80">
-                        {task.title}
-                      </span>
+                      <span className="text-[13px] text-white/80">{task.title}</span>
                     </div>
                   )}
                 </div>
               </div>
 
-              {/* Right: Brand System Preview */}
               <div className="hidden lg:flex flex-col gap-4 pl-6 border-l border-white/10 min-w-[180px]">
-                {/* Logo Evolution */}
                 <div className="flex flex-col items-center gap-2">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50 self-start">Logo Evolution</span>
                   <div className="flex items-center gap-3 w-full">
@@ -113,8 +68,6 @@ const AnalyticsSection = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Color Palette */}
                 <div>
                   <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50">Color System</span>
                   <div className="flex gap-1.5 mt-2">
@@ -125,8 +78,6 @@ const AnalyticsSection = () => {
                     ))}
                   </div>
                 </div>
-
-                {/* Typography */}
                 <div>
                   <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50">Typography</span>
                   <div className="mt-2 space-y-1">
@@ -139,34 +90,7 @@ const AnalyticsSection = () => {
             </div>
           </div>
 
-          {/* Card 3: Client Satisfaction */}
-          <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
-            <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">96%</p>
-            <p className="text-text-secondary mt-1 font-sans text-sm font-medium">
-              Client satisfaction rate
-            </p>
-            <div className="flex flex-col gap-3 mt-5">
-              {[
-              { icon: ThumbsUp, label: "Happy clients", value: "20+" },
-              { icon: Repeat, label: "Repeat rate", value: "78%" },
-              { icon: Clock, label: "Avg. delivery", value: "12 days" },
-              { icon: TrendingUp, label: "YoY growth", value: "+34%" }].
-              map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.label} className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <Icon size={15} strokeWidth={1.5} className="text-text-secondary opacity-100 shadow-none" />
-                      <span className="text-[13px] text-text-secondary font-medium">{item.label}</span>
-                    </div>
-                    <span className="text-[13px] font-semibold text-text-primary">{item.value}</span>
-                  </div>);
-
-              })}
-            </div>
-          </div>
-
-          {/* Card 4: Active Campaign + Creative Sync */}
+          {/* Active Campaign + Creative Sync */}
           <div ref={card4.ref} className={`flex flex-col gap-6 ${card4.className}`}>
             <div className="bg-canvas border border-input rounded-[16px] p-5 shadow-float flex-1">
               <div className="flex items-center justify-between mb-2">
