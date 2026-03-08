@@ -72,7 +72,7 @@ const AnalyticsSection = () => {
                 </svg>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
                   <span className="text-[24px] font-bold text-text-primary leading-none">74%</span>
-                  <span className="text-[10px] text-text-secondary mt-1">Activity Records</span>
+                  <span className="text-[10px] text-text-secondary mt-1">​ </span>
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ const AnalyticsSection = () => {
 
           {/* Card 3: 165+ Tasks Bar Chart */}
           <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
-            <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">165+</p>
+            <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">20+ Tasks </p>
             <p className="text-[13px] text-text-secondary mt-1">
               Selected period: <span className="font-semibold text-text-primary">39 Tasks</span>
             </p>
