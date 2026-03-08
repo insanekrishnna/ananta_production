@@ -80,9 +80,9 @@ const FloatingIcon = ({
       ) : icon.name === "Twitter" ? (
         <TwitterIcon />
       ) : icon.name === "Dribbble" ? (
-        <DribbbleIcon />
+        <img src={dribbbleLogo} alt="Dribbble" className="w-8 h-8 rounded-[6px]" />
       ) : icon.name === "Pinterest" ? (
-        <PinterestIcon />
+        <img src={pinterestLogo} alt="Pinterest" className="w-8 h-8 rounded-[6px]" />
       ) : icon.name === "Behance" ? (
         <BehanceIcon />
       ) : icon.name === "Figma" ? (
