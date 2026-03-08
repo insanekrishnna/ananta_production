@@ -57,26 +57,25 @@ const ExpertiseMapSection = () => {
             Tools
           </span>
 
-          {/* Core service pills — diamond layout */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex justify-center">
-                <CorePill Icon={CORE_SERVICES[0].icon} label={CORE_SERVICES[0].label} />
+          {/* Core service pills — distributed around inner circle */}
+          {CORE_SERVICES.map((service, i) => {
+            const total = CORE_SERVICES.length;
+            const angle = -90 + (i * 360) / total;
+            const rad = (angle * Math.PI) / 180;
+            const rx = 22;
+            const ry = 28;
+            const cx = 50 + rx * Math.cos(rad);
+            const cy = 50 + ry * Math.sin(rad);
+            return (
+              <div
+                key={service.label}
+                className="absolute -translate-x-1/2 -translate-y-1/2"
+                style={{ top: `${cy}%`, left: `${cx}%` }}
+              >
+                <CorePill Icon={service.icon} label={service.label} />
               </div>
-              <div className="flex gap-2 justify-center">
-                <CorePill Icon={CORE_SERVICES[1].icon} label={CORE_SERVICES[1].label} />
-                <CorePill Icon={CORE_SERVICES[2].icon} label={CORE_SERVICES[2].label} />
-              </div>
-              <div className="flex gap-2 justify-center">
-                <CorePill Icon={CORE_SERVICES[3].icon} label={CORE_SERVICES[3].label} />
-                <CorePill Icon={CORE_SERVICES[4].icon} label={CORE_SERVICES[4].label} />
-                <CorePill Icon={CORE_SERVICES[5].icon} label={CORE_SERVICES[5].label} />
-              </div>
-              <div className="flex justify-center">
-                <CorePill Icon={CORE_SERVICES[6].icon} label={CORE_SERVICES[6].label} />
-              </div>
-            </div>
-          </div>
+            );
+          })}
 
           {/* Secondary pills */}
           {SECONDARY_SERVICES_LEFT.map((s) => (
