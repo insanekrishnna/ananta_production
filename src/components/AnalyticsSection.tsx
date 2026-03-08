@@ -1,5 +1,7 @@
-import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette } from "lucide-react";
+import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette, ArrowDown } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import samukOld from "@/assets/samuk-old-logo.png";
+import samukNew from "@/assets/samuk-new-logo.png";
 
 const barData = {
   labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
