@@ -148,7 +148,7 @@ const HeroSection = () => {
                   </div>
                 </div>
               </span>
-            ) : part.accent && part.text === "design  & innovation" ? (
+            ) : part.accent && part.text === "innovation" ? (
               <span key={i} className="relative inline-block">
                 <button
                   onClick={() => setOpenDropdown((prev) => prev === "innovation" ? null : "innovation")}
