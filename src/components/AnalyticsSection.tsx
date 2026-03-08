@@ -59,7 +59,7 @@ const AnalyticsSection = () => {
                   <circle cx="50" cy="50" r="38" fill="none" stroke="hsl(200 80% 55%)" strokeWidth="12" strokeDasharray={`${0.12 * 238.76} ${238.76}`} strokeDashoffset={`${-0.62 * 238.76}`} strokeLinecap="round" />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center text-accent">
-                  <span className="text-[24px] font-bold leading-none" style={{ color: "hsl(200, 80%, 55%)" }}>84%</span>
+                  <span className="text-[24px] font-bold text-text-primary leading-none text-card-foreground">84%</span>
                 </div>
               </div>
             </div>
