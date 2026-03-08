@@ -76,17 +76,23 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 2: Brand Identity Design */}
-          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(263,100%,62%)] to-[hsl(253,100%,56%)] text-primary-foreground rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
+          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(220,10%,20%)] to-[hsl(220,10%,12%)] text-white rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
             <div className="flex items-center justify-between mb-1">
-              <h3 className="text-[16px] font-bold">Brand Identity Design</h3>
-              <span className="text-primary-foreground/50 text-xl leading-none">•••</span>
+              <div className="flex items-center gap-2">
+                <Palette className="w-4 h-4 text-white/70" />
+                <h3 className="text-[16px] font-bold">Brand Identity Design</h3>
+              </div>
+              <span className="text-white/40 text-xl leading-none">•••</span>
             </div>
-            <p className="text-[12px] text-primary-foreground/60 mb-4">Deadline: 28 March</p>
+            <div className="flex items-center gap-1.5 mb-4">
+              <CalendarDays className="w-3 h-3 text-white/40" />
+              <p className="text-[12px] text-white/50">Deadline: 28 March</p>
+            </div>
             <div className="grid grid-cols-4 gap-2 mb-5">
               {timeline.map((item) =>
-              <div key={item.date} className="bg-primary-foreground/10 rounded-[12px] py-2.5 px-1 text-center">
-                  <p className="text-[10px] text-primary-foreground/50 mb-0.5">{item.date}</p>
-                  <p className="text-[14px] font-bold">{item.time}</p>
+              <div key={item.date} className="bg-white/8 rounded-[12px] py-2.5 px-1 text-center border border-white/5">
+                  <p className="text-[10px] text-white/40 mb-0.5">{item.date}</p>
+                  <p className="text-[14px] font-bold text-white">{item.time}</p>
                 </div>
               )}
             </div>
@@ -94,11 +100,10 @@ const AnalyticsSection = () => {
               {tasks.map((task) =>
               <div key={task.title} className="flex items-center gap-2">
                   {task.completed ?
-                <CheckCircle2 className="w-4 h-4 text-primary-foreground/50 flex-shrink-0" /> :
-
-                <div className="w-4 h-4 rounded-full border-[1.5px] border-primary-foreground/40 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-white/40 flex-shrink-0" /> :
+                <Circle className="w-4 h-4 text-white/30 flex-shrink-0" />
                 }
-                  <span className={`text-[13px] ${task.completed ? "line-through text-primary-foreground/50" : ""}`}>
+                  <span className={`text-[13px] ${task.completed ? "line-through text-white/40" : "text-white/80"}`}>
                     {task.title}
                   </span>
                 </div>
