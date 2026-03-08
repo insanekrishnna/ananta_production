@@ -26,10 +26,14 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50">
-      <div className="h-16 flex items-center justify-between px-4 md:px-10 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="Stacker logo" className="w-7 h-7 object-contain" />
-          
+      <div className="h-14 flex items-center justify-between px-5 md:px-10 backdrop-blur-[16px] bg-canvas/90">
+        <div className="flex items-center gap-2.5">
+          <div
+            className="w-9 h-9 rounded-[12px] bg-foreground flex items-center justify-center"
+            style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
+          >
+            <img src={logo} alt="Logo" className="w-5 h-5 object-contain brightness-0 invert" />
+          </div>
         </div>
 
         <div className="hidden md:flex items-center gap-10">
