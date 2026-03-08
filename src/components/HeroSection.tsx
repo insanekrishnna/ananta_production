@@ -227,7 +227,7 @@ const HeroSection = () => {
         </h1>
 
         <p
-          className="text-base text-text-secondary leading-[1.65] max-w-[440px] mt-6 animate-hero-fade font-normal"
+          className="text-base text-text-secondary leading-[1.65] max-w-[440px] mt-6 animate-hero-fade font-medium"
           style={{ animationDelay: "100ms" }}>
           
           {HERO.subheading}
