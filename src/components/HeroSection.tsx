@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { HERO, FLOATING_ICONS } from "@/data/content";
-import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark, Heart } from "lucide-react";
+import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark, Heart, Sparkles, Monitor, PlayCircle, Box, Target } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import instagramLogo from "@/assets/instagram-logo.png";
 import linkedinLogo from "@/assets/linkedin-logo.png";
@@ -72,14 +72,22 @@ const companyItems: { label: string; icon: LucideIcon }[] = [
   { label: "Non-Profits", icon: Heart },
 ];
 
+const innovationItems: { label: string; icon: LucideIcon }[] = [
+  { label: "Branding", icon: Sparkles },
+  { label: "Digital", icon: Monitor },
+  { label: "Motion", icon: PlayCircle },
+  { label: "Product", icon: Box },
+  { label: "Strategy", icon: Target },
+];
+
 const HeroSection = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLSpanElement>(null);
+  const [openDropdown, setOpenDropdown] = useState<"companies" | "innovation" | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -97,33 +105,31 @@ const HeroSection = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center text-center px-4">
+      <div ref={containerRef} className="relative z-10 flex flex-col items-center text-center px-4">
         <h1
           className="text-[36px] md:text-[56px] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-primary max-w-[720px] animate-hero-fade"
         >
           {HERO.heading.parts.map((part, i) =>
             part.accent && part.text === "companies" ? (
-              <span key={i} className="relative inline-block" ref={dropdownRef}>
+              <span key={i} className="relative inline-block">
                 <button
-                  onClick={() => setDropdownOpen((prev) => !prev)}
+                  onClick={() => setOpenDropdown((prev) => prev === "companies" ? null : "companies")}
                   className="text-primary hover:text-primary/80 transition-colors duration-200 cursor-pointer focus:outline-none"
                 >
                   {part.text}
                   <span
                     className="ml-1 text-[0.6em] opacity-60 inline-block transition-transform duration-200"
-                    style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                    style={{ transform: openDropdown === "companies" ? "rotate(180deg)" : "rotate(0deg)" }}
                   >
                     ▾
                   </span>
                 </button>
-
-                {/* Companies Dropdown */}
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50"
                   style={{
-                    opacity: dropdownOpen ? 1 : 0,
-                    transform: dropdownOpen ? "translateY(0)" : "translateY(10px)",
-                    pointerEvents: dropdownOpen ? "auto" : "none",
+                    opacity: openDropdown === "companies" ? 1 : 0,
+                    transform: openDropdown === "companies" ? "translateY(0)" : "translateY(10px)",
+                    pointerEvents: openDropdown === "companies" ? "auto" : "none",
                     transition: "all 0.25s ease",
                   }}
                 >
@@ -131,11 +137,43 @@ const HeroSection = () => {
                     {companyItems.map((item) => {
                       const Icon = item.icon;
                       return (
-                        <button
-                          key={item.label}
-                          className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
-                          onClick={() => setDropdownOpen(false)}
-                        >
+                        <button key={item.label} className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150" onClick={() => setOpenDropdown(null)}>
+                          <Icon size={16} className="text-primary" />
+                          {item.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </span>
+            ) : part.accent && part.text === "design  & innovation" ? (
+              <span key={i} className="relative inline-block">
+                <button
+                  onClick={() => setOpenDropdown((prev) => prev === "innovation" ? null : "innovation")}
+                  className="text-primary hover:text-primary/80 transition-colors duration-200 cursor-pointer focus:outline-none"
+                >
+                  {part.text}
+                  <span
+                    className="ml-1 text-[0.6em] opacity-60 inline-block transition-transform duration-200"
+                    style={{ transform: openDropdown === "innovation" ? "rotate(180deg)" : "rotate(0deg)" }}
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50"
+                  style={{
+                    opacity: openDropdown === "innovation" ? 1 : 0,
+                    transform: openDropdown === "innovation" ? "translateY(0)" : "translateY(10px)",
+                    pointerEvents: openDropdown === "innovation" ? "auto" : "none",
+                    transition: "all 0.25s ease",
+                  }}
+                >
+                  <div className="bg-canvas border border-input rounded-[14px] shadow-float p-2 min-w-[200px]">
+                    {innovationItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <button key={item.label} className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150" onClick={() => setOpenDropdown(null)}>
                           <Icon size={16} className="text-primary" />
                           {item.label}
                         </button>
