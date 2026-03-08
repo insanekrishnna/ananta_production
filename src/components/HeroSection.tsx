@@ -79,6 +79,12 @@ const FloatingIcon = ({
         <TwitterIcon />
       ) : icon.name === "Dribbble" ? (
         <DribbbleIcon />
+      ) : icon.name === "Pinterest" ? (
+        <PinterestIcon />
+      ) : icon.name === "Behance" ? (
+        <BehanceIcon />
+      ) : icon.name === "Figma" ? (
+        <FigmaIcon />
       ) : LucideIcon ? (
         <LucideIcon size={18} strokeWidth={1.2} className="text-text-primary" />
       ) : (
