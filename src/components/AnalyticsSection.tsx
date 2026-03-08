@@ -114,7 +114,7 @@ const AnalyticsSection = () => {
             </p>
             <div className="flex flex-col gap-3 mt-5">
               {[
-                { icon: ThumbsUp, label: "Happy clients", value: "240+" },
+                { icon: ThumbsUp, label: "Happy clients", value: "20+" },
                 { icon: Repeat, label: "Repeat rate", value: "78%" },
                 { icon: Clock, label: "Avg. delivery", value: "12 days" },
                 { icon: TrendingUp, label: "YoY growth", value: "+34%" },
