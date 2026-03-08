@@ -6,7 +6,7 @@ import logo from "@/assets/logo.png";
 
 const sectionMap: Record<string, string> = {
   Home: "hero",
-  Solutions: "analytics",
+  Services: "analytics",
   Product: "features",
   Resources: "integrations",
   Pricing: "pricing",
@@ -47,7 +47,7 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <Button variant="default" size="default" className="hidden md:inline-flex">
-            Get Started
+            
           </Button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

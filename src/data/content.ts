@@ -1,4 +1,4 @@
-export const NAV_LINKS = ["Home", "Solutions", "Product", "Resources", "Pricing"] as const;
+export const NAV_LINKS = ["Home", "Services", "Product", "Resources", "Pricing"] as const;
 
 export const HERO = {
   heading: {
@@ -7,7 +7,7 @@ export const HERO = {
       { text: "companies", accent: true },
       { text: " through ", accent: false },
       { text: "", accent: false },
-      { text: "design innovation", accent: true },
+      { text: "design  & innovation", accent: true },
       { text: " ", accent: false },
     ],
   },
