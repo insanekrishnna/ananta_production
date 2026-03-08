@@ -7,6 +7,7 @@ import linkedinLogo from "@/assets/linkedin-logo.png";
 import pinterestLogo from "@/assets/pinterest-logo.png";
 import dribbbleLogo from "@/assets/dribbble-logo-new.png";
 import samukCard from "@/assets/samuk-card.png";
+import brandLogo from "@/assets/logo.png";
 
 const iconMap: Record<string, LucideIcon> = {
   Browser: Globe,
