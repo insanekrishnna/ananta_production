@@ -1,20 +1,22 @@
 import { useState, useRef, useEffect } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { Sparkles, Monitor, Play, Box, Target, Rocket, Building2, Zap, Palette, Heart } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const everythingItems = [
-  { label: "Branding", emoji: "✦" },
-  { label: "Digital", emoji: "◈" },
-  { label: "Motion", emoji: "▸" },
-  { label: "Product", emoji: "◉" },
-  { label: "Strategy", emoji: "△" },
+const everythingItems: { label: string; icon: LucideIcon }[] = [
+  { label: "Branding", icon: Sparkles },
+  { label: "Digital", icon: Monitor },
+  { label: "Motion", icon: Play },
+  { label: "Product", icon: Box },
+  { label: "Strategy", icon: Target },
 ];
 
-const everyoneItems = [
-  { label: "Startups", emoji: "🚀" },
-  { label: "Enterprises", emoji: "🏢" },
-  { label: "Agencies", emoji: "⚡" },
-  { label: "Creators", emoji: "🎨" },
-  { label: "Non-Profits", emoji: "💚" },
+const everyoneItems: { label: string; icon: LucideIcon }[] = [
+  { label: "Startups", icon: Rocket },
+  { label: "Enterprises", icon: Building2 },
+  { label: "Agencies", icon: Zap },
+  { label: "Creators", icon: Palette },
+  { label: "Non-Profits", icon: Heart },
 ];
 
 const InteractiveHeadline = () => {
@@ -72,16 +74,19 @@ const InteractiveHeadline = () => {
                 }}
               >
                 <div className="bg-canvas border border-input rounded-[14px] shadow-float p-2 min-w-[200px]">
-                  {everythingItems.map((item) => (
-                    <button
-                      key={item.label}
-                      className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
-                      onClick={() => setOpenDropdown(null)}
-                    >
-                      <span className="text-primary text-[14px]">{item.emoji}</span>
-                      {item.label}
-                    </button>
-                  ))}
+                  {everythingItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={item.label}
+                        className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        <Icon size={16} className="text-primary" />
+                        {item.label}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </span>{" "}
@@ -110,16 +115,19 @@ const InteractiveHeadline = () => {
                 }}
               >
                 <div className="bg-canvas border border-input rounded-[14px] shadow-float p-2 min-w-[200px]">
-                  {everyoneItems.map((item) => (
-                    <button
-                      key={item.label}
-                      className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
-                      onClick={() => setOpenDropdown(null)}
-                    >
-                      <span className="text-[14px]">{item.emoji}</span>
-                      {item.label}
-                    </button>
-                  ))}
+                  {everyoneItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={item.label}
+                        className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        <Icon size={16} className="text-primary" />
+                        {item.label}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </span>
