@@ -5,8 +5,8 @@ export const HERO = {
     parts: [
       { text: "We transform ", accent: false },
       { text: "companies", accent: true },
-      { text: " through ", accent: false },
-      { text: "", accent: false },
+      { text: "\n", accent: false },
+      { text: "through ", accent: false },
       { text: "design  & innovation", accent: true },
       { text: " ", accent: false },
     ],
