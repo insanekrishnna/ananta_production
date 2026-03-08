@@ -17,7 +17,7 @@ const timeline = [
 const tasks = [
 { title: "Brand Audit & Research", completed: true },
 { title: "Moodboard & Direction", completed: true },
-{ title: "Final Identity Delivery", completed: false }];
+{ title: "Final Identity Delivery", completed: true }];
 
 
 const AnalyticsSection = () => {
