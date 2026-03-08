@@ -1,5 +1,5 @@
 import { HERO, FLOATING_ICONS } from "@/data/content";
-import { Play, Twitter } from "lucide-react";
+import { Play } from "lucide-react";
 
 const FloatingIcon = ({
   icon,
@@ -23,7 +23,11 @@ const FloatingIcon = ({
         className="w-10 h-10 rounded-[10px] flex items-center justify-center text-primary-foreground font-bold text-sm"
         style={{ background: icon.bg, color: icon.bg === "#FFFFFF" ? "#000" : "#fff" }}
       >
-        {icon.name === "Twitter" ? <Twitter size={20} fill="white" stroke="none" /> : icon.letter}
+        {icon.name === "Twitter" ? (
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="white">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        ) : icon.letter}
       </div>
     </div>
   );
