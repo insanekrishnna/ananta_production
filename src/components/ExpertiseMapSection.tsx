@@ -12,18 +12,18 @@ const CORE_SERVICES: { label: string; icon: LucideIcon }[] = [
 ];
 
 const SECONDARY_SERVICES_LEFT = [
-  { label: "airtable sync", top: "16%", left: "6%" },
-  { label: "google sheets", top: "34%", left: "3%" },
-  { label: "form builders", top: "52%", left: "4%" },
-  { label: "email notifications", top: "70%", left: "6%" },
+  { label: "airtable sync", top: "12%", left: "10%" },
+  { label: "google sheets", top: "30%", left: "3%" },
+  { label: "form builders", top: "54%", left: "3%" },
+  { label: "email notifications", top: "72%", left: "10%" },
 ];
 
 const SECONDARY_SERVICES_RIGHT = [
-  { label: "REST APIs", top: "16%", right: "4%" },
-  { label: "role-based access", top: "34%", right: "2%" },
-  { label: "custom domains", top: "52%", right: "4%" },
-  { label: "SSO", top: "52%", right: "18%" },
-  { label: "embedded analytics", top: "70%", right: "3%" },
+  { label: "REST APIs", top: "12%", right: "10%" },
+  { label: "role-based access", top: "30%", right: "3%" },
+  { label: "custom domains", top: "54%", right: "3%" },
+  { label: "SSO", top: "42%", right: "16%" },
+  { label: "embedded analytics", top: "72%", right: "8%" },
 ];
 
 const ExpertiseMapSection = () => {
