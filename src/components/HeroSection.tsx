@@ -7,7 +7,6 @@ import linkedinLogo from "@/assets/linkedin-logo.png";
 const iconMap: Record<string, LucideIcon> = {
   Browser: Globe,
   Shopify: ShoppingBag,
-  LinkedIn: Linkedin,
   Sheets: Sheet,
 };
 
