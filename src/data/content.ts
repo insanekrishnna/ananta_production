@@ -20,7 +20,7 @@ export const FLOATING_ICONS = [
   { name: "Browser", letter: "🌐", bg: "#4285F4", top: "36%", left: "2%", delay: "0.4s" },
   { name: "Shopify", letter: "🛍", bg: "#96BF48", top: "62%", left: "6%", delay: "0.8s" },
   { name: "Twitter", letter: "𝕏", bg: "#000000", top: "8%", right: "4%", delay: "1.2s" },
-  { name: "Figma", letter: "▲", bg: "#FFFFFF", top: "36%", right: "2%", delay: "1.6s" },
+  { name: "LinkedIn", letter: "in", bg: "#0A66C2", top: "36%", right: "2%", delay: "1.6s" },
   { name: "Sheets", letter: "≡", bg: "#0F9D58", top: "62%", right: "6%", delay: "2.0s" },
 ] as const;
 
