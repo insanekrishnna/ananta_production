@@ -120,7 +120,7 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 3: 165+ Tasks Bar Chart */}
-          <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.style}`}>
+          <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
             <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">165+</p>
             <p className="text-[13px] text-text-secondary mt-1">
               Selected period: <span className="font-semibold text-text-primary">39 Tasks</span>
