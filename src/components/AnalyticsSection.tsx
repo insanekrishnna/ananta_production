@@ -1,4 +1,4 @@
-import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette } from "lucide-react";
+import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette, CalendarDays, Circle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const barData = {
@@ -7,14 +7,17 @@ const barData = {
   green: [20, 35, 50, 30, 45, 65, 40]
 };
 
+const timeline = [
+{ date: "13 Mar", time: "5h" },
+{ date: "14 Mar", time: "7h" },
+{ date: "15 Mar", time: "8h" },
+{ date: "16 Mar", time: "8h" }];
+
+
 const tasks = [
-{ title: "Concept Sketching", completed: true },
-{ title: "Vector Refinement", completed: true },
-{ title: "Grid Alignment", completed: true },
 { title: "Brand Audit & Research", completed: true },
 { title: "Moodboard & Direction", completed: true },
-{ title: "Final Mark", completed: true },
-{ title: "Final Identity Delivery", completed: true }];
+{ title: "Final Identity Delivery", completed: false }];
 
 
 const AnalyticsSection = () => {
@@ -32,7 +35,7 @@ const AnalyticsSection = () => {
             Dashboard
           </span>
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center max-w-[560px] leading-[1.2]">
-            Every project, tracked in real time
+            ​
           </h2>
           <p className="text-base text-text-secondary leading-[1.65] text-center max-w-[440px] mt-4">
             Monitor design sprints, brand deliverables, and team performance from one unified creative dashboard.
@@ -81,10 +84,25 @@ const AnalyticsSection = () => {
               </div>
               <span className="text-white/40 text-xl leading-none">•••</span>
             </div>
-            <div className="flex flex-col gap-2.5 mt-4">
+            <div className="flex items-center gap-1.5 mb-4">
+              <CalendarDays className="w-3 h-3 text-white/40" />
+              <p className="text-[12px] text-white/50">Deadline: 28 March</p>
+            </div>
+            <div className="grid grid-cols-4 gap-2 mb-5">
+              {timeline.map((item) =>
+              <div key={item.date} className="bg-white/8 rounded-[12px] py-2.5 px-1 text-center border border-white/5">
+                  <p className="text-[10px] text-white/40 mb-0.5">{item.date}</p>
+                  <p className="text-[14px] font-bold text-white">{item.time}</p>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-col gap-2.5">
               {tasks.map((task) =>
               <div key={task.title} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
+                  {task.completed ?
+                <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" /> :
+                <Circle className="w-4 h-4 text-white flex-shrink-0" />
+                }
                   <span className="text-[13px] text-white/80">
                     {task.title}
                   </span>
