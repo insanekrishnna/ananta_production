@@ -149,9 +149,9 @@ const ExpertiseMapSection = () => {
 
 };
 
-const CorePill = ({ emoji, label }: {emoji: string;label: string;}) =>
+const CorePill = ({ Icon, label }: { Icon: LucideIcon; label: string }) =>
 <span className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white rounded-[999px] px-5 py-2.5 text-[15px] font-medium cursor-default transition-transform duration-200 hover:scale-105 hover:shadow-lg">
-    <span className="text-sm">{emoji}</span>
+    <Icon size={16} className="text-white" />
     {label}
   </span>;
 
