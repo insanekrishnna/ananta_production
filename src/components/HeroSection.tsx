@@ -77,23 +77,27 @@ const FloatingIcon = ({
       aria-label={icon.name}
     >
       {icon.name === "Instagram" ? (
-        <img src={instagramLogo} alt="Instagram" className="w-8 h-8 rounded-[6px]" />
+        <div className="w-9 h-9 rounded-[10px] bg-foreground flex items-center justify-center overflow-hidden" style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.10)" }}>
+          <img src={instagramLogo} alt="Instagram" className="w-5 h-5 object-contain brightness-0 invert" />
+        </div>
       ) : icon.name === "LinkedIn" ? (
-        <img src={linkedinLogo} alt="LinkedIn" className="w-8 h-8 rounded-[6px]" />
+        <div className="w-9 h-9 rounded-[10px] bg-foreground flex items-center justify-center overflow-hidden" style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.10)" }}>
+          <img src={linkedinLogo} alt="LinkedIn" className="w-5 h-5 object-contain brightness-0 invert" />
+        </div>
       ) : icon.name === "Twitter" ? (
         <TwitterIcon />
       ) : icon.name === "Dribbble" ? (
-        <img src={dribbbleLogo} alt="Dribbble" className="w-8 h-8 rounded-[6px]" />
+        <DribbbleIcon />
       ) : icon.name === "Pinterest" ? (
-        <img src={pinterestLogo} alt="Pinterest" className="w-8 h-8 rounded-[6px]" />
+        <PinterestIcon />
       ) : icon.name === "Behance" ? (
         <BehanceIcon />
       ) : icon.name === "Figma" ? (
         <FigmaIcon />
       ) : LucideIcon ? (
-        <LucideIcon size={18} strokeWidth={1.2} className="text-text-primary" />
+        <LucideIcon size={16} strokeWidth={1.5} className="text-foreground" />
       ) : (
-        <span className="text-sm font-medium text-text-primary">{icon.letter}</span>
+        <span className="text-sm font-medium text-foreground">{icon.letter}</span>
       )}
     </div>
   );
