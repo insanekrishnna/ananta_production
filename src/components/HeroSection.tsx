@@ -36,7 +36,9 @@ const FloatingIcon = ({
       style={posStyle}
       aria-label={icon.name}
     >
-      {icon.name === "Twitter" ? (
+      {icon.name === "Instagram" ? (
+        <img src={instagramLogo} alt="Instagram" className="w-8 h-8 rounded-[6px]" />
+      ) : icon.name === "Twitter" ? (
         <TwitterIcon />
       ) : LucideIcon ? (
         <LucideIcon size={18} strokeWidth={1.2} className="text-text-primary" />
