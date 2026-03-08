@@ -163,7 +163,7 @@ const HeroSection = () => {
                   </span>
                 </button>
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-[999]"
                   style={{
                     opacity: openDropdown === "innovation" ? 1 : 0,
                     transform: openDropdown === "innovation" ? "translateY(0)" : "translateY(10px)",
