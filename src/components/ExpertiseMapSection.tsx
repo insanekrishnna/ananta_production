@@ -29,7 +29,7 @@ const SECONDARY_SERVICES_RIGHT = [
 
 const ExpertiseMapSection = () => {
   return (
-    <section className="py-24 px-4" style={{ backgroundColor: "#f7f7f7" }}>
+    <section className="py-16 px-4" style={{ backgroundColor: "#f7f7f7" }}>
       <div className="max-w-[960px] mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
