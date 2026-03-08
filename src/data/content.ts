@@ -12,7 +12,7 @@ export const HERO = {
     ],
   },
   subheading: "A full-service creative studio crafting innovative digital experiences across every brand touchpoint.\n\n",
-  cta: { label: "Watch Showreel", sub: "2mins" },
+  cta: { label: "Watch ", sub: "2mins" },
 };
 
 export const FLOATING_ICONS = [
