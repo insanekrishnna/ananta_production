@@ -1,4 +1,4 @@
-import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette, CalendarDays, Circle } from "lucide-react";
+import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const barData = {
@@ -7,17 +7,11 @@ const barData = {
   green: [20, 35, 50, 30, 45, 65, 40]
 };
 
-const timeline = [
-{ date: "13 Mar", time: "5h" },
-{ date: "14 Mar", time: "7h" },
-{ date: "15 Mar", time: "8h" },
-{ date: "16 Mar", time: "8h" }];
-
-
 const tasks = [
-{ title: "Brand Audit & Research", completed: true },
-{ title: "Moodboard & Direction", completed: true },
-{ title: "Final Identity Delivery", completed: true }];
+{ title: "Concept Sketching", completed: true },
+{ title: "Vector Refinement", completed: true },
+{ title: "Grid Alignment", completed: true },
+{ title: "Final Mark", completed: true }];
 
 
 const AnalyticsSection = () => {
@@ -84,25 +78,10 @@ const AnalyticsSection = () => {
               </div>
               <span className="text-white/40 text-xl leading-none">•••</span>
             </div>
-            <div className="flex items-center gap-1.5 mb-4">
-              <CalendarDays className="w-3 h-3 text-white/40" />
-              <p className="text-[12px] text-white/50">Deadline: 28 March</p>
-            </div>
-            <div className="grid grid-cols-4 gap-2 mb-5">
-              {timeline.map((item) =>
-              <div key={item.date} className="bg-white/8 rounded-[12px] py-2.5 px-1 text-center border border-white/5">
-                  <p className="text-[10px] text-white/40 mb-0.5">{item.date}</p>
-                  <p className="text-[14px] font-bold text-white">{item.time}</p>
-                </div>
-              )}
-            </div>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-2.5 mt-4">
               {tasks.map((task) =>
               <div key={task.title} className="flex items-center gap-2">
-                  {task.completed ?
-                <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" /> :
-                <Circle className="w-4 h-4 text-white flex-shrink-0" />
-                }
+                  <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
                   <span className="text-[13px] text-white/80">
                     {task.title}
                   </span>
