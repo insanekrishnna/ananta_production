@@ -50,7 +50,7 @@
     @apply border-border;
   }
   body {
-    font-family: "Graphik Web", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: var(--hds-font-family, 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
     @apply bg-outer text-foreground antialiased;
   }
 }
