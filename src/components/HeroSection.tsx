@@ -4,6 +4,8 @@ import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark,
 import type { LucideIcon } from "lucide-react";
 import instagramLogo from "@/assets/instagram-logo.png";
 import linkedinLogo from "@/assets/linkedin-logo.png";
+import pinterestLogo from "@/assets/pinterest-logo.png";
+import dribbbleLogo from "@/assets/dribbble-logo-new.png";
 
 const iconMap: Record<string, LucideIcon> = {
   Browser: Globe,
