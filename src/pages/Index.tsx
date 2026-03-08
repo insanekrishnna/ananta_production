@@ -18,6 +18,7 @@ const Index = () => {
         <Navbar />
         <HeroSection />
         <LogoStrip />
+        <InteractiveHeadline />
         <AnalyticsSection />
         <ExpertiseMapSection />
         <FeaturesSection />
