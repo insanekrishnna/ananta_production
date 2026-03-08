@@ -98,15 +98,42 @@ const AnalyticsSection = () => {
                 </div>
               </div>
 
-              {/* Right: Logo Evolution */}
-              <div className="hidden lg:flex flex-col items-center gap-3 pl-6 border-l border-white/10">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50 mb-1">Logo Evolution</span>
-                <div className="bg-white rounded-[10px] p-3 w-[120px] flex items-center justify-center">
-                  <img src={samukOld} alt="Samuk old logo" className="max-h-[40px] object-contain" />
+              {/* Right: Brand System Preview */}
+              <div className="hidden lg:flex flex-col gap-4 pl-6 border-l border-white/10 min-w-[180px]">
+                {/* Logo Evolution */}
+                <div className="flex flex-col items-center gap-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50 self-start">Logo Evolution</span>
+                  <div className="flex items-center gap-3 w-full">
+                    <div className="bg-white rounded-[10px] p-2.5 w-[72px] h-[52px] flex items-center justify-center">
+                      <img src={samukOld} alt="Samuk old logo" className="max-h-[28px] object-contain opacity-60" />
+                    </div>
+                    <ArrowDown className="w-3.5 h-3.5 text-white/30 rotate-[-90deg]" />
+                    <div className="bg-white rounded-[10px] p-2.5 w-[72px] h-[52px] flex items-center justify-center ring-2 ring-primary/40">
+                      <img src={samukNew} alt="Samuk new logo" className="max-h-[28px] object-contain" />
+                    </div>
+                  </div>
                 </div>
-                <ArrowDown className="w-4 h-4 text-white/40" />
-                <div className="bg-white/95 rounded-[10px] p-3 w-[120px] flex items-center justify-center">
-                  <img src={samukNew} alt="Samuk new logo" className="max-h-[40px] object-contain" />
+
+                {/* Color Palette */}
+                <div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50">Color System</span>
+                  <div className="flex gap-1.5 mt-2">
+                    {["#4F46E5", "#7C3AED", "#06B6D4", "#10B981", "#F59E0B"].map((color) => (
+                      <div key={color} className="flex flex-col items-center gap-1">
+                        <div className="w-7 h-7 rounded-full shadow-lg" style={{ backgroundColor: color }} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Typography */}
+                <div>
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50">Typography</span>
+                  <div className="mt-2 space-y-1">
+                    <p className="text-[18px] font-bold text-white/90 leading-none tracking-tight">Aa</p>
+                    <p className="text-[10px] text-white/50 font-medium">Plus Jakarta Sans</p>
+                    <p className="text-[9px] text-white/30 tracking-wide">ABCDEFGHIJKLM</p>
+                  </div>
                 </div>
               </div>
             </div>
