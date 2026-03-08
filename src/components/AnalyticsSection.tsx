@@ -8,17 +8,17 @@ const barData = {
 };
 
 const timeline = [
-  { date: "13 Mar", time: "5h" },
-  { date: "14 Mar", time: "7h" },
-  { date: "15 Mar", time: "8h" },
-  { date: "16 Mar", time: "8h" },
-];
+{ date: "13 Mar", time: "5h" },
+{ date: "14 Mar", time: "7h" },
+{ date: "15 Mar", time: "8h" },
+{ date: "16 Mar", time: "8h" }];
+
 
 const tasks = [
-  { title: "Brand Audit & Research", completed: true },
-  { title: "Moodboard & Direction", completed: true },
-  { title: "Final Identity Delivery", completed: false },
-];
+{ title: "Brand Audit & Research", completed: true },
+{ title: "Moodboard & Direction", completed: true },
+{ title: "Final Identity Delivery", completed: false }];
+
 
 const AnalyticsSection = () => {
   const header = useScrollReveal(0);
@@ -83,26 +83,26 @@ const AnalyticsSection = () => {
             </div>
             <p className="text-[12px] text-primary-foreground/60 mb-4">Deadline: 28 March</p>
             <div className="grid grid-cols-4 gap-2 mb-5">
-              {timeline.map((item) => (
-                <div key={item.date} className="bg-primary-foreground/10 rounded-[12px] py-2.5 px-1 text-center">
+              {timeline.map((item) =>
+              <div key={item.date} className="bg-primary-foreground/10 rounded-[12px] py-2.5 px-1 text-center">
                   <p className="text-[10px] text-primary-foreground/50 mb-0.5">{item.date}</p>
                   <p className="text-[14px] font-bold">{item.time}</p>
                 </div>
-              ))}
+              )}
             </div>
             <div className="flex flex-col gap-2.5">
-              {tasks.map((task) => (
-                <div key={task.title} className="flex items-center gap-2">
-                  {task.completed ? (
-                    <CheckCircle2 className="w-4 h-4 text-primary-foreground/50 flex-shrink-0" />
-                  ) : (
-                    <div className="w-4 h-4 rounded-full border-[1.5px] border-primary-foreground/40 flex-shrink-0" />
-                  )}
+              {tasks.map((task) =>
+              <div key={task.title} className="flex items-center gap-2">
+                  {task.completed ?
+                <CheckCircle2 className="w-4 h-4 text-primary-foreground/50 flex-shrink-0" /> :
+
+                <div className="w-4 h-4 rounded-full border-[1.5px] border-primary-foreground/40 flex-shrink-0" />
+                }
                   <span className={`text-[13px] ${task.completed ? "line-through text-primary-foreground/50" : ""}`}>
                     {task.title}
                   </span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -114,21 +114,21 @@ const AnalyticsSection = () => {
             </p>
             <div className="flex flex-col gap-3 mt-5">
               {[
-                { icon: ThumbsUp, label: "Happy clients", value: "20+" },
-                { icon: Repeat, label: "Repeat rate", value: "78%" },
-                { icon: Clock, label: "Avg. delivery", value: "12 days" },
-                { icon: TrendingUp, label: "YoY growth", value: "+34%" },
-              ].map((item) => {
+              { icon: ThumbsUp, label: "Happy clients", value: "20+" },
+              { icon: Repeat, label: "Repeat rate", value: "78%" },
+              { icon: Clock, label: "Avg. delivery", value: "12 days" },
+              { icon: TrendingUp, label: "YoY growth", value: "+34%" }].
+              map((item) => {
                 const Icon = item.icon;
                 return (
                   <div key={item.label} className="flex items-center justify-between">
                     <div className="flex items-center gap-2.5">
-                      <Icon size={15} strokeWidth={1.5} className="text-text-secondary" />
-                      <span className="text-[13px] text-text-secondary">{item.label}</span>
+                      <Icon size={15} strokeWidth={1.5} className="text-text-secondary opacity-100 shadow-none" />
+                      <span className="text-[13px] text-text-secondary font-medium">{item.label}</span>
                     </div>
                     <span className="text-[13px] font-semibold text-text-primary">{item.value}</span>
-                  </div>
-                );
+                  </div>);
+
               })}
             </div>
           </div>
@@ -147,9 +147,9 @@ const AnalyticsSection = () => {
               </p>
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
-                  {["hsl(var(--primary))", "hsl(160 84% 39%)", "hsl(32 95% 44%)"].map((bg, i) => (
-                    <div key={i} className="w-6 h-6 rounded-full border-2 border-canvas" style={{ backgroundColor: bg }} />
-                  ))}
+                  {["hsl(var(--primary))", "hsl(160 84% 39%)", "hsl(32 95% 44%)"].map((bg, i) =>
+                  <div key={i} className="w-6 h-6 rounded-full border-2 border-canvas" style={{ backgroundColor: bg }} />
+                  )}
                   <div className="w-6 h-6 rounded-full border-2 border-canvas bg-muted text-[8px] font-bold text-text-secondary flex items-center justify-center">
                     +2
                   </div>
@@ -184,8 +184,8 @@ const AnalyticsSection = () => {
           200+ Brand Projects Delivered Worldwide
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AnalyticsSection;
