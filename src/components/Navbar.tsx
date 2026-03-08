@@ -1,5 +1,6 @@
 import { NAV_LINKS } from "@/data/content";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const sectionMap: Record<string, string> = {
   Home: "hero",
@@ -21,9 +22,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 h-18 flex items-center justify-between px-10 md:px-10 px-4 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
       <div className="flex items-center gap-2">
-        <div className="w-9 h-9 rounded-[10px] bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
-          S
-        </div>
+        <img src={logo} alt="Stacker logo" className="w-9 h-9" />
         <span className="text-lg font-bold text-text-primary">stacker</span>
       </div>
 
