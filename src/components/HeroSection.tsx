@@ -245,24 +245,24 @@ const HeroSection = () => {
 
         {/* App Window Preview */}
         <div
-          className="w-full max-w-[960px] mt-12 rounded-t-[16px] border border-input shadow-app overflow-hidden animate-hero-fade"
+          className="w-full max-w-[720px] mt-12 rounded-[16px] border border-input shadow-app overflow-hidden animate-hero-fade"
           style={{ animationDelay: "300ms" }}>
           
           {/* Title bar */}
-          <div className="h-10 bg-secondary flex items-center gap-1.5 px-4 border-b border-input">
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FF5F57" }} />
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
+          <div className="h-9 bg-secondary flex items-center gap-1.5 px-4 border-b border-input">
+            <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#FF5F57" }} />
+            <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
+            <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: "#28C840" }} />
           </div>
           {/* Mock content */}
-          <div className="bg-canvas p-6 flex gap-4 min-h-[280px]">
+          <div className="bg-canvas p-4 flex gap-3 min-h-[200px]">
             {/* Sidebar */}
-            <div className="hidden md:flex flex-col gap-3 w-48 pr-4 border-r border-input">
-              <div className="h-3 w-24 bg-secondary rounded-pill" />
-              <div className="h-3 w-32 bg-primary/10 rounded-pill" />
-              <div className="h-3 w-28 bg-secondary rounded-pill" />
-              <div className="h-3 w-20 bg-secondary rounded-pill" />
-              <div className="h-3 w-36 bg-secondary rounded-pill" />
+            <div className="hidden md:flex flex-col gap-2.5 w-36 pr-3 border-r border-input">
+              <div className="h-2.5 w-20 bg-secondary rounded-pill" />
+              <div className="h-2.5 w-28 bg-primary/10 rounded-pill" />
+              <div className="h-2.5 w-24 bg-secondary rounded-pill" />
+              <div className="h-2.5 w-16 bg-secondary rounded-pill" />
+              <div className="h-2.5 w-30 bg-secondary rounded-pill" />
             </div>
             {/* Samuk Card */}
             <div className="flex-1 flex items-center justify-center">
