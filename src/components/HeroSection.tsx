@@ -1,5 +1,6 @@
+import { useState, useRef, useEffect } from "react";
 import { HERO, FLOATING_ICONS } from "@/data/content";
-import { Play, Globe, ShoppingBag, Sheet } from "lucide-react";
+import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark, Heart } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import instagramLogo from "@/assets/instagram-logo.png";
 import linkedinLogo from "@/assets/linkedin-logo.png";
@@ -63,7 +64,28 @@ const FloatingIcon = ({
   );
 };
 
+const companyItems: { label: string; icon: LucideIcon }[] = [
+  { label: "Startups", icon: Building2 },
+  { label: "Brands", icon: Briefcase },
+  { label: "E-Commerce", icon: Store },
+  { label: "Institutions", icon: Landmark },
+  { label: "Non-Profits", icon: Heart },
+];
+
 const HeroSection = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <section id="hero" className="relative min-h-[640px] pt-24 pb-0 overflow-hidden">
       {/* Gradient mesh */}
@@ -80,7 +102,49 @@ const HeroSection = () => {
           className="text-[36px] md:text-[56px] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-primary max-w-[720px] animate-hero-fade"
         >
           {HERO.heading.parts.map((part, i) =>
-            part.accent ? (
+            part.accent && part.text === "companies" ? (
+              <span key={i} className="relative inline-block" ref={dropdownRef}>
+                <button
+                  onClick={() => setDropdownOpen((prev) => !prev)}
+                  className="text-primary hover:text-primary/80 transition-colors duration-200 cursor-pointer focus:outline-none"
+                >
+                  {part.text}
+                  <span
+                    className="ml-1 text-[0.6em] opacity-60 inline-block transition-transform duration-200"
+                    style={{ transform: dropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                  >
+                    ▾
+                  </span>
+                </button>
+
+                {/* Companies Dropdown */}
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50"
+                  style={{
+                    opacity: dropdownOpen ? 1 : 0,
+                    transform: dropdownOpen ? "translateY(0)" : "translateY(10px)",
+                    pointerEvents: dropdownOpen ? "auto" : "none",
+                    transition: "all 0.25s ease",
+                  }}
+                >
+                  <div className="bg-canvas border border-input rounded-[14px] shadow-float p-2 min-w-[200px]">
+                    {companyItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <button
+                          key={item.label}
+                          className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
+                          onClick={() => setDropdownOpen(false)}
+                        >
+                          <Icon size={16} className="text-primary" />
+                          {item.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </span>
+            ) : part.accent ? (
               <span key={i} className="text-primary">{part.text}</span>
             ) : (
               <span key={i}>{part.text}</span>
