@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NAV_LINKS } from "@/data/content";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/brand-logo.png";
 
 const sectionMap: Record<string, string> = {
   Home: "hero",
