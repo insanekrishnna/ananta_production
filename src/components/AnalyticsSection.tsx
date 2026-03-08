@@ -15,11 +15,7 @@ const tasks = [
   { title: "Grid Alignment", completed: true },
   { title: "Brand Audit & Research", completed: true },
   { title: "Moodboard & Direction", completed: true },
-  { title: "Typography Selection", completed: true },
-  { title: "Color System Design", completed: true },
-  { title: "Icon & Asset Library", completed: true },
   { title: "Final Mark", completed: true },
-  { title: "Brand Guidelines Doc", completed: true },
   { title: "Final Identity Delivery", completed: true },
 ];
 
