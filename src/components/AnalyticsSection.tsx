@@ -7,17 +7,11 @@ const barData = {
   green: [20, 35, 50, 30, 45, 65, 40]
 };
 
-const timeline = [
-{ date: "13 Mar", time: "5h" },
-{ date: "14 Mar", time: "7h" },
-{ date: "15 Mar", time: "8h" },
-{ date: "16 Mar", time: "8h" }];
-
-
 const tasks = [
-{ title: "Brand Audit & Research", completed: true },
-{ title: "Moodboard & Direction", completed: true },
-{ title: "Final Identity Delivery", completed: true }];
+{ title: "Concept Sketching", completed: true },
+{ title: "Vector Refinement", completed: true },
+{ title: "Grid Alignment", completed: true },
+{ title: "Final Mark", completed: true }];
 
 
 const AnalyticsSection = () => {
