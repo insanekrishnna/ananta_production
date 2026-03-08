@@ -17,7 +17,6 @@ const FeaturesSection = () => {
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center max-w-[560px] leading-[1.2]">
             Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results. Working as one team with our clients, we merge human creativity with AI-driven efficiency to consistently exceed expectations.
           </h2>
-          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
