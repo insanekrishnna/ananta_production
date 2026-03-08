@@ -255,25 +255,8 @@ const HeroSection = () => {
             <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
           </div>
           {/* Mock content */}
-          <div className="bg-canvas p-6 flex gap-4 min-h-[280px]">
-            {/* Sidebar */}
-            <div className="hidden md:flex flex-col gap-3 w-48 pr-4 border-r border-input">
-              <div className="h-3 w-24 bg-secondary rounded-pill" />
-              <div className="h-3 w-32 bg-primary/10 rounded-pill" />
-              <div className="h-3 w-28 bg-secondary rounded-pill" />
-              <div className="h-3 w-20 bg-secondary rounded-pill" />
-              <div className="h-3 w-36 bg-secondary rounded-pill" />
-            </div>
-            {/* Table */}
-            <div className="flex-1 flex flex-col gap-3">
-              <div className="text-xs font-semibold text-text-secondary uppercase tracking-wider">Active Projects</div>
-              {[80, 65, 90, 55, 72].map((w, i) =>
-              <div key={i} className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-sm bg-primary/20" />
-                  <div className="h-3 bg-secondary rounded-pill" style={{ width: `${w}%` }} />
-                </div>
-              )}
-            </div>
+          <div className="bg-canvas flex items-center justify-center min-h-[280px]">
+            <img src={heroPreview} alt="Samuk — Beyond the Moment" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
