@@ -7,6 +7,7 @@ import linkedinLogo from "@/assets/linkedin-logo.png";
 import pinterestLogo from "@/assets/pinterest-logo.png";
 import dribbbleLogo from "@/assets/dribbble-logo-new.png";
 import samukCard from "@/assets/samuk-card.png";
+import brandLogo from "@/assets/logo.png";
 
 const iconMap: Record<string, LucideIcon> = {
   Browser: Globe,
@@ -257,8 +258,8 @@ const HeroSection = () => {
           {/* Mock content */}
           <div className="bg-canvas p-4 flex gap-3 min-h-[200px]">
             {/* Sidebar */}
-            <div className="hidden md:flex flex-col gap-2.5 w-36 pr-3 border-r border-input">
-              <div className="h-2.5 w-20 bg-secondary rounded-pill" />
+            <div className="hidden md:flex flex-col items-center gap-2.5 w-36 pr-3 border-r border-input">
+              <img src={brandLogo} alt="Logo" className="w-10 h-10 object-contain mb-1" />
               <div className="h-2.5 w-28 bg-primary/10 rounded-pill" />
               <div className="h-2.5 w-24 bg-secondary rounded-pill" />
               <div className="h-2.5 w-16 bg-secondary rounded-pill" />
