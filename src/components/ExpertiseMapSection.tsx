@@ -1,11 +1,15 @@
-const CORE_SERVICES = [
-{ label: "client portals", emoji: "🟡", row: 0, col: 1 },
-{ label: "CRM tools", emoji: "🔵", row: 1, col: 0 },
-{ label: "internal dashboards", emoji: "🟪", row: 1, col: 1 },
-{ label: "data integrations", emoji: "❤️", row: 2, col: 0 },
-{ label: "workflow automation", emoji: "▶️", row: 2, col: 1 },
-{ label: "no-code apps", emoji: "🟩", row: 3, col: 0 },
-{ label: "custom permissions", emoji: "🟪", row: 3, col: 1 }];
+import { Users, ContactRound, LayoutDashboard, Database, Workflow, Blocks, ShieldCheck } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+const CORE_SERVICES: { label: string; icon: LucideIcon }[] = [
+  { label: "client portals", icon: Users },
+  { label: "CRM tools", icon: ContactRound },
+  { label: "internal dashboards", icon: LayoutDashboard },
+  { label: "data integrations", icon: Database },
+  { label: "workflow automation", icon: Workflow },
+  { label: "no-code apps", icon: Blocks },
+  { label: "custom permissions", icon: ShieldCheck },
+];
 
 
 const SECONDARY_SERVICES_LEFT = [
@@ -96,28 +100,28 @@ const ExpertiseMapSection = () => {
             <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-[480px]">
               {/* Row 0: single centered */}
               <div className="col-span-2 flex justify-center">
-                <CorePill emoji="🟡" label="client portals" />
+                <CorePill Icon={CORE_SERVICES[0].icon} label={CORE_SERVICES[0].label} />
               </div>
               {/* Row 1 */}
               <div className="flex justify-end">
-                <CorePill emoji="🔵" label="CRM tools" />
+                <CorePill Icon={CORE_SERVICES[1].icon} label={CORE_SERVICES[1].label} />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="🟪" label="internal dashboards" />
+                <CorePill Icon={CORE_SERVICES[2].icon} label={CORE_SERVICES[2].label} />
               </div>
               {/* Row 2 */}
               <div className="flex justify-end">
-                <CorePill emoji="❤️" label="data integrations" />
+                <CorePill Icon={CORE_SERVICES[3].icon} label={CORE_SERVICES[3].label} />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="▶️" label="workflow automation" />
+                <CorePill Icon={CORE_SERVICES[4].icon} label={CORE_SERVICES[4].label} />
               </div>
               {/* Row 3 */}
               <div className="flex justify-end">
-                <CorePill emoji="🟩" label="no-code apps" />
+                <CorePill Icon={CORE_SERVICES[5].icon} label={CORE_SERVICES[5].label} />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="🟪" label="custom permissions" />
+                <CorePill Icon={CORE_SERVICES[6].icon} label={CORE_SERVICES[6].label} />
               </div>
             </div>
           </div>
@@ -145,9 +149,9 @@ const ExpertiseMapSection = () => {
 
 };
 
-const CorePill = ({ emoji, label }: {emoji: string;label: string;}) =>
+const CorePill = ({ Icon, label }: { Icon: LucideIcon; label: string }) =>
 <span className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white rounded-[999px] px-5 py-2.5 text-[15px] font-medium cursor-default transition-transform duration-200 hover:scale-105 hover:shadow-lg">
-    <span className="text-sm">{emoji}</span>
+    <Icon size={16} className="text-white" />
     {label}
   </span>;
 
