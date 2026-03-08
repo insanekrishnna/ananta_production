@@ -11,7 +11,7 @@ export const HERO = {
       { text: " ", accent: false },
     ],
   },
-  subheading: "A full-service creative agency designing and building inventive digital experiences across all platforms and brand touchpoints.\n\n",
+  subheading: "A full-service creative studio crafting innovative digital experiences across every brand touchpoint.\n\n",
   cta: { label: "Watch Demo", sub: "3mins" },
 };
 
