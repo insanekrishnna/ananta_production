@@ -1,11 +1,14 @@
 import { TESTIMONIALS } from "@/data/content";
 import { Star } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const TestimonialsSection = () => {
+  const header = useScrollReveal(0);
+
   return (
     <section className="py-24 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div className="flex flex-col items-center mb-16">
+        <div ref={header.ref} className={`flex flex-col items-center mb-16 ${header.className}`}>
           <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
             Testimonials
           </span>
@@ -15,11 +18,22 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t) => (
-            <div
-              key={t.name}
-              className="bg-canvas border border-input rounded-card p-8 shadow-card hover:shadow-float-hover hover:-translate-y-1 transition-all duration-200"
-            >
+          {TESTIMONIALS.map((t, index) => (
+            <TestimonialCard key={t.name} t={t} delay={index * 150} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const TestimonialCard = ({ t, delay }: { t: typeof TESTIMONIALS[number]; delay: number }) => {
+  const reveal = useScrollReveal(delay);
+  return (
+    <div
+      ref={reveal.ref}
+      className={`bg-canvas border border-input rounded-card p-8 shadow-card hover:shadow-float-hover hover:-translate-y-1 transition-all duration-200 ${reveal.className}`}
+    >
               <div className="flex gap-0.5 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={16} className="fill-[#F59E0B] text-[#F59E0B]" />
