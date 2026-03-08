@@ -1,13 +1,16 @@
 import { FEATURES } from "@/data/content";
 import { Database, Layers, Users } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const iconMap = { Database, Layers, Users } as const;
 
 const FeaturesSection = () => {
+  const header = useScrollReveal(0);
+
   return (
     <section className="py-24 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div className="flex flex-col items-center mb-16">
+        <div ref={header.ref} className={`flex flex-col items-center mb-16 ${header.className}`}>
           <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
             Features
           </span>
@@ -17,21 +20,31 @@ const FeaturesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {FEATURES.map((feat) => {
+          {FEATURES.map((feat, index) => {
             const Icon = iconMap[feat.icon];
-            return (
-              <div
-                key={feat.title}
-                className="bg-canvas border border-input rounded-card p-8 shadow-card hover:shadow-float-hover hover:-translate-y-1 transition-all duration-200"
-              >
-                <div
-                  className="w-12 h-12 rounded-[12px] flex items-center justify-center mb-4"
-                  style={{ backgroundColor: feat.iconBg }}
-                >
-                  <Icon size={24} strokeWidth={1.5} style={{ color: feat.iconColor }} />
-                </div>
-                <h3 className="text-xl font-semibold text-text-primary mb-2">{feat.title}</h3>
-                <p className="text-[15px] text-text-secondary leading-[1.65]">{feat.body}</p>
+            return <FeatureCard key={feat.title} feat={feat} Icon={Icon} delay={index * 150} />;
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const FeatureCard = ({ feat, Icon, delay }: { feat: typeof FEATURES[number]; Icon: any; delay: number }) => {
+  const reveal = useScrollReveal(delay);
+  return (
+    <div
+      ref={reveal.ref}
+      className={`bg-canvas border border-input rounded-card p-8 shadow-card hover:shadow-float-hover hover:-translate-y-1 transition-all duration-200 ${reveal.className}`}
+    >
+      <div
+        className="w-12 h-12 rounded-[12px] flex items-center justify-center mb-4"
+        style={{ backgroundColor: feat.iconBg }}
+      >
+        <Icon size={24} strokeWidth={1.5} style={{ color: feat.iconColor }} />
+      </div>
+      <h3 className="text-xl font-semibold text-text-primary mb-2">{feat.title}</h3>
+      <p className="text-[15px] text-text-secondary leading-[1.65]">{feat.body}</p>
     </div>
   );
 };
