@@ -110,7 +110,9 @@ const HeroSection = () => {
           className="text-[36px] md:text-[56px] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-primary max-w-[960px] animate-hero-fade"
         >
           {HERO.heading.parts.map((part, i) =>
-            part.accent && part.text === "companies" ? (
+            part.text === "\n" ? (
+              <br key={i} />
+            ) : part.accent && part.text === "companies" ? (
               <span key={i} className="relative inline-block">
                 <button
                   onClick={() => setOpenDropdown((prev) => prev === "companies" ? null : "companies")}
