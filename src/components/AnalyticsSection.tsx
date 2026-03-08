@@ -75,39 +75,33 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 2: Brand Identity Design + Logo Evolution */}
-          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(220,10%,20%)] to-[hsl(220,10%,12%)] text-white rounded-[16px] p-6 shadow-float lg:col-span-2 lg:-rotate-[3deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
-            <div className="flex gap-6">
-              {/* Left: Checklist */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center justify-between mb-1">
-                  <div className="flex items-center gap-2">
-                    <Palette className="w-4 h-4 text-white/70" />
-                    <h3 className="text-[16px] font-bold">Brand Identity Design</h3>
-                  </div>
-                  <span className="text-white/40 text-xl leading-none">•••</span>
-                </div>
-                <div className="flex flex-col gap-2.5 mt-4">
-                  {tasks.map((task) =>
-                    <div key={task.title} className="flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
-                      <span className="text-[13px] text-white/80">
-                        {task.title}
-                      </span>
-                    </div>
-                  )}
-                </div>
+          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(220,10%,20%)] to-[hsl(220,10%,12%)] text-white rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
+            <div className="flex items-center justify-between mb-1">
+              <div className="flex items-center gap-2">
+                <Palette className="w-4 h-4 text-white/70" />
+                <h3 className="text-[16px] font-bold">Brand Identity Design</h3>
               </div>
-
-              {/* Right: Logo Evolution */}
-              <div className="hidden lg:flex flex-col items-center gap-3 pl-6 border-l border-white/10">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-white/50 mb-1">Logo Evolution</span>
-                <div className="bg-white rounded-[10px] p-3 w-[120px] flex items-center justify-center">
-                  <img src={samukOld} alt="Samuk old logo" className="max-h-[40px] object-contain" />
+              <span className="text-white/40 text-xl leading-none">•••</span>
+            </div>
+            <div className="flex flex-col gap-2.5 mt-4">
+              {tasks.map((task) =>
+                <div key={task.title} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
+                  <span className="text-[13px] text-white/80">
+                    {task.title}
+                  </span>
                 </div>
-                <ArrowDown className="w-4 h-4 text-white/40" />
-                <div className="bg-white/95 rounded-[10px] p-3 w-[120px] flex items-center justify-center">
-                  <img src={samukNew} alt="Samuk new logo" className="max-h-[40px] object-contain" />
-                </div>
+              )}
+            </div>
+            {/* Logo Evolution */}
+            <div className="flex items-center gap-3 mt-5 pt-4 border-t border-white/10">
+              <span className="text-[9px] font-semibold uppercase tracking-[0.1em] text-white/40">Evolution</span>
+              <div className="bg-white rounded-[6px] p-1.5 w-[60px] h-[28px] flex items-center justify-center">
+                <img src={samukOld} alt="Samuk old logo" className="max-h-[18px] object-contain" />
+              </div>
+              <ArrowDown className="w-3 h-3 text-white/30 rotate-[-90deg]" />
+              <div className="bg-white/95 rounded-[6px] p-1.5 w-[60px] h-[28px] flex items-center justify-center">
+                <img src={samukNew} alt="Samuk new logo" className="max-h-[18px] object-contain" />
               </div>
             </div>
           </div>
