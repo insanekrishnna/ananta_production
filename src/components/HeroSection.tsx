@@ -38,6 +38,8 @@ const FloatingIcon = ({
     >
       {icon.name === "Instagram" ? (
         <img src={instagramLogo} alt="Instagram" className="w-8 h-8 rounded-[6px]" />
+      ) : icon.name === "LinkedIn" ? (
+        <img src={linkedinLogo} alt="LinkedIn" className="w-8 h-8 rounded-[6px]" />
       ) : icon.name === "Twitter" ? (
         <TwitterIcon />
       ) : LucideIcon ? (
