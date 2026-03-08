@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["UniversalSans-740-Headlines", "Arial", "sans-serif"],
+        sans: ["DM Sans", "Arial", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

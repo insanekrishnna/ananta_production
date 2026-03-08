@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -50,13 +50,13 @@
     @apply border-border;
   }
   body {
-    font-family: 'UniversalSans-740-Headlines', Arial, sans-serif;
+    font-family: 'DM Sans', Arial, sans-serif;
     @apply bg-outer text-foreground antialiased;
     letter-spacing: -0.01em;
-    font-weight: 400;
+    font-weight: 300;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.02em;
   }
 }
