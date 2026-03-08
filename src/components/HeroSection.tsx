@@ -260,7 +260,9 @@ const HeroSection = () => {
             {/* Sidebar */}
             <div className="hidden md:flex flex-col items-center gap-2.5 w-36 pr-3 border-r border-input">
               <img src={brandLogo} alt="Logo" className="w-8 h-8 object-contain mb-1" />
-              <div className="h-2.5 w-28 bg-primary/10 rounded-pill" />
+              <div className="h-5 w-28 bg-primary/10 rounded-pill overflow-hidden flex items-center justify-center">
+                <img src={samukCard} alt="Samuk" className="w-full h-full object-cover" />
+              </div>
               <div className="h-2.5 w-24 bg-secondary rounded-pill" />
               <div className="h-2.5 w-16 bg-secondary rounded-pill" />
               <div className="h-2.5 w-30 bg-secondary rounded-pill" />
