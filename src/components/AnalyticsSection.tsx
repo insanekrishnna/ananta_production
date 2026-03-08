@@ -10,12 +10,12 @@ const barData = {
 
 
 const tasks = [
-  { title: "Concept Sketching", completed: true },
-  { title: "Grid Alignment", completed: true },
-  { title: "Brand Audit & Research", completed: true },
-  { title: "Final Mark", completed: true },
-  { title: "Final Identity Delivery", completed: true },
-];
+{ title: "Concept Sketching", completed: true },
+{ title: "Grid Alignment", completed: true },
+{ title: "Brand Audit & Research", completed: true },
+{ title: "Final Mark", completed: true },
+{ title: "Final Identity Delivery", completed: true }];
+
 
 
 const AnalyticsSection = () => {
@@ -28,8 +28,8 @@ const AnalyticsSection = () => {
   return (
     <section id="analytics" className="pt-4 pb-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div ref={header.ref} className={`flex flex-col items-center mb-6 ${header.className}`}>
-          <p className="text-base text-text-secondary leading-[1.65] text-center max-w-[440px]">
+        <div ref={header.ref} className="">
+          <p className="text-base text-text-secondary leading-[1.65] max-w-[440px] font-medium text-left">
             Monitor design sprints, brand deliverables, and team performance from one unified creative dashboard.
           </p>
         </div>
