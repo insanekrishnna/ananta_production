@@ -107,7 +107,7 @@ const HeroSection = () => {
       {/* Content */}
       <div ref={containerRef} className="relative z-10 flex flex-col items-center text-center px-4">
         <h1
-          className="text-[36px] md:text-[56px] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-primary max-w-[720px] animate-hero-fade"
+          className="text-[36px] md:text-[56px] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-primary max-w-[960px] animate-hero-fade"
         >
           {HERO.heading.parts.map((part, i) =>
             part.accent && part.text === "companies" ? (
