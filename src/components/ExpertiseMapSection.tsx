@@ -1,26 +1,26 @@
 const CORE_SERVICES = [
-  { label: "design systems", emoji: "🟡", row: 0, col: 1 },
-  { label: "branding", emoji: "🔵", row: 1, col: 0 },
-  { label: "app design", emoji: "🟪", row: 1, col: 1 },
-  { label: "brand strategy", emoji: "❤️", row: 2, col: 0 },
-  { label: "ui/ux design", emoji: "▶️", row: 2, col: 1 },
-  { label: "web design", emoji: "🟩", row: 3, col: 0 },
-  { label: "web app development", emoji: "🟪", row: 3, col: 1 },
+  { label: "client portals", emoji: "🟡", row: 0, col: 1 },
+  { label: "CRM tools", emoji: "🔵", row: 1, col: 0 },
+  { label: "internal dashboards", emoji: "🟪", row: 1, col: 1 },
+  { label: "data integrations", emoji: "❤️", row: 2, col: 0 },
+  { label: "workflow automation", emoji: "▶️", row: 2, col: 1 },
+  { label: "no-code apps", emoji: "🟩", row: 3, col: 0 },
+  { label: "custom permissions", emoji: "🟪", row: 3, col: 1 },
 ];
 
 const SECONDARY_SERVICES_LEFT = [
-  { label: "printing services", top: "18%", left: "8%" },
-  { label: "packaging design", top: "32%", left: "4%" },
-  { label: "pr campaigns", top: "48%", left: "6%" },
-  { label: "video productions", top: "64%", left: "8%" },
+  { label: "airtable sync", top: "18%", left: "8%" },
+  { label: "google sheets", top: "32%", left: "4%" },
+  { label: "form builders", top: "48%", left: "6%" },
+  { label: "email notifications", top: "64%", left: "8%" },
 ];
 
 const SECONDARY_SERVICES_RIGHT = [
-  { label: "data science", top: "18%", right: "4%" },
-  { label: "production planning", top: "32%", right: "2%" },
-  { label: "gtm strategy", top: "48%", right: "6%" },
-  { label: "smm", top: "48%", right: "18%" },
-  { label: "product writing", top: "64%", right: "4%" },
+  { label: "REST APIs", top: "18%", right: "4%" },
+  { label: "role-based access", top: "32%", right: "2%" },
+  { label: "custom domains", top: "48%", right: "6%" },
+  { label: "SSO", top: "48%", right: "18%" },
+  { label: "embedded analytics", top: "64%", right: "4%" },
 ];
 
 const ExpertiseMapSection = () => {
