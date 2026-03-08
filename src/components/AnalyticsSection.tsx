@@ -66,33 +66,18 @@ const AnalyticsSection = () => {
 
           {/* Card 2: Brand Identity Design */}
           <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(220,10%,20%)] to-[hsl(220,10%,12%)] text-white rounded-[16px] p-6 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
-            <div className="flex items-center justify-between mb-1">
-              <div className="flex items-center gap-2">
-                <Palette className="w-4 h-4 text-white/70" />
-                <h3 className="text-[16px] font-bold">Brand Identity Design</h3>
+            <div className="flex items-center justify-between mb-5">
+              <div className="flex flex-col gap-1">
+                <h3 className="text-[18px] font-bold leading-tight">Brand Identity<br />Design</h3>
+                <Palette className="w-4 h-4 text-white/50" />
               </div>
-              <span className="text-white/40 text-xl leading-none">•••</span>
+              <span className="text-white/40 text-xl leading-none self-start">•••</span>
             </div>
-            <div className="flex items-center gap-1.5 mb-4">
-              <CalendarDays className="w-3 h-3 text-white/40" />
-              <p className="text-[12px] text-white/50">Deadline: 28 March</p>
-            </div>
-            <div className="grid grid-cols-4 gap-2 mb-5">
-              {timeline.map((item) =>
-              <div key={item.date} className="bg-white/8 rounded-[12px] py-2.5 px-1 text-center border border-white/5">
-                  <p className="text-[10px] text-white/40 mb-0.5">{item.date}</p>
-                  <p className="text-[14px] font-bold text-white">{item.time}</p>
-                </div>
-              )}
-            </div>
-            <div className="flex flex-col gap-2.5">
+            <div className="flex flex-col gap-3">
               {tasks.map((task) =>
-              <div key={task.title} className="flex items-center gap-2">
-                  {task.completed ?
-                <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" /> :
-                <Circle className="w-4 h-4 text-white flex-shrink-0" />
-                }
-                  <span className="text-[13px] text-white/80">
+              <div key={task.title} className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-white/70 flex-shrink-0" />
+                  <span className="text-[13px] text-white/90 font-medium">
                     {task.title}
                   </span>
                 </div>
