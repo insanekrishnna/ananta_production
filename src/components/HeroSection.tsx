@@ -1,5 +1,5 @@
 import { HERO, FLOATING_ICONS } from "@/data/content";
-import { Play } from "lucide-react";
+import { Play, Twitter } from "lucide-react";
 
 const FloatingIcon = ({
   icon,
