@@ -33,7 +33,7 @@ const ExpertiseMapSection = () => {
             What we do
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-text-primary mt-3">
-            Mastery Area
+            What We Build
           </h2>
         </div>
 
