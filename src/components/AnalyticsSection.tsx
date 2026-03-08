@@ -64,7 +64,7 @@ const AnalyticsSection = () => {
                   
                   <circle
                     cx="50" cy="50" r="38" fill="none"
-                    stroke="hsl(160 84% 39%)" strokeWidth="12"
+                    stroke="hsl(200 80% 55%)" strokeWidth="12"
                     strokeDasharray={`${0.12 * 238.76} ${238.76}`}
                     strokeDashoffset={`${-0.62 * 238.76}`}
                     strokeLinecap="round" />
