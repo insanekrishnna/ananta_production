@@ -42,7 +42,7 @@ const Navbar = () => {
               key={link}
               href={`#${sectionMap[link]}`}
               onClick={(e) => handleClick(e, link)}
-              className="text-[15px] font-medium text-text-nav hover:text-primary transition-colors duration-150"
+              className="text-[14px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               {link}
             </a>
