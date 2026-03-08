@@ -263,15 +263,9 @@ const HeroSection = () => {
               <div className="h-3 w-20 bg-secondary rounded-pill" />
               <div className="h-3 w-36 bg-secondary rounded-pill" />
             </div>
-            {/* Table */}
-            <div className="flex-1 flex flex-col gap-3">
-              <div className="text-xs font-semibold text-text-secondary uppercase tracking-wider">Active Projects</div>
-              {[80, 65, 90, 55, 72].map((w, i) =>
-              <div key={i} className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-sm bg-primary/20" />
-                  <div className="h-3 bg-secondary rounded-pill" style={{ width: `${w}%` }} />
-                </div>
-              )}
+            {/* Samuk Card */}
+            <div className="flex-1 flex items-center justify-center">
+              <img src={samukCard} alt="Samuk - Beyond the Moment" className="w-full h-full object-cover rounded-[8px]" />
             </div>
           </div>
         </div>
