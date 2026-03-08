@@ -50,8 +50,8 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button variant="default" size="default" className="hidden md:inline-flex">
-            
+          <Button variant="default" size="sm" className="hidden md:inline-flex rounded-[12px] shadow-none bg-foreground text-background hover:bg-foreground/90 text-[13px] font-semibold px-5">
+            Get Started
           </Button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

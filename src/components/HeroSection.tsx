@@ -69,8 +69,11 @@ const FloatingIcon = ({
 
   return (
     <div
-      className="absolute hidden md:flex w-12 h-12 rounded-[12px] bg-canvas/80 shadow-sm items-center justify-center animate-float"
-      style={posStyle}
+      className="absolute hidden md:flex w-[52px] h-[52px] rounded-[16px] bg-canvas items-center justify-center animate-float"
+      style={{
+        ...posStyle,
+        boxShadow: "0 2px 16px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03)",
+      }}
       aria-label={icon.name}
     >
       {icon.name === "Instagram" ? (
