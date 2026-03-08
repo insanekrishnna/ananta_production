@@ -31,7 +31,7 @@ const FloatingIcon = ({
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[640px] pt-24 pb-0 overflow-hidden">
+    <section id="hero" className="relative min-h-[640px] pt-24 pb-0 overflow-hidden">
       {/* Gradient mesh */}
       <div className="absolute inset-0 z-0 pointer-events-none gradient-mesh" />
 
