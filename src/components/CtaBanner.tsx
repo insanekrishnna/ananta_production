@@ -11,7 +11,7 @@ const CtaBanner = () => {
           Join thousands of teams already using Stacker to build internal tools without code.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <Button variant="hero-primary" size="xl">Get Started Free</Button>
+          <Button variant="hero-primary" size="xl">Boo</Button>
           <Button variant="hero-ghost" size="xl">Watch Demo</Button>
         </div>
       </div>
