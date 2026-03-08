@@ -70,9 +70,8 @@ const AnalyticsSection = () => {
                     strokeLinecap="round" />
                   
                 </svg>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center">
                   <span className="text-[24px] font-bold text-text-primary leading-none">74%</span>
-                  <span className="text-[10px] text-text-secondary mt-1">​ </span>
                 </div>
               </div>
             </div>
