@@ -1,5 +1,6 @@
 import { FOOTER } from "@/data/content";
 import { Twitter, Linkedin, Github } from "lucide-react";
+import brandLogo from "@/assets/brand-logo.png";
 
 const FooterSection = () => {
   return (
