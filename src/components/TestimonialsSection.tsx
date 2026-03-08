@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
             Testimonials
           </span>
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center leading-[1.2]">
-            Loved by teams at fast-growing companies
+            Trusted by ambitious brands worldwide
           </h2>
         </div>
 

@@ -15,7 +15,7 @@ const FeaturesSection = () => {
             Features
           </span>
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary max-w-[560px] leading-[1.2] text-left">
-            Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results. 
+            Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results.
           </h2>
         </div>
 
