@@ -4,6 +4,8 @@ import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark,
 import type { LucideIcon } from "lucide-react";
 import instagramLogo from "@/assets/instagram-logo.png";
 import linkedinLogo from "@/assets/linkedin-logo.png";
+import pinterestLogo from "@/assets/pinterest-logo.png";
+import dribbbleLogo from "@/assets/dribbble-logo-new.png";
 
 const iconMap: Record<string, LucideIcon> = {
   Browser: Globe,
@@ -78,9 +80,9 @@ const FloatingIcon = ({
       ) : icon.name === "Twitter" ? (
         <TwitterIcon />
       ) : icon.name === "Dribbble" ? (
-        <DribbbleIcon />
+        <img src={dribbbleLogo} alt="Dribbble" className="w-8 h-8 rounded-[6px]" />
       ) : icon.name === "Pinterest" ? (
-        <PinterestIcon />
+        <img src={pinterestLogo} alt="Pinterest" className="w-8 h-8 rounded-[6px]" />
       ) : icon.name === "Behance" ? (
         <BehanceIcon />
       ) : icon.name === "Figma" ? (
