@@ -100,28 +100,28 @@ const ExpertiseMapSection = () => {
             <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-[480px]">
               {/* Row 0: single centered */}
               <div className="col-span-2 flex justify-center">
-                <CorePill emoji="🟡" label="client portals" />
+                <CorePill Icon={CORE_SERVICES[0].icon} label={CORE_SERVICES[0].label} />
               </div>
               {/* Row 1 */}
               <div className="flex justify-end">
-                <CorePill emoji="🔵" label="CRM tools" />
+                <CorePill Icon={CORE_SERVICES[1].icon} label={CORE_SERVICES[1].label} />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="🟪" label="internal dashboards" />
+                <CorePill Icon={CORE_SERVICES[2].icon} label={CORE_SERVICES[2].label} />
               </div>
               {/* Row 2 */}
               <div className="flex justify-end">
-                <CorePill emoji="❤️" label="data integrations" />
+                <CorePill Icon={CORE_SERVICES[3].icon} label={CORE_SERVICES[3].label} />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="▶️" label="workflow automation" />
+                <CorePill Icon={CORE_SERVICES[4].icon} label={CORE_SERVICES[4].label} />
               </div>
               {/* Row 3 */}
               <div className="flex justify-end">
-                <CorePill emoji="🟩" label="no-code apps" />
+                <CorePill Icon={CORE_SERVICES[5].icon} label={CORE_SERVICES[5].label} />
               </div>
               <div className="flex justify-start">
-                <CorePill emoji="🟪" label="custom permissions" />
+                <CorePill Icon={CORE_SERVICES[6].icon} label={CORE_SERVICES[6].label} />
               </div>
             </div>
           </div>
