@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import LogoStrip from "@/components/LogoStrip";
+import InteractiveHeadline from "@/components/InteractiveHeadline";
 import AnalyticsSection from "@/components/AnalyticsSection";
 import ExpertiseMapSection from "@/components/ExpertiseMapSection";
 import FeaturesSection from "@/components/FeaturesSection";
