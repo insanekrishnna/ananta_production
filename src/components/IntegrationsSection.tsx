@@ -6,7 +6,7 @@ const IntegrationsSection = () => {
   const right = useScrollReveal(200);
 
   return (
-    <section id="integrations" className="py-24 px-4 md:px-10">
+    <section id="integrations" className="py-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto flex flex-col md:flex-row gap-16 items-center">
         {/* Left */}
         <div ref={left.ref} className={`flex-1 ${left.className}`}>

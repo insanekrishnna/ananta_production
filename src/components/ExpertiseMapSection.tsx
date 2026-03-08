@@ -32,7 +32,7 @@ const ExpertiseMapSection = () => {
     <section className="py-16 px-4" style={{ backgroundColor: "#f7f7f7" }}>
       <div className="max-w-[960px] mx-auto">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           
 
           

@@ -39,7 +39,7 @@ const InteractiveHeadline = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-10">
+    <section className="py-14 px-4 md:px-10">
       <div
         ref={containerRef}
         className="max-w-canvas mx-auto flex flex-col items-center"

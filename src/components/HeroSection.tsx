@@ -244,7 +244,7 @@ const HeroSection = () => {
 
         {/* App Window Preview */}
         <div
-          className="w-full max-w-[960px] mt-16 rounded-t-[16px] border border-input shadow-app overflow-hidden animate-hero-fade"
+          className="w-full max-w-[960px] mt-12 rounded-t-[16px] border border-input shadow-app overflow-hidden animate-hero-fade"
           style={{ animationDelay: "300ms" }}
         >
           {/* Title bar */}
