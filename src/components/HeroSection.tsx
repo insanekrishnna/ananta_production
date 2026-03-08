@@ -127,7 +127,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[640px] pt-24 pb-0 overflow-hidden">
+    <section id="hero" className="relative min-h-[560px] pt-20 pb-0 overflow-hidden">
       {/* Gradient mesh */}
       <div className="absolute inset-0 z-0 pointer-events-none gradient-mesh" />
 
@@ -244,7 +244,7 @@ const HeroSection = () => {
 
         {/* App Window Preview */}
         <div
-          className="w-full max-w-[960px] mt-16 rounded-t-[16px] border border-input shadow-app overflow-hidden animate-hero-fade"
+          className="w-full max-w-[960px] mt-12 rounded-t-[16px] border border-input shadow-app overflow-hidden animate-hero-fade"
           style={{ animationDelay: "300ms" }}
         >
           {/* Title bar */}

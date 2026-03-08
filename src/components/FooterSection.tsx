@@ -4,9 +4,9 @@ import brandLogo from "@/assets/brand-logo.png";
 
 const FooterSection = () => {
   return (
-    <footer className="border-t border-input px-4 md:px-10 pt-16 pb-10">
+    <footer className="border-t border-input px-4 md:px-10 pt-12 pb-8">
       <div className="max-w-canvas mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           {/* Brand col */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-2">
