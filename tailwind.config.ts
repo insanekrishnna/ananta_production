@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Poppins", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+        sans: ["UniversalSans-740-Headlines", "Arial", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
