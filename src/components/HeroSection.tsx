@@ -1,7 +1,8 @@
 import { HERO, FLOATING_ICONS } from "@/data/content";
 import { Play, Instagram, Globe, ShoppingBag, Triangle, Sheet } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const iconMap: Record<string, React.FC<{ size?: number; className?: string }>> = {
+const iconMap: Record<string, LucideIcon> = {
   Instagram,
   Browser: Globe,
   Shopify: ShoppingBag,
