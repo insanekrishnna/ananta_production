@@ -74,16 +74,19 @@ const InteractiveHeadline = () => {
                 }}
               >
                 <div className="bg-canvas border border-input rounded-[14px] shadow-float p-2 min-w-[200px]">
-                  {everythingItems.map((item) => (
-                    <button
-                      key={item.label}
-                      className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
-                      onClick={() => setOpenDropdown(null)}
-                    >
-                      <span className="text-primary text-[14px]">{item.emoji}</span>
-                      {item.label}
-                    </button>
-                  ))}
+                  {everythingItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <button
+                        key={item.label}
+                        className="w-full flex items-center gap-3 px-4 py-3 rounded-[10px] text-left text-[15px] font-medium text-text-primary hover:bg-secondary transition-colors duration-150"
+                        onClick={() => setOpenDropdown(null)}
+                      >
+                        <Icon size={16} className="text-primary" />
+                        {item.label}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </span>{" "}
