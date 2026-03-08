@@ -31,13 +31,7 @@ const AnalyticsSection = () => {
     <section id="analytics" className="py-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
         <div ref={header.ref} className={`flex flex-col items-center mb-10 ${header.className}`}>
-          <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-3">
-            
-          </span>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center max-w-[560px] leading-[1.2]">
-            ​
-          </h2>
-          <p className="text-base text-text-secondary leading-[1.65] text-center max-w-[440px] mt-4">
+          <p className="text-base text-text-secondary leading-[1.65] text-center max-w-[440px]">
             Monitor design sprints, brand deliverables, and team performance from one unified creative dashboard.
           </p>
         </div>
