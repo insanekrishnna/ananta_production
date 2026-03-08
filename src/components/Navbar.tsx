@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className="h-16 flex items-center justify-between px-4 md:px-10 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
         <div className="flex items-center gap-2">
           <img src={logo} alt="Stacker logo" className="w-7 h-7 object-contain" />
-          <span className="text-lg font-bold text-text-primary">stacker</span>
+          
         </div>
 
         <div className="hidden md:flex items-center gap-10">
