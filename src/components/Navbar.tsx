@@ -1,5 +1,6 @@
 import { NAV_LINKS } from "@/data/content";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 
 const sectionMap: Record<string, string> = {
   Home: "hero",
