@@ -14,8 +14,8 @@ const FeaturesSection = () => {
           <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
             Features
           </span>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center max-w-[560px] leading-[1.2]">
-            Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results. Working as one team with our clients, we merge human creativity with AI-driven efficiency to consistently exceed expectations.
+          <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary max-w-[560px] leading-[1.2] text-left">
+            Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results. 
           </h2>
         </div>
 
