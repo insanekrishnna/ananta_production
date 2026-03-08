@@ -68,7 +68,7 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 2: Brand Identity Design */}
-          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(220,10%,20%)] to-[hsl(220,10%,12%)] text-white rounded-[16px] p-6 pb-4 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 ${card2.className}`}>
+          <div ref={card2.ref} className={`bg-gradient-to-br from-[hsl(220,10%,20%)] to-[hsl(220,10%,12%)] text-white rounded-[16px] p-6 pb-4 shadow-float lg:-rotate-[6deg] hover:rotate-0 transition-transform duration-300 self-start ${card2.className}`}>
             <div className="flex items-center justify-between mb-5">
               <div className="flex flex-col gap-1">
                 <Palette className="w-4 h-4 text-white/50" />
