@@ -50,7 +50,7 @@
     @apply border-border;
   }
   body {
-    font-family: 'DM Sans', Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     @apply bg-outer text-foreground antialiased;
     letter-spacing: -0.01em;
     font-weight: 300;
