@@ -37,10 +37,21 @@ const PricingSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-          {PRICING_PLANS.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-card p-8 border transition-all duration-200 ${
+          {PRICING_PLANS.map((plan, index) => (
+            <PricingCard key={plan.name} plan={plan} delay={index * 150} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const PricingCard = ({ plan, delay }: { plan: typeof PRICING_PLANS[number]; delay: number }) => {
+  const reveal = useScrollReveal(delay);
+  return (
+    <div
+      ref={reveal.ref}
+      className={`rounded-card p-8 border transition-all duration-200 ${reveal.className} ${
                 plan.highlighted
                   ? "bg-primary text-primary-foreground border-primary scale-[1.02] shadow-[0_16px_48px_rgba(79,70,229,0.25)]"
                   : "bg-canvas text-text-primary border-input shadow-card"
