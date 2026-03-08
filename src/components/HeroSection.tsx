@@ -69,7 +69,7 @@ const HeroSection = () => {
             <Play className="w-4 h-4 text-text-primary fill-text-primary" />
           </span>
           <span>{HERO.cta.label}</span>
-          <span className="text-muted-foreground text-sm">{HERO.cta.sub}</span>
+          
         </button>
 
         {/* App Window Preview */}
