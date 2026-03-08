@@ -90,11 +90,7 @@ const PricingCard = ({ plan, delay }: { plan: typeof PRICING_PLANS[number]; dela
               >
                 {plan.cta}
               </Button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 

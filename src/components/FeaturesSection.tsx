@@ -32,12 +32,7 @@ const FeaturesSection = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-text-primary mb-2">{feat.title}</h3>
                 <p className="text-[15px] text-text-secondary leading-[1.65]">{feat.body}</p>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 

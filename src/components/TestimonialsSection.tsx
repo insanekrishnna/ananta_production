@@ -52,11 +52,7 @@ const TestimonialCard = ({ t, delay }: { t: typeof TESTIMONIALS[number]; delay: 
                   <div className="text-sm text-text-secondary">{t.role}</div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
 

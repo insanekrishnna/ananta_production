@@ -23,7 +23,7 @@ const IntegrationsSection = () => {
         </div>
 
         {/* Right grid */}
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
+        <div ref={right.ref} className={`grid grid-cols-3 md:grid-cols-4 gap-4 ${right.className}`}>
           {INTEGRATIONS.apps.map((app) => (
             <div
               key={app.name}
