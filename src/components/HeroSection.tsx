@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { HERO, FLOATING_ICONS } from "@/data/content";
-import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark, Heart, Sparkles, Monitor, PlayCircle, Box, Target } from "lucide-react";
+import { HERO, FLOATING_ICONS, FEATURES } from "@/data/content";
+import { Play, Globe, ShoppingBag, Sheet, Building2, Briefcase, Store, Landmark, Heart, Sparkles, Monitor, PlayCircle, Box, Target, ChevronRight, Database, Layers, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import instagramLogo from "@/assets/instagram-logo.png";
 import linkedinLogo from "@/assets/linkedin-logo.png";
@@ -11,6 +11,12 @@ const iconMap: Record<string, LucideIcon> = {
   Browser: Globe,
   Shopify: ShoppingBag,
   Sheets: Sheet,
+};
+
+const featureIconMap: Record<string, LucideIcon> = {
+  Database,
+  Layers,
+  Users,
 };
 
 const TwitterIcon = () => (
@@ -69,26 +75,26 @@ const FloatingIcon = ({
 
   return (
     <div
-      className="absolute hidden md:flex w-12 h-12 rounded-[12px] bg-canvas/80 shadow-sm items-center justify-center animate-float"
+      className="absolute hidden md:flex w-14 h-14 rounded-[16px] bg-canvas shadow-[0_4px_20px_rgba(0,0,0,0.08)] items-center justify-center animate-float"
       style={posStyle}
       aria-label={icon.name}
     >
       {icon.name === "Instagram" ? (
-        <img src={instagramLogo} alt="Instagram" className="w-8 h-8 rounded-[6px]" />
+        <img src={instagramLogo} alt="Instagram" className="w-9 h-9 rounded-[8px]" />
       ) : icon.name === "LinkedIn" ? (
-        <img src={linkedinLogo} alt="LinkedIn" className="w-8 h-8 rounded-[6px]" />
+        <img src={linkedinLogo} alt="LinkedIn" className="w-9 h-9 rounded-[8px]" />
       ) : icon.name === "Twitter" ? (
         <TwitterIcon />
       ) : icon.name === "Dribbble" ? (
-        <img src={dribbbleLogo} alt="Dribbble" className="w-8 h-8 rounded-[6px]" />
+        <img src={dribbbleLogo} alt="Dribbble" className="w-9 h-9 rounded-[8px]" />
       ) : icon.name === "Pinterest" ? (
-        <img src={pinterestLogo} alt="Pinterest" className="w-8 h-8 rounded-[6px]" />
+        <img src={pinterestLogo} alt="Pinterest" className="w-9 h-9 rounded-[8px]" />
       ) : icon.name === "Behance" ? (
         <BehanceIcon />
       ) : icon.name === "Figma" ? (
         <FigmaIcon />
       ) : LucideIcon ? (
-        <LucideIcon size={18} strokeWidth={1.2} className="text-text-primary" />
+        <LucideIcon size={20} strokeWidth={1.2} className="text-text-primary" />
       ) : (
         <span className="text-sm font-medium text-text-primary">{icon.letter}</span>
       )}
@@ -127,8 +133,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[640px] pt-24 pb-0 overflow-hidden">
-      {/* Gradient mesh */}
+    <section id="hero" className="relative pt-20 pb-0 overflow-hidden">
+      {/* Subtle gradient bg */}
       <div className="absolute inset-0 z-0 pointer-events-none gradient-mesh" />
 
       {/* Floating icons */}
@@ -137,9 +143,24 @@ const HeroSection = () => {
       ))}
 
       {/* Content */}
-      <div ref={containerRef} className="relative z-10 flex flex-col items-center text-center px-4">
+      <div ref={containerRef} className="relative z-10 flex flex-col items-center text-center px-4 max-w-[960px] mx-auto">
+        {/* Social proof badge */}
+        <div className="flex items-center gap-2 mb-8 animate-hero-fade">
+          <div className="flex -space-x-2">
+            {["hsl(var(--primary))", "hsl(160 84% 39%)", "hsl(32 95% 44%)"].map((bg, i) => (
+              <div
+                key={i}
+                className="w-7 h-7 rounded-full border-2 border-canvas"
+                style={{ backgroundColor: bg }}
+              />
+            ))}
+          </div>
+          <span className="text-[13px] font-medium text-text-secondary">200+ Brands Scaled</span>
+        </div>
+
+        {/* Heading */}
         <h1
-          className="text-[36px] md:text-[56px] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-primary max-w-[960px] animate-hero-fade"
+          className="text-[40px] md:text-[64px] lg:text-[72px] font-extrabold leading-[1.05] tracking-[-0.03em] text-text-primary max-w-[800px] animate-hero-fade"
         >
           {HERO.heading.parts.map((part, i) =>
             part.text === "\n" ? (
@@ -152,7 +173,7 @@ const HeroSection = () => {
                 >
                   {part.text}
                   <span
-                    className="ml-1 text-[0.6em] opacity-60 inline-block transition-transform duration-200"
+                    className="ml-1 text-[0.5em] opacity-50 inline-block transition-transform duration-200"
                     style={{ transform: openDropdown === "companies" ? "rotate(180deg)" : "rotate(0deg)" }}
                   >
                     ▾
@@ -167,7 +188,7 @@ const HeroSection = () => {
                     transition: "all 0.25s ease",
                   }}
                 >
-                  <div className="bg-background border border-input rounded-[14px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-2 min-w-[200px] backdrop-blur-none">
+                  <div className="bg-background border border-input rounded-[14px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-2 min-w-[200px]">
                     {companyItems.map((item) => {
                       const Icon = item.icon;
                       return (
@@ -188,7 +209,7 @@ const HeroSection = () => {
                 >
                   {part.text}
                   <span
-                    className="ml-1 text-[0.6em] opacity-60 inline-block transition-transform duration-200"
+                    className="ml-1 text-[0.5em] opacity-50 inline-block transition-transform duration-200"
                     style={{ transform: openDropdown === "innovation" ? "rotate(180deg)" : "rotate(0deg)" }}
                   >
                     ▾
@@ -203,7 +224,7 @@ const HeroSection = () => {
                     transition: "all 0.25s ease",
                   }}
                 >
-                  <div className="bg-background border border-input rounded-[14px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-2 min-w-[200px] backdrop-blur-none">
+                  <div className="bg-background border border-input rounded-[14px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-2 min-w-[200px]">
                     {innovationItems.map((item) => {
                       const Icon = item.icon;
                       return (
@@ -224,56 +245,45 @@ const HeroSection = () => {
           )}
         </h1>
 
+        {/* Subtitle */}
         <p
-          className="text-base text-text-secondary leading-[1.65] max-w-[440px] mt-6 animate-hero-fade"
+          className="text-[15px] md:text-base text-text-secondary leading-[1.7] max-w-[480px] mt-6 animate-hero-fade"
           style={{ animationDelay: "100ms" }}
         >
           {HERO.subheading}
         </p>
 
+        {/* CTA Button */}
         <button
-          className="mt-10 flex items-center gap-2 bg-demo text-primary-foreground rounded-pill px-7 h-14 text-[15px] font-semibold hover:scale-[1.02] transition-transform animate-hero-fade"
+          className="mt-10 flex items-center gap-3 bg-text-primary text-canvas rounded-pill px-8 h-14 text-[15px] font-semibold hover:opacity-90 transition-opacity animate-hero-fade"
           style={{ animationDelay: "200ms" }}
         >
-          <span className="w-8 h-8 rounded-full bg-canvas flex items-center justify-center">
-            <Play className="w-4 h-4 text-text-primary fill-text-primary" />
-          </span>
           <span>{HERO.cta.label}</span>
-          
+          <ChevronRight className="w-4 h-4" />
         </button>
 
-        {/* App Window Preview */}
+        {/* Feature columns */}
         <div
-          className="w-full max-w-[960px] mt-16 rounded-t-[16px] border border-input shadow-app overflow-hidden animate-hero-fade"
+          className="w-full grid grid-cols-1 md:grid-cols-3 gap-0 mt-24 border-t border-input animate-hero-fade"
           style={{ animationDelay: "300ms" }}
         >
-          {/* Title bar */}
-          <div className="h-10 bg-secondary flex items-center gap-1.5 px-4 border-b border-input">
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FF5F57" }} />
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#FEBC2E" }} />
-            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "#28C840" }} />
-          </div>
-          {/* Mock content */}
-          <div className="bg-canvas p-6 flex gap-4 min-h-[280px]">
-            {/* Sidebar */}
-            <div className="hidden md:flex flex-col gap-3 w-48 pr-4 border-r border-input">
-              <div className="h-3 w-24 bg-secondary rounded-pill" />
-              <div className="h-3 w-32 bg-primary/10 rounded-pill" />
-              <div className="h-3 w-28 bg-secondary rounded-pill" />
-              <div className="h-3 w-20 bg-secondary rounded-pill" />
-              <div className="h-3 w-36 bg-secondary rounded-pill" />
-            </div>
-            {/* Table */}
-            <div className="flex-1 flex flex-col gap-3">
-              <div className="text-xs font-semibold text-text-secondary uppercase tracking-wider">Active Projects</div>
-              {[80, 65, 90, 55, 72].map((w, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-sm bg-primary/20" />
-                  <div className="h-3 bg-secondary rounded-pill" style={{ width: `${w}%` }} />
+          {FEATURES.map((feat, index) => {
+            const Icon = featureIconMap[feat.icon];
+            return (
+              <div
+                key={feat.title}
+                className={`flex flex-col items-center text-center py-10 px-6 ${
+                  index < FEATURES.length - 1 ? "md:border-r md:border-input" : ""
+                }`}
+              >
+                <div className="w-12 h-12 rounded-[12px] bg-muted/50 flex items-center justify-center mb-4">
+                  {Icon && <Icon size={22} strokeWidth={1.5} className="text-text-primary" />}
                 </div>
-              ))}
-            </div>
-          </div>
+                <h3 className="text-[15px] font-semibold text-text-primary mb-1.5">{feat.title}</h3>
+                <p className="text-[13px] text-text-secondary leading-[1.6] max-w-[240px]">{feat.body}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
