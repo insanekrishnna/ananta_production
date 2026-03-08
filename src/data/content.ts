@@ -17,7 +17,7 @@ export const HERO = {
 
 export const FLOATING_ICONS = [
   { name: "Instagram", letter: "IG", bg: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)", top: "8%", left: "4%", delay: "0s" },
-  { name: "QuickBooks", letter: "QB", bg: "#2CA01C", top: "36%", left: "2%", delay: "0.4s" },
+  { name: "Browser", letter: "🌐", bg: "#4285F4", top: "36%", left: "2%", delay: "0.4s" },
   { name: "Shopify", letter: "🛍", bg: "#96BF48", top: "62%", left: "6%", delay: "0.8s" },
   { name: "Twitter", letter: "𝕏", bg: "#000000", top: "8%", right: "4%", delay: "1.2s" },
   { name: "Figma", letter: "▲", bg: "#FFFFFF", top: "36%", right: "2%", delay: "1.6s" },
