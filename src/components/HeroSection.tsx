@@ -113,7 +113,7 @@ const HeroSection = () => {
             part.text === "\n" ? (
               <br key={i} />
             ) : part.accent && part.text === "companies" ? (
-              <span key={i} className="relative inline-block">
+              <span key={i} className={`relative inline-block ${openDropdown === "companies" ? "z-[999]" : ""}`}>
                 <button
                   onClick={() => setOpenDropdown((prev) => prev === "companies" ? null : "companies")}
                   className="text-primary hover:text-primary/80 transition-colors duration-200 cursor-pointer focus:outline-none"
@@ -127,7 +127,7 @@ const HeroSection = () => {
                   </span>
                 </button>
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-[999]"
                   style={{
                     opacity: openDropdown === "companies" ? 1 : 0,
                     transform: openDropdown === "companies" ? "translateY(0)" : "translateY(10px)",
@@ -149,7 +149,7 @@ const HeroSection = () => {
                 </div>
               </span>
             ) : part.accent && part.text === "innovation" ? (
-              <span key={i} className="relative inline-block">
+              <span key={i} className={`relative inline-block ${openDropdown === "innovation" ? "z-[999]" : ""}`}>
                 <button
                   onClick={() => setOpenDropdown((prev) => prev === "innovation" ? null : "innovation")}
                   className="text-primary hover:text-primary/80 transition-colors duration-200 cursor-pointer focus:outline-none"
@@ -163,7 +163,7 @@ const HeroSection = () => {
                   </span>
                 </button>
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-50"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-[999]"
                   style={{
                     opacity: openDropdown === "innovation" ? 1 : 0,
                     transform: openDropdown === "innovation" ? "translateY(0)" : "translateY(10px)",
