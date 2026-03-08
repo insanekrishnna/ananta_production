@@ -11,7 +11,7 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const TwitterIcon = () => (
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" className="text-text-primary">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
@@ -32,19 +32,17 @@ const FloatingIcon = ({
 
   return (
     <div
-      className="absolute hidden md:flex w-16 h-16 rounded-float-icon bg-canvas shadow-float items-center justify-center animate-float"
+      className="absolute hidden md:flex w-12 h-12 rounded-[12px] bg-canvas/80 shadow-sm items-center justify-center animate-float"
       style={posStyle}
       aria-label={icon.name}
     >
-      <div className="w-10 h-10 rounded-[10px] flex items-center justify-center font-bold text-sm bg-canvas text-text-primary border border-input">
-        {icon.name === "Twitter" ? (
-          <TwitterIcon />
-        ) : LucideIcon ? (
-          <LucideIcon size={20} className="text-text-primary" />
-        ) : (
-          icon.letter
-        )}
-      </div>
+      {icon.name === "Twitter" ? (
+        <TwitterIcon />
+      ) : LucideIcon ? (
+        <LucideIcon size={18} strokeWidth={1.2} className="text-text-primary" />
+      ) : (
+        <span className="text-sm font-medium text-text-primary">{icon.letter}</span>
+      )}
     </div>
   );
 };
