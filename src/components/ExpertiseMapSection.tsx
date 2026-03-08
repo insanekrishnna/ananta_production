@@ -11,112 +11,71 @@ const CORE_SERVICES: { label: string; icon: LucideIcon }[] = [
   { label: "custom permissions", icon: ShieldCheck },
 ];
 
-
 const SECONDARY_SERVICES_LEFT = [
-{ label: "airtable sync", top: "18%", left: "8%" },
-{ label: "google sheets", top: "32%", left: "4%" },
-{ label: "form builders", top: "48%", left: "6%" },
-{ label: "email notifications", top: "64%", left: "8%" }];
-
+  { label: "airtable sync", top: "16%", left: "6%" },
+  { label: "google sheets", top: "34%", left: "3%" },
+  { label: "form builders", top: "52%", left: "4%" },
+  { label: "email notifications", top: "70%", left: "6%" },
+];
 
 const SECONDARY_SERVICES_RIGHT = [
-{ label: "REST APIs", top: "18%", right: "4%" },
-{ label: "role-based access", top: "32%", right: "2%" },
-{ label: "custom domains", top: "48%", right: "6%" },
-{ label: "SSO", top: "48%", right: "18%" },
-{ label: "embedded analytics", top: "64%", right: "4%" }];
-
+  { label: "REST APIs", top: "16%", right: "4%" },
+  { label: "role-based access", top: "34%", right: "2%" },
+  { label: "custom domains", top: "52%", right: "4%" },
+  { label: "SSO", top: "52%", right: "18%" },
+  { label: "embedded analytics", top: "70%", right: "3%" },
+];
 
 const ExpertiseMapSection = () => {
   return (
-    <section className="py-16 px-4" style={{ backgroundColor: "#f7f7f7" }}>
+    <section className="py-14 px-4" style={{ backgroundColor: "#f7f7f7" }}>
       <div className="max-w-[960px] mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-10">
-          
-
-          
-          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mt-3 text-left my-0">
-            What We Build
-          </h2>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-8">
+          What We Build
+        </h2>
 
         {/* Map container */}
-        <div className="relative w-full aspect-[16/10] md:aspect-[16/8]">
+        <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
           {/* SVG rings and axis */}
           <svg
             className="absolute inset-0 w-full h-full"
-            viewBox="0 0 800 500"
+            viewBox="0 0 800 450"
             fill="none"
-            preserveAspectRatio="xMidYMid meet">
-            
-            {/* Outer ring */}
-            <ellipse
-              cx="400"
-              cy="260"
-              rx="340"
-              ry="220"
-              stroke="#dcdcdc"
-              strokeWidth="1"
-              strokeDasharray="4 6"
-              fill="none" />
-            
-            {/* Inner ring */}
-            <ellipse
-              cx="400"
-              cy="260"
-              rx="200"
-              ry="140"
-              stroke="#dcdcdc"
-              strokeWidth="1"
-              strokeDasharray="4 6"
-              fill="none" />
-            
-            {/* Horizontal axis */}
-            <line
-              x1="40"
-              y1="260"
-              x2="760"
-              y2="260"
-              stroke="#dcdcdc"
-              strokeWidth="1"
-              strokeDasharray="4 6" />
-            
-            {/* Axis dots */}
-            <circle cx="60" cy="260" r="3" fill="#1a1a1a" />
-            <circle cx="740" cy="260" r="3" fill="#1a1a1a" />
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <ellipse cx="400" cy="225" rx="320" ry="200" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
+            <ellipse cx="400" cy="225" rx="185" ry="120" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
+            <line x1="60" y1="225" x2="740" y2="225" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" />
+            <circle cx="70" cy="225" r="3" fill="#1a1a1a" />
+            <circle cx="730" cy="225" r="3" fill="#1a1a1a" />
           </svg>
 
           {/* Axis labels */}
-          <span className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-text-primary">
+          <span className="absolute left-1 md:left-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-text-primary">
             Data
           </span>
-          <span className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-text-primary">
+          <span className="absolute right-1 md:right-3 top-1/2 -translate-y-1/2 text-sm font-semibold text-text-primary">
             Tools
           </span>
 
-          {/* Core service pills — positioned in center grid */}
+          {/* Core service pills */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="grid grid-cols-2 gap-3 md:gap-4 max-w-[480px]">
-              {/* Row 0: single centered */}
+            <div className="grid grid-cols-2 gap-2.5 md:gap-3 max-w-[460px]">
               <div className="col-span-2 flex justify-center">
                 <CorePill Icon={CORE_SERVICES[0].icon} label={CORE_SERVICES[0].label} />
               </div>
-              {/* Row 1 */}
               <div className="flex justify-end">
                 <CorePill Icon={CORE_SERVICES[1].icon} label={CORE_SERVICES[1].label} />
               </div>
               <div className="flex justify-start">
                 <CorePill Icon={CORE_SERVICES[2].icon} label={CORE_SERVICES[2].label} />
               </div>
-              {/* Row 2 */}
               <div className="flex justify-end">
                 <CorePill Icon={CORE_SERVICES[3].icon} label={CORE_SERVICES[3].label} />
               </div>
               <div className="flex justify-start">
                 <CorePill Icon={CORE_SERVICES[4].icon} label={CORE_SERVICES[4].label} />
               </div>
-              {/* Row 3 */}
               <div className="flex justify-end">
                 <CorePill Icon={CORE_SERVICES[5].icon} label={CORE_SERVICES[5].label} />
               </div>
@@ -126,49 +85,33 @@ const ExpertiseMapSection = () => {
             </div>
           </div>
 
-          {/* Secondary pills — left side */}
-          {SECONDARY_SERVICES_LEFT.map((s) =>
-          <SecondaryPill
-            key={s.label}
-            label={s.label}
-            style={{ top: s.top, left: s.left }} />
-
-          )}
-
-          {/* Secondary pills — right side */}
-          {SECONDARY_SERVICES_RIGHT.map((s) =>
-          <SecondaryPill
-            key={s.label}
-            label={s.label}
-            style={{ top: s.top, right: s.right }} />
-
-          )}
+          {/* Secondary pills */}
+          {SECONDARY_SERVICES_LEFT.map((s) => (
+            <SecondaryPill key={s.label} label={s.label} style={{ top: s.top, left: s.left }} />
+          ))}
+          {SECONDARY_SERVICES_RIGHT.map((s) => (
+            <SecondaryPill key={s.label} label={s.label} style={{ top: s.top, right: s.right }} />
+          ))}
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
-const CorePill = ({ Icon, label }: { Icon: LucideIcon; label: string }) =>
-<span className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white rounded-[999px] px-5 py-2.5 text-[15px] font-medium cursor-default transition-transform duration-200 hover:scale-105 hover:shadow-lg">
-    <Icon size={16} className="text-white" />
+const CorePill = ({ Icon, label }: { Icon: LucideIcon; label: string }) => (
+  <span className="inline-flex items-center gap-2 bg-[#1a1a1a] text-white rounded-[999px] px-5 py-2.5 text-[14px] font-medium cursor-default transition-transform duration-200 hover:scale-105 hover:shadow-lg">
+    <Icon size={15} className="text-white" />
     {label}
-  </span>;
+  </span>
+);
 
-
-const SecondaryPill = ({
-  label,
-  style
-
-
-
-}: {label: string;style: React.CSSProperties;}) =>
-<span
-  className="absolute hidden md:inline-flex items-center rounded-[999px] border border-[#e0e0e0] bg-white/60 px-4 py-1.5 text-[13px] font-medium text-muted-foreground opacity-60 cursor-default transition-all duration-200 hover:opacity-100 hover:border-[#c0c0c0] hover:shadow-sm"
-  style={style}>
-  
+const SecondaryPill = ({ label, style }: { label: string; style: React.CSSProperties }) => (
+  <span
+    className="absolute hidden md:inline-flex items-center rounded-[999px] border border-[#e0e0e0] bg-white/60 px-4 py-1.5 text-[13px] font-medium text-muted-foreground opacity-60 cursor-default transition-all duration-200 hover:opacity-100 hover:border-[#c0c0c0] hover:shadow-sm"
+    style={style}
+  >
     {label}
-  </span>;
-
+  </span>
+);
 
 export default ExpertiseMapSection;
