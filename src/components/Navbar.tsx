@@ -26,10 +26,14 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50">
-      <div className="h-16 flex items-center justify-between px-4 md:px-10 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="Stacker logo" className="w-7 h-7 object-contain" />
-          
+      <div className="h-14 flex items-center justify-between px-5 md:px-10 backdrop-blur-[16px] bg-canvas/90">
+        <div className="flex items-center gap-2.5">
+          <div
+            className="w-9 h-9 rounded-[12px] bg-foreground flex items-center justify-center"
+            style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}
+          >
+            <img src={logo} alt="Logo" className="w-5 h-5 object-contain brightness-0 invert" />
+          </div>
         </div>
 
         <div className="hidden md:flex items-center gap-10">
@@ -38,7 +42,7 @@ const Navbar = () => {
               key={link}
               href={`#${sectionMap[link]}`}
               onClick={(e) => handleClick(e, link)}
-              className="text-[15px] font-medium text-text-nav hover:text-primary transition-colors duration-150"
+              className="text-[14px] font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               {link}
             </a>
@@ -46,8 +50,8 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button variant="default" size="default" className="hidden md:inline-flex">
-            
+          <Button variant="default" size="sm" className="hidden md:inline-flex rounded-[12px] shadow-none bg-foreground text-background hover:bg-foreground/90 text-[13px] font-semibold px-5">
+            Get Started
           </Button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
