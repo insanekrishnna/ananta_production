@@ -258,8 +258,8 @@ const HeroSection = () => {
           {/* Mock content */}
           <div className="bg-canvas p-4 flex gap-3 min-h-[200px]">
             {/* Sidebar */}
-            <div className="hidden md:flex flex-col items-center gap-2.5 w-36 pr-3 border-r border-input">
-              <img src={brandLogo} alt="Logo" className="w-8 h-8 object-contain mb-1" />
+            <div className="hidden md:flex flex-col items-start gap-2.5 w-36 pr-3 border-r border-input">
+              <img src={brandLogo} alt="Logo" className="w-5 h-5 object-contain mb-1" />
               <div className="h-2.5 w-28 bg-primary/10 rounded-pill" />
               <div className="h-2.5 w-24 bg-secondary rounded-pill" />
               <div className="h-2.5 w-16 bg-secondary rounded-pill" />
