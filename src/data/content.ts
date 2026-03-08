@@ -3,15 +3,15 @@ export const NAV_LINKS = ["Home", "Solutions", "Product", "Resources", "Pricing"
 export const HERO = {
   heading: {
     parts: [
-      { text: "Where your ", accent: false },
-      { text: "data", accent: true },
-      { text: " turns", accent: false },
-      { text: "\ninto ", accent: false },
-      { text: "software", accent: true },
-      { text: " with a click", accent: false },
+      { text: "We transform ", accent: false },
+      { text: "companies", accent: true },
+      { text: " through ", accent: false },
+      { text: "", accent: false },
+      { text: "design innovation", accent: true },
+      { text: " ", accent: false },
     ],
   },
-  subheading: "Build custom portals, CRMs, and tools effortlessly. From concept to launch in minutes, not months.",
+  subheading: "A full-service creative agency designing and building inventive digital experiences across all platforms and brand touchpoints.\n\n",
   cta: { label: "Watch Demo", sub: "3mins" },
 };
 
