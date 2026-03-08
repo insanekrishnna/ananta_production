@@ -22,6 +22,7 @@ export const FLOATING_ICONS = [
   { name: "Twitter", letter: "𝕏", bg: "#000000", top: "8%", right: "4%", delay: "1.2s" },
   { name: "LinkedIn", letter: "in", bg: "#0A66C2", top: "36%", right: "2%", delay: "1.6s" },
   { name: "Sheets", letter: "≡", bg: "#0F9D58", top: "62%", right: "6%", delay: "2.0s" },
+  { name: "Dribbble", letter: "🏀", bg: "#EA4C89", top: "82%", left: "4%", delay: "2.4s" },
 ] as const;
 
 export const LOGOS = ["OpenPurpose®", "LaunchPad", "FinanceFlow", "ScaleUp", "VentureStudio"];

@@ -44,6 +44,8 @@ const FloatingIcon = ({
         <img src={linkedinLogo} alt="LinkedIn" className="w-8 h-8 rounded-[6px]" />
       ) : icon.name === "Twitter" ? (
         <TwitterIcon />
+      ) : icon.name === "Dribbble" ? (
+        <DribbbleIcon />
       ) : LucideIcon ? (
         <LucideIcon size={18} strokeWidth={1.2} className="text-text-primary" />
       ) : (
