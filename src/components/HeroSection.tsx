@@ -72,9 +72,17 @@ const companyItems: { label: string; icon: LucideIcon }[] = [
   { label: "Non-Profits", icon: Heart },
 ];
 
+const innovationItems: { label: string; icon: LucideIcon }[] = [
+  { label: "Branding", icon: Sparkles },
+  { label: "Digital", icon: Monitor },
+  { label: "Motion", icon: PlayCircle },
+  { label: "Product", icon: Box },
+  { label: "Strategy", icon: Target },
+];
+
 const HeroSection = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLSpanElement>(null);
+  const [openDropdown, setOpenDropdown] = useState<"companies" | "innovation" | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
