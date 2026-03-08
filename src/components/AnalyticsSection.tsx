@@ -147,7 +147,7 @@ const AnalyticsSection = () => {
           </div>
 
           {/* Card 4: Design System + Team Meeting stacked */}
-          <div ref={card4.ref} className={`flex flex-col gap-6 ${card4.style}`}>
+          <div ref={card4.ref} className={`flex flex-col gap-6 ${card4.className}`}>
             {/* Design System */}
             <div className="bg-canvas border border-input rounded-[16px] p-5 shadow-float flex-1">
               <div className="flex items-center justify-between mb-2">
