@@ -57,28 +57,26 @@ const ExpertiseMapSection = () => {
             Tools
           </span>
 
-          {/* Core service pills */}
+          {/* Core service pills — diamond layout */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="grid grid-cols-2 gap-2.5 md:gap-3 max-w-[460px]">
-              <div className="col-span-2 flex justify-center">
+            <div className="flex flex-col items-center gap-2.5 md:gap-3">
+              {/* Row 1: 1 pill */}
+              <div className="flex justify-center">
                 <CorePill Icon={CORE_SERVICES[0].icon} label={CORE_SERVICES[0].label} />
               </div>
-              <div className="flex justify-end">
+              {/* Row 2: 2 pills */}
+              <div className="flex gap-3 justify-center">
                 <CorePill Icon={CORE_SERVICES[1].icon} label={CORE_SERVICES[1].label} />
-              </div>
-              <div className="flex justify-start">
                 <CorePill Icon={CORE_SERVICES[2].icon} label={CORE_SERVICES[2].label} />
               </div>
-              <div className="flex justify-end">
+              {/* Row 3: 3 pills */}
+              <div className="flex gap-3 justify-center">
                 <CorePill Icon={CORE_SERVICES[3].icon} label={CORE_SERVICES[3].label} />
-              </div>
-              <div className="flex justify-start">
                 <CorePill Icon={CORE_SERVICES[4].icon} label={CORE_SERVICES[4].label} />
-              </div>
-              <div className="flex justify-end">
                 <CorePill Icon={CORE_SERVICES[5].icon} label={CORE_SERVICES[5].label} />
               </div>
-              <div className="flex justify-start">
+              {/* Row 4: 1 pill */}
+              <div className="flex justify-center">
                 <CorePill Icon={CORE_SERVICES[6].icon} label={CORE_SERVICES[6].label} />
               </div>
             </div>
