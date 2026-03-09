@@ -30,7 +30,7 @@ export const LOGOS = ["avtar®", "Samuk", "Twinkle artist", "Cont.", "Rabbit"];
 
 export const FEATURES = [
   {
-    icon: "Compass" as const,
+    icon: "Fingerprint" as const,
     iconBg: "rgba(79,70,229,0.08)",
     iconColor: "#4F46E5",
     title: "Brand Strategy & Identity",
