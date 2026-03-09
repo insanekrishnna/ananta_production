@@ -21,8 +21,8 @@ const Index = () => {
         <InteractiveHeadline />
         <AnalyticsSection />
         <ExpertiseMapSection />
-        <FeaturesSection />
         <IntegrationsSection />
+        <FeaturesSection />
         <TestimonialsSection />
         <PricingSection />
         <CtaBanner />
