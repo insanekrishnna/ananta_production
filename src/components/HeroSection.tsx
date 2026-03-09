@@ -234,16 +234,16 @@ const HeroSection = () => {
           {HERO.subheading}
         </p>
 
-        <button
-          className="mt-10 flex items-center gap-2 bg-demo text-primary-foreground rounded-pill h-14 text-[15px] font-semibold hover:scale-[1.02] transition-transform animate-hero-fade my-0 px-[19px]"
-          style={{ animationDelay: "200ms" }}>
-          
-          <span className="w-8 h-8 rounded-full bg-canvas flex items-center justify-center">
-            <Play className="w-4 h-4 text-text-primary fill-text-primary" />
-          </span>
-          <span>{HERO.cta.label}</span>
-          
-        </button>
+        <VideoModal>
+          <button
+            className="mt-10 flex items-center gap-2 bg-demo text-primary-foreground rounded-pill h-14 text-[15px] font-semibold hover:scale-[1.02] transition-transform animate-hero-fade my-0 px-[19px]"
+            style={{ animationDelay: "200ms" }}>
+            <span className="w-8 h-8 rounded-full bg-canvas flex items-center justify-center">
+              <Play className="w-4 h-4 text-text-primary fill-text-primary" />
+            </span>
+            <span>{HERO.cta.label}</span>
+          </button>
+        </VideoModal>
 
         {/* App Window Preview */}
         <div

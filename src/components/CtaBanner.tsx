@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import VideoModal from "@/components/VideoModal";
 
 const CtaBanner = () => {
   return (
@@ -14,7 +15,9 @@ const CtaBanner = () => {
           <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
             <Button variant="hero-primary" size="lg">Book a Strategy Call</Button>
           </a>
-          <Button variant="hero-ghost" size="lg">Watch Demo</Button>
+          <VideoModal>
+            <Button variant="hero-ghost" size="lg">Watch Demo</Button>
+          </VideoModal>
         </div>
       </div>
     </section>
