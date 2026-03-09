@@ -12,9 +12,6 @@ const PricingSection = () => {
     <section id="pricing" className="py-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
         <div ref={header.ref} className={`flex flex-col items-center mb-10 ${header.className}`}>
-          <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
-            Pricing
-          </span>
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary text-center leading-[1.2] mb-8">
             Simple, transparent pricing
           </h2>
