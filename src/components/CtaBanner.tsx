@@ -11,7 +11,9 @@ const CtaBanner = () => {
           Whether it's a rebrand, a product launch, or a full creative overhaul — we're ready when you are.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-          <Button variant="hero-primary" size="lg">Book a Strategy Call</Button>
+          <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
+            <Button variant="hero-primary" size="lg">Book a Strategy Call</Button>
+          </a>
           <Button variant="hero-ghost" size="lg">Watch Demo</Button>
         </div>
       </div>

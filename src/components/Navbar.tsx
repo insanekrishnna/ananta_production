@@ -73,9 +73,11 @@ const Navbar = () => {
               {link}
             </a>
           ))}
-          <Button variant="default" size="default" className="w-full mt-2">
-            Book a call
-          </Button>
+          <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
+            <Button variant="default" size="default" className="w-full mt-2">
+              Book a call
+            </Button>
+          </a>
         </div>
       )}
     </nav>
