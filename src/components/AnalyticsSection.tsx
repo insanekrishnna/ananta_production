@@ -62,7 +62,7 @@ const AnalyticsSection = () => {
               </div>
               <div>
                 <p className="text-[11px] text-text-secondary">In progress</p>
-                <p ref={inProgress.ref} className="text-[20px] font-bold text-text-primary">{inProgress.display}</p>
+                <span ref={inProgress.ref} className="block text-[20px] font-bold text-text-primary">{inProgress.display}</span>
               </div>
             </div>
           </div>
