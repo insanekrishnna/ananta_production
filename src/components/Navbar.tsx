@@ -3,7 +3,7 @@ import { NAV_LINKS } from "@/data/content";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/brand-logo.png";
-import ThemeToggle from "@/components/ThemeToggle";
+
 
 const sectionMap: Record<string, string> = {
   Home: "hero",
