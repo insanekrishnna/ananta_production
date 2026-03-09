@@ -17,9 +17,9 @@ const Index = () => {
       <div className="max-w-canvas mx-auto my-6 bg-canvas rounded-canvas overflow-hidden shadow-app">
         <Navbar />
         <HeroSection />
-        <LogoStrip />
         <InteractiveHeadline />
         <AnalyticsSection />
+        <LogoStrip />
         <ExpertiseMapSection />
         <IntegrationsSection />
         <FeaturesSection />
