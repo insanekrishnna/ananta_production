@@ -3,12 +3,12 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Search, Users, Target, Layout, Palette, Rocket } from "lucide-react";
 
 const PROCESS_STEPS = [
-  { icon: Search, label: "Discovery", desc: "Research & audit" },
-  { icon: Users, label: "Audience", desc: "Define personas" },
-  { icon: Target, label: "Strategy", desc: "Position & voice" },
-  { icon: Layout, label: "Design", desc: "Visual identity" },
-  { icon: Palette, label: "Refine", desc: "Iterate & polish" },
-  { icon: Rocket, label: "Launch", desc: "Deploy & scale" },
+  { icon: Search, label: "Discovery & Research" },
+  { icon: Users, label: "Audience & Personas" },
+  { icon: Target, label: "Strategy & Positioning" },
+  { icon: Layout, label: "Visual Identity Design" },
+  { icon: Palette, label: "Refine & Iterate" },
+  { icon: Rocket, label: "Launch & Scale" },
 ];
 
 const IntegrationsSection = () => {
@@ -33,36 +33,26 @@ const IntegrationsSection = () => {
         </div>
 
         {/* Right - Flow Diagram */}
-        <div ref={right.ref} className={`flex-1 min-w-0 ${right.className}`}>
-          <div className="relative">
+        <div ref={right.ref} className={`flex-1 min-w-0 flex justify-center ${right.className}`}>
+          <div className="flex flex-col items-center">
             {PROCESS_STEPS.map((step, i) => {
               const Icon = step.icon;
-              const isEven = i % 2 === 0;
               return (
-                <div key={step.label} className="relative flex items-start gap-4">
-                  {/* Vertical line */}
-                  <div className="flex flex-col items-center">
-                    <div
-                      className="w-11 h-11 rounded-full border-2 border-primary/20 bg-canvas flex items-center justify-center z-10 group hover:border-primary hover:bg-primary/5 transition-all duration-300"
-                      style={{ animationDelay: `${i * 0.15}s` }}
-                    >
-                      <Icon size={18} strokeWidth={1.5} className="text-primary" />
-                    </div>
-                    {i < PROCESS_STEPS.length - 1 && (
-                      <div className="w-px h-8 bg-gradient-to-b from-primary/30 to-primary/5" />
-                    )}
+                <div key={step.label} className="flex flex-col items-center">
+                  {/* Card node */}
+                  <div className="bg-canvas border border-input rounded-xl px-5 py-3 shadow-card flex items-center gap-3 hover:shadow-float transition-shadow duration-200 min-w-[200px]">
+                    <Icon size={16} strokeWidth={1.5} className="text-text-primary shrink-0" />
+                    <span className="text-[14px] font-medium text-text-primary">{step.label}</span>
                   </div>
 
-                  {/* Content */}
-                  <div className={`pt-2 pb-4 ${isEven ? '' : 'md:translate-x-4'}`}>
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <span className="text-[11px] font-bold text-primary/40 tracking-widest uppercase">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <h4 className="text-[15px] font-semibold text-text-primary">{step.label}</h4>
+                  {/* Connector */}
+                  {i < PROCESS_STEPS.length - 1 && (
+                    <div className="flex flex-col items-center">
+                      <div className="w-px h-3 bg-border" />
+                      <div className="w-2 h-2 rounded-full border-2 border-border bg-canvas" />
+                      <div className="w-px h-3 bg-border" />
                     </div>
-                    <p className="text-[13px] text-text-secondary">{step.desc}</p>
-                  </div>
+                  )}
                 </div>
               );
             })}
