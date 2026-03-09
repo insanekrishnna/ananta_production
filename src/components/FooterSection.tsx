@@ -100,7 +100,7 @@ const FooterSection = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="w-full h-px bg-border mb-8" />
+        <div className="w-full h-px bg-border mb-5" />
         <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-muted-foreground">
           <span>© 2026 Ananta Production</span>
           <div className="flex gap-6 mt-2 sm:mt-0">
