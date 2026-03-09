@@ -125,7 +125,7 @@ const AnalyticsSection = () => {
                 </span>
               </div>
               <p className="text-[12px] text-text-secondary leading-[1.5] mb-3">
-                Complete visual overhaul for Lumina — logo, typography, color system, and brand guidelines.
+                Complete visual overhaul for Samuk - logo, typography, color system, and brand guidelines.
               </p>
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
