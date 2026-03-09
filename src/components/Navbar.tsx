@@ -72,7 +72,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="default" size="default" className="w-full mt-2">
-            Get Started
+            Book a call
           </Button>
         </div>
       )}
