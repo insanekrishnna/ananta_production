@@ -10,8 +10,8 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div ref={header.ref} className={`flex flex-col items-center mb-10 ${header.className}`}>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary max-w-[560px] leading-[1.2] text-left">
+        <div ref={header.ref} className={`flex flex-col items-start mb-10 ${header.className}`}>
+          <h2 className="text-[22px] md:text-[26px] font-medium text-muted-foreground max-w-[640px] leading-[1.4] text-left tracking-tight">
             Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results.
           </h2>
         </div>
