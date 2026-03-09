@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
           <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
             <Button variant="default" size="default" className="hidden md:inline-flex">
               Book a Call
