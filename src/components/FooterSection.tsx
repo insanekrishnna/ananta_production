@@ -3,9 +3,7 @@ import { FOOTER } from "@/data/content";
 import { Twitter, Linkedin, Github } from "lucide-react";
 import brandLogo from "@/assets/brand-logo.png";
 
-const FooterLink = ({ link }: { link: { label: string; description?: string } }) => {
-  const [showCard, setShowCard] = useState(false);
-
+const FooterLink = ({ link, isOpen, onToggle }: { link: { label: string; description?: string }; isOpen: boolean; onToggle: () => void }) => {
   if (!link.description) {
     return (
       <li>
@@ -19,12 +17,12 @@ const FooterLink = ({ link }: { link: { label: string; description?: string } })
   return (
     <li className="relative">
       <button
-        onClick={() => setShowCard((prev) => !prev)}
+        onClick={onToggle}
         className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors duration-200 text-left"
       >
         {link.label}
       </button>
-      {showCard && (
+      {isOpen && (
         <div className="absolute left-0 bottom-full mb-2 z-50 w-[220px] bg-background border border-input rounded-[12px] shadow-[0_8px_30px_rgba(0,0,0,0.10)] p-3 animate-in fade-in-0 zoom-in-95 duration-200">
           <p className="text-[11px] font-semibold text-text-primary mb-1">{link.label}</p>
           <p className="text-[11px] text-text-secondary leading-relaxed">{link.description}</p>
@@ -35,6 +33,8 @@ const FooterLink = ({ link }: { link: { label: string; description?: string } })
 };
 
 const FooterSection = () => {
+  const [openLink, setOpenLink] = useState<string | null>(null);
+
   return (
     <footer className="px-4 md:px-10 pt-12 pb-8">
       <div className="max-w-[900px] mx-auto">
@@ -63,7 +63,12 @@ const FooterSection = () => {
               </div>
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
-                  <FooterLink key={link.label} link={link} />
+                  <FooterLink
+                    key={link.label}
+                    link={link}
+                    isOpen={openLink === link.label}
+                    onToggle={() => setOpenLink((prev) => prev === link.label ? null : link.label)}
+                  />
                 ))}
               </ul>
             </div>
