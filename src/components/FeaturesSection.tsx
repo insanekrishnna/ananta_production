@@ -1,8 +1,8 @@
 import { FEATURES } from "@/data/content";
-import { Gem, Box, Earth } from "lucide-react";
+import { Fingerprint, Box, Earth } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const iconMap = { Gem, Box, Earth } as const;
+const iconMap = { Fingerprint, Box, Earth } as const;
 
 const FeaturesSection = () => {
   const header = useScrollReveal(0);
