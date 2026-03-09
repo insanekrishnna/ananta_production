@@ -8,10 +8,10 @@ const FeaturesSection = () => {
   const header = useScrollReveal(0);
 
   return (
-    <section id="features" className="py-12 px-4 md:px-10">
+    <section id="features" className="pt-4 pb-8 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
-        <div ref={header.ref} className={`flex flex-col items-start mb-8 ${header.className}`}>
-          <h2 className="text-[20px] md:text-[24px] font-medium text-muted-foreground max-w-[640px] leading-[1.4] text-left tracking-tight">
+        <div ref={header.ref} className={`flex flex-col items-start mb-5 ${header.className}`}>
+          <h2 className="text-[18px] md:text-[22px] font-medium text-muted-foreground max-w-[580px] leading-[1.4] text-left tracking-tight">
             Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results.
           </h2>
         </div>
@@ -40,7 +40,7 @@ const FeatureCard = ({
   return (
     <div
       ref={reveal.ref}
-      className={`bg-canvas border border-input rounded-card p-6 hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300 group ${reveal.className}`}
+      className={`bg-canvas border border-input rounded-card p-5 hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300 group ${reveal.className}`}
     >
       <div className="w-10 h-10 rounded-full bg-muted/40 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors duration-300">
         <Icon size={18} strokeWidth={1.2} className="text-text-primary" />
