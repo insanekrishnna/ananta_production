@@ -58,7 +58,7 @@ const AnalyticsSection = () => {
             <div className="flex justify-between text-center px-2">
               <div>
                 <p className="text-[11px] text-text-secondary">Delivered</p>
-                <p ref={delivered.ref} className="text-[20px] font-bold text-text-primary">{delivered.display}</p>
+                <span ref={delivered.ref} className="block text-[20px] font-bold text-text-primary">{delivered.display}</span>
               </div>
               <div>
                 <p className="text-[11px] text-text-secondary">In progress</p>
