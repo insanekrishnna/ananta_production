@@ -3,13 +3,13 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Search, Users, Target, Layout, Palette, Rocket } from "lucide-react";
 
 const PROCESS_STEPS = [
-  { icon: Search, label: "Discovery" },
-  { icon: Users, label: "Audience" },
-  { icon: Target, label: "Strategy" },
-  { icon: Layout, label: "Design" },
-  { icon: Palette, label: "Refine" },
-  { icon: Rocket, label: "Launch" },
-];
+{ icon: Search, label: "Discovery" },
+{ icon: Users, label: "Audience" },
+{ icon: Target, label: "Strategy" },
+{ icon: Layout, label: "Design" },
+{ icon: Palette, label: "Refine" },
+{ icon: Rocket, label: "Launch" }];
+
 
 const IntegrationsSection = () => {
   const left = useScrollReveal(0);
@@ -23,7 +23,7 @@ const IntegrationsSection = () => {
           <span className="bg-primary/10 text-primary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] inline-block mb-4">
             {INTEGRATIONS.tag}
           </span>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary leading-[1.2] mb-4">
+          <h2 className="text-[32px] md:text-[36px] text-text-primary leading-[1.2] mb-4 font-medium">
             {INTEGRATIONS.heading}
           </h2>
           <p className="text-base text-text-secondary leading-[1.65]">{INTEGRATIONS.body}</p>
@@ -45,21 +45,21 @@ const IntegrationsSection = () => {
                   </div>
 
                   {/* Connector */}
-                  {i < PROCESS_STEPS.length - 1 && (
-                    <div className="flex items-center mx-1">
+                  {i < PROCESS_STEPS.length - 1 &&
+                  <div className="flex items-center mx-1">
                       <div className="h-px w-4 bg-border" />
                       <div className="w-2 h-2 rounded-full border-2 border-border bg-canvas shrink-0" />
                       <div className="h-px w-4 bg-border" />
                     </div>
-                  )}
-                </div>
-              );
+                  }
+                </div>);
+
             })}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default IntegrationsSection;
