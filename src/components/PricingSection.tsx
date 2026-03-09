@@ -38,7 +38,7 @@ const PricingSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
           {PRICING_PLANS.map((plan, index) => (
-            <PricingCard key={plan.name} plan={plan} delay={index * 150} />
+            <PricingCard key={plan.name} plan={plan} delay={index * 150} annual={annual} />
           ))}
         </div>
       </div>
