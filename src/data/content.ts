@@ -101,7 +101,7 @@ export const PRICING_PLANS = [
   {
     name: "Sprint",
     price: "$99",
-    annualPrice: "$79",
+    annualPrice: "$89",
     period: "/project",
     annualPeriod: "/project",
     description: "Ideal for startups needing a strong visual foundation",
@@ -112,7 +112,7 @@ export const PRICING_PLANS = [
   {
     name: "Studio",
     price: "$999",
-    annualPrice: "$799",
+    annualPrice: "$899",
     period: "/month",
     annualPeriod: "/month",
     description: "For brands that need ongoing creative partnership",
