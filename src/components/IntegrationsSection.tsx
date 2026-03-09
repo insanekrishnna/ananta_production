@@ -5,7 +5,7 @@ import { Search, Users, ChartPie, Layout, Palette, BadgeCheck } from "lucide-rea
 const PROCESS_STEPS = [
   { icon: Search, label: "Discovery" },
   { icon: Users, label: "Audience" },
-  { icon: Target, label: "Strategy" },
+  { icon: ChartPie, label: "Strategy" },
   { icon: Layout, label: "Design" },
   { icon: Palette, label: "Refine" },
   { icon: Rocket, label: "Launch" },
