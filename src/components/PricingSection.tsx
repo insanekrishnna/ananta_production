@@ -86,16 +86,18 @@ const PricingCard = ({ plan, delay, annual }: { plan: typeof PRICING_PLANS[numbe
         ))}
       </ul>
 
-      <button
-        className={`w-full py-2.5 rounded-pill text-[13px] font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 group ${
-          isDark
-            ? "bg-white text-[#1a1a1a] hover:bg-[#f5f5f5]"
-            : "bg-[#1a1a1a] text-white hover:bg-[#333]"
-        }`}
-      >
-        {plan.cta}
-        <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
-      </button>
+      <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer" className="w-full">
+        <button
+          className={`w-full py-2.5 rounded-pill text-[13px] font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 group ${
+            isDark
+              ? "bg-white text-[#1a1a1a] hover:bg-[#f5f5f5]"
+              : "bg-[#1a1a1a] text-white hover:bg-[#333]"
+          }`}
+        >
+          {plan.cta}
+          <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-0.5" />
+        </button>
+      </a>
     </div>
   );
 };
