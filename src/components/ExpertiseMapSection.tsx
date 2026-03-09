@@ -35,8 +35,15 @@ const ExpertiseMapSection = () => {
           What We Build
         </h2>
 
-        {/* Map container */}
-        <div className="relative w-full" style={{ aspectRatio: "5 / 3" }}>
+        {/* Mobile: 2-column grid */}
+        <div className="grid grid-cols-2 gap-3 md:hidden">
+          {CORE_SERVICES.map((service) => (
+            <CorePill key={service.label} Icon={service.icon} label={service.label} />
+          ))}
+        </div>
+
+        {/* Desktop: SVG circle map */}
+        <div className="relative w-full hidden md:block" style={{ aspectRatio: "5 / 3" }}>
           <svg
             className="absolute inset-0 w-full h-full"
             viewBox="0 0 500 300"
@@ -56,14 +63,14 @@ const ExpertiseMapSection = () => {
           </div>
 
           {/* Axis labels */}
-          <span className="absolute left-0 md:left-1 top-1/2 -translate-y-1/2 text-xs font-semibold text-text-primary">
+          <span className="absolute left-1 top-1/2 -translate-y-1/2 text-xs font-semibold text-text-primary">
             Data
           </span>
-          <span className="absolute right-0 md:right-1 top-1/2 -translate-y-1/2 text-xs font-semibold text-text-primary">
+          <span className="absolute right-1 top-1/2 -translate-y-1/2 text-xs font-semibold text-text-primary">
             Tools
           </span>
 
-          {/* Core service pills — distributed around inner circle */}
+          {/* Core service pills */}
           {CORE_SERVICES.map((service, i) => {
             const total = CORE_SERVICES.length;
             const angle = -90 + (i * 360) / total;
