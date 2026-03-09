@@ -46,9 +46,9 @@ const FooterSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {/* Left: Brand info */}
           <div className="flex flex-col items-start">
-            <img src={brandLogo} alt="Ananta Production" className="w-10 h-10 object-contain mb-4" />
-            <span className="text-[16px] font-semibold text-text-primary tracking-tight mb-2">Ananta Production</span>
-            <p className="text-[13px] text-muted-foreground leading-relaxed max-w-[260px] mb-6">
+            <img src={brandLogo} alt="Ananta Production" className="w-8 h-8 object-contain mb-3" />
+            <span className="text-[15px] font-semibold text-text-primary tracking-tight mb-1.5">Ananta Production</span>
+            <p className="text-[12px] text-muted-foreground leading-relaxed max-w-[240px] mb-4">
               {FOOTER.tagline}
             </p>
             <div className="flex gap-4">
