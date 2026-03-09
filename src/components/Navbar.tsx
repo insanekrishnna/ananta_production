@@ -6,8 +6,8 @@ import logo from "@/assets/brand-logo.png";
 
 const sectionMap: Record<string, string> = {
   Home: "hero",
-  Services: "f",
-  Work: "analytics",
+  Services: "expertise",
+  Work: "expertise",
   Process: "integrations",
   Pricing: "pricing",
 };
