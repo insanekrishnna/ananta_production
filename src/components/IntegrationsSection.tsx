@@ -40,9 +40,6 @@ const IntegrationsSection = () => {
                 <div key={step.label} className="relative z-10 flex flex-col items-center gap-2">
                   {/* Card */}
                   <div className="bg-canvas border border-input rounded-xl w-[100px] h-[80px] flex flex-col items-center justify-center gap-1.5 shadow-card hover:shadow-float hover:-translate-y-1 hover:border-primary/20 transition-all duration-300 group">
-                    <span className="absolute -top-2 -right-1 text-[10px] font-semibold text-muted-foreground/40">
-                      0{i + 1}
-                    </span>
                     <Icon size={18} strokeWidth={1.5} className="text-text-primary group-hover:text-primary transition-colors duration-300" />
                     <span className="text-[12px] font-medium text-text-primary">{step.label}</span>
                   </div>
