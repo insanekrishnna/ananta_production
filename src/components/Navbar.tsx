@@ -46,9 +46,11 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button variant="default" size="default" className="hidden md:inline-flex">
-            Book a Call
-          </Button>
+          <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
+            <Button variant="default" size="default" className="hidden md:inline-flex">
+              Book a Call
+            </Button>
+          </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden p-2 text-text-primary"
@@ -71,9 +73,11 @@ const Navbar = () => {
               {link}
             </a>
           ))}
-          <Button variant="default" size="default" className="w-full mt-2">
-            Book a call
-          </Button>
+          <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
+            <Button variant="default" size="default" className="w-full mt-2">
+              Book a call
+            </Button>
+          </a>
         </div>
       )}
     </nav>
