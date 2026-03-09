@@ -13,8 +13,8 @@ const FooterSection = () => {
           {/* Brand col */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <img src={brandLogo} alt="Craft Studio" className="w-7 h-7 object-contain" />
-              <span className="text-[15px] font-semibold text-[#1a1a1a] tracking-tight">Craft Studio</span>
+              <img src={brandLogo} alt="Ananta Production" className="w-7 h-7 object-contain" />
+              <span className="text-[15px] font-semibold text-[#1a1a1a] tracking-tight">Ananta Production</span>
             </div>
             <p className="text-[12px] text-[#999] leading-relaxed max-w-[200px]">{FOOTER.tagline}</p>
             <div className="flex gap-3.5 mt-5">
