@@ -17,23 +17,23 @@ const PricingSection = () => {
           </h2>
 
           {/* Toggle */}
-          <div className="flex items-center bg-secondary rounded-pill p-1 gap-0">
+          <div className="flex items-center bg-[#f5f5f5] rounded-pill p-1 gap-0">
             <button
               onClick={() => setAnnual(false)}
-              className={`px-5 py-2 rounded-pill text-sm font-medium transition-all ${!annual ? "bg-primary text-primary-foreground" : "text-text-secondary"}`}
+              className={`px-5 py-2 rounded-pill text-sm font-medium transition-all ${!annual ? "bg-black text-white" : "text-black/50"}`}
             >
               Monthly
             </button>
             <button
               onClick={() => setAnnual(true)}
-              className={`px-5 py-2 rounded-pill text-sm font-medium transition-all ${annual ? "bg-primary text-primary-foreground" : "text-text-secondary"}`}
+              className={`px-5 py-2 rounded-pill text-sm font-medium transition-all ${annual ? "bg-black text-white" : "text-black/50"}`}
             >
               Annual
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
           {PRICING_PLANS.map((plan, index) => (
             <PricingCard key={plan.name} plan={plan} delay={index * 150} annual={annual} />
           ))}
@@ -51,45 +51,51 @@ const PricingCard = ({ plan, delay, annual }: { plan: typeof PRICING_PLANS[numbe
   return (
     <div
       ref={reveal.ref}
-      className={`rounded-card p-8 border transition-all duration-200 ${reveal.className} ${
-                plan.highlighted
-                  ? "bg-primary text-primary-foreground border-primary scale-[1.02] shadow-[0_16px_48px_rgba(79,70,229,0.25)]"
-                  : "bg-canvas text-text-primary border-input shadow-card"
-              }`}
-            >
-              <div className="text-xl font-semibold mb-2">{plan.name}</div>
-              <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-[40px] font-extrabold leading-none">{displayPrice}</span>
-                {displayPeriod && (
-                  <span className={plan.highlighted ? "text-primary-foreground/60" : "text-text-secondary"}>
-                    {displayPeriod}
-                  </span>
-                )}
-              </div>
-              <p className={`text-sm mb-6 ${plan.highlighted ? "text-primary-foreground/70" : "text-text-secondary"}`}>
-                {plan.description}
-              </p>
+      className={`rounded-2xl p-7 border transition-all duration-300 hover:-translate-y-1 flex flex-col ${reveal.className} ${
+        plan.highlighted
+          ? "bg-black text-white border-black shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] scale-[1.02] relative z-10"
+          : "bg-white text-black border-black/10 shadow-[0_2px_20px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_-8px_rgba(0,0,0,0.12)]"
+      }`}
+    >
+      <div className="text-lg font-bold tracking-tight mb-3">{plan.name}</div>
+      <div className="flex items-baseline gap-1 mb-2">
+        <span className="text-[44px] font-extrabold leading-none tracking-tight">{displayPrice}</span>
+        {displayPeriod && (
+          <span className={`text-sm ${plan.highlighted ? "text-white/50" : "text-black/40"}`}>
+            {displayPeriod}
+          </span>
+        )}
+      </div>
+      <p className={`text-[13px] mb-6 leading-relaxed ${plan.highlighted ? "text-white/60" : "text-black/50"}`}>
+        {plan.description}
+      </p>
 
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm">
-                    <Check
-                      size={16}
-                      strokeWidth={2}
-                      className={plan.highlighted ? "text-primary-foreground/60" : "text-primary"}
-                    />
-                    {f}
-                  </li>
-                ))}
-              </ul>
+      <ul className="space-y-3 mb-8 flex-1">
+        {plan.features.map((f) => (
+          <li key={f} className="flex items-center gap-2.5 text-[13px]">
+            <div className={`w-4.5 h-4.5 rounded-full flex items-center justify-center shrink-0 ${
+              plan.highlighted ? "bg-white/15" : "bg-black/5"
+            }`}>
+              <Check
+                size={12}
+                strokeWidth={2.5}
+                className={plan.highlighted ? "text-white" : "text-black"}
+              />
+            </div>
+            <span className={plan.highlighted ? "text-white/90" : "text-black/80"}>{f}</span>
+          </li>
+        ))}
+      </ul>
 
-              <Button
-                variant={plan.highlighted ? "hero-ghost" : plan.name === "Enterprise" ? "ghost" : "hero-primary"}
-                size="lg"
-                className={`w-full ${plan.highlighted ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90 border-none" : ""}`}
-              >
-                {plan.cta}
-              </Button>
+      <button
+        className={`w-full py-3 rounded-pill text-sm font-semibold transition-all duration-200 ${
+          plan.highlighted
+            ? "bg-white text-black hover:bg-white/90"
+            : "bg-black text-white hover:bg-black/90"
+        }`}
+      >
+        {plan.cta}
+      </button>
     </div>
   );
 };
