@@ -37,7 +37,7 @@ export const FEATURES = [
     body: "We define your brand's DNA — positioning, voice, visual identity — to create a foundation that resonates and endures.",
   },
   {
-    icon: "PenTool" as const,
+    icon: "Layers" as const,
     iconBg: "rgba(16,185,129,0.08)",
     iconColor: "#10B981",
     title: "UI/UX & Product Design",
