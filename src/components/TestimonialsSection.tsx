@@ -1,11 +1,11 @@
 import { TESTIMONIALS } from "@/data/content";
 import { Star, Quote } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import avatarSarah from "@/assets/avatar-sarah.png";
-import avatarDavid from "@/assets/avatar-david.png";
-import avatarElena from "@/assets/avatar-elena.png";
+import avatarMale from "@/assets/avatar-male.png";
+import avatarFemale from "@/assets/avatar-female.png";
 
-const AVATARS = [avatarSarah, avatarDavid, avatarElena];
+// Sarah=female, David=male, Elena=female
+const AVATARS = [avatarFemale, avatarMale, avatarFemale];
 
 const TestimonialsSection = () => {
   const header = useScrollReveal(0);
