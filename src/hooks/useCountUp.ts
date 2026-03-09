@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const useCountUp = (end: number, duration = 2000, suffix = "") => {
   const [value, setValue] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const started = useRef(false);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const useCountUp = (end: number, duration = 2000, suffix = "") => {
           const animate = (now: number) => {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
             setValue(Math.round(eased * end));
             if (progress < 1) requestAnimationFrame(animate);
           };
@@ -27,5 +27,5 @@ export const useCountUp = (end: number, duration = 2000, suffix = "") => {
     return () => observer.disconnect();
   }, [end, duration]);
 
-  return { ref, display: `${value}${suffix}` };
+  return { ref: ref as any, display: `${value}${suffix}` };
 };

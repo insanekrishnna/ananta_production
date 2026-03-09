@@ -88,7 +88,7 @@ const AnalyticsSection = () => {
 
           {/* Card 3: Client Satisfaction */}
           <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
-            <p ref={satisfaction.ref} className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">{satisfaction.display}</p>
+            <span ref={satisfaction.ref} className="block text-[40px] font-extrabold text-text-primary leading-none tracking-tight">{satisfaction.display}</span>
             <p className="text-text-secondary mt-1 font-sans text-sm font-medium">
               Client satisfaction rate
             </p>
