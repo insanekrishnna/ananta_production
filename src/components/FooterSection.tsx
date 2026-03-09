@@ -45,7 +45,7 @@ const FooterSection = () => {
         {/* Bottom bar */}
         <div className="w-full h-px bg-[#e8e8e8] mb-6" />
         <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-[#bbb]">
-          <span>© 2026 Craft Studio</span>
+          <span>© 2026 Ananta Production</span>
           <div className="flex gap-5 mt-2 sm:mt-0">
             <a href="#" className="hover:text-[#1a1a1a] transition-colors duration-200">Privacy Policy</a>
             <a href="#" className="hover:text-[#1a1a1a] transition-colors duration-200">Terms of Service</a>
