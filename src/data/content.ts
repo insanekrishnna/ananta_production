@@ -109,7 +109,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "Studio",
-    price: "$12,500",
+    price: "$999",
     period: "/month",
     description: "For brands that need ongoing creative partnership",
     features: ["Unlimited design requests", "Brand strategy", "UI/UX design", "Motion & animation", "Dedicated art director"],
