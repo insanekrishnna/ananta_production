@@ -46,8 +46,11 @@ const PricingSection = () => {
   );
 };
 
-const PricingCard = ({ plan, delay }: { plan: typeof PRICING_PLANS[number]; delay: number }) => {
+const PricingCard = ({ plan, delay, annual }: { plan: typeof PRICING_PLANS[number]; delay: number; annual: boolean }) => {
   const reveal = useScrollReveal(delay);
+  const displayPrice = annual ? plan.annualPrice : plan.price;
+  const displayPeriod = annual ? plan.annualPeriod : plan.period;
+
   return (
     <div
       ref={reveal.ref}
@@ -59,10 +62,10 @@ const PricingCard = ({ plan, delay }: { plan: typeof PRICING_PLANS[number]; dela
             >
               <div className="text-xl font-semibold mb-2">{plan.name}</div>
               <div className="flex items-baseline gap-1 mb-2">
-                <span className="text-[40px] font-extrabold leading-none">{plan.price}</span>
-                {plan.period && (
+                <span className="text-[40px] font-extrabold leading-none">{displayPrice}</span>
+                {displayPeriod && (
                   <span className={plan.highlighted ? "text-primary-foreground/60" : "text-text-secondary"}>
-                    {plan.period}
+                    {displayPeriod}
                   </span>
                 )}
               </div>
