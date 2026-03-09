@@ -54,7 +54,7 @@ export const FEATURES = [
 
 export const INTEGRATIONS = {
   tag: "Our Process",
-  heading: "A proven creative process that delivers results",
+  heading: "From blank canvas to iconic brand — in six moves",
   body: "From discovery to delivery, our cross-disciplinary team follows a battle-tested methodology — blending strategy, design, and technology at every stage.",
   cta: "See our case studies →",
   apps: [
