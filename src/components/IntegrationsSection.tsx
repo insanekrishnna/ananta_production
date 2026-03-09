@@ -8,7 +8,7 @@ const PROCESS_STEPS = [
   { icon: ChartPie, label: "Strategy" },
   { icon: Layout, label: "Design" },
   { icon: Palette, label: "Refine" },
-  { icon: Rocket, label: "Launch" },
+  { icon: BadgeCheck, label: "Launch" },
 ];
 
 const IntegrationsSection = () => {
