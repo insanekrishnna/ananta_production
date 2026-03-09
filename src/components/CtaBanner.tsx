@@ -8,7 +8,7 @@ const CtaBanner = () => {
           Let's build something extraordinary together
         </h2>
         <p className="text-[15px] text-text-secondary mt-3 max-w-[440px] mx-auto leading-[1.6]">
-          Whether it's a rebrand, a product launch, or a full creative overhaul — we're ready when you are.
+          Whether it's a rebrand, a product launch, or a full creative overhaul - we're ready when you are.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
           <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">

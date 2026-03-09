@@ -34,7 +34,7 @@ export const FEATURES = [
     iconBg: "rgba(79,70,229,0.08)",
     iconColor: "#4F46E5",
     title: "Brand Strategy & Identity",
-    body: "We define your brand's DNA — positioning, voice, visual identity — to create a foundation that resonates and endures.",
+    body: "We define your brand's DNA - positioning, voice, visual identity - to create a foundation that resonates and endures.",
   },
   {
     icon: "Box" as const,
