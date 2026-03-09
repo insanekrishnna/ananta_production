@@ -162,7 +162,7 @@ const AnalyticsSection = () => {
           </div>
         </div>
 
-        <p className="text-center text-[14px] text-primary font-medium mt-12 my-[20px]">
+        <p className="text-center text-[14px] text-primary font-medium mt-4 mb-1">
           Trusted by 20+ Brands Worldwide
         </p>
       </div>
