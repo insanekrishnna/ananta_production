@@ -1,10 +1,10 @@
 import { INTEGRATIONS } from "@/data/content";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import { Search, Users, ChartPie, Layout, Palette, BadgeCheck } from "lucide-react";
+import { Origami, UserCheck, ChartPie, Layout, Palette, BadgeCheck } from "lucide-react";
 
 const PROCESS_STEPS = [
-  { icon: Search, label: "Discovery" },
-  { icon: Users, label: "Audience" },
+  { icon: Origami, label: "Discovery" },
+  { icon: UserCheck, label: "Audience" },
   { icon: ChartPie, label: "Strategy" },
   { icon: Layout, label: "Design" },
   { icon: Palette, label: "Refine" },
