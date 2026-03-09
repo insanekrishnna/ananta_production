@@ -101,7 +101,9 @@ export const PRICING_PLANS = [
   {
     name: "Sprint",
     price: "$99",
+    annualPrice: "$79",
     period: "/project",
+    annualPeriod: "/project",
     description: "Ideal for startups needing a strong visual foundation",
     features: ["Brand identity design", "Logo & color system", "1 landing page", "Social media kit"],
     cta: "Book a call",
@@ -110,7 +112,9 @@ export const PRICING_PLANS = [
   {
     name: "Studio",
     price: "$999",
+    annualPrice: "$799",
     period: "/month",
+    annualPeriod: "/month",
     description: "For brands that need ongoing creative partnership",
     features: ["Unlimited design requests", "Brand strategy", "UI/UX design", "Motion & animation", "Dedicated art director"],
     cta: "Book a call",
@@ -119,7 +123,9 @@ export const PRICING_PLANS = [
   {
     name: "Enterprise",
     price: "Custom",
+    annualPrice: "Custom",
     period: "",
+    annualPeriod: "",
     description: "For organizations with complex creative needs",
     features: ["Full creative team", "Product design", "Brand campaigns", "Video production", "Dedicated account lead"],
     cta: "Contact us",
