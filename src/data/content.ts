@@ -136,8 +136,26 @@ export const PRICING_PLANS = [
 export const FOOTER = {
   tagline: "Full-service creative studio for ambitious brands.",
   columns: [
-    { heading: "Services", links: ["Brand Strategy", "Identity Design", "UI/UX Design", "Web Development", "Motion Design"] },
-    { heading: "Company", links: ["About", "Careers", "Blog", "Press", "Contact"] },
-    { heading: "Resources", links: ["Case Studies", "Design Process", "Style Guides", "FAQ", "Support"] },
+    { heading: "Services", links: [
+      { label: "Brand Strategy" },
+      { label: "Identity Design" },
+      { label: "UI/UX Design" },
+      { label: "Web Development" },
+      { label: "Motion Design" },
+    ]},
+    { heading: "Company", links: [
+      { label: "About", description: "Learn about our story, mission, and the creative minds behind Ananta Production." },
+      { label: "Careers", description: "Join our team of designers, strategists, and builders shaping the future of brands." },
+      { label: "Blog", description: "Insights on design trends, creative processes, and industry perspectives." },
+      { label: "Press", description: "Media coverage, press releases, and brand assets for journalists." },
+      { label: "Contact", description: "Get in touch — we'd love to hear about your next project." },
+    ]},
+    { heading: "Resources", links: [
+      { label: "Case Studies", description: "See how we've helped brands transform through design and strategy." },
+      { label: "Design Process", description: "A look at our end-to-end creative workflow from brief to delivery." },
+      { label: "Style Guides", description: "Templates and guidelines to maintain consistent brand identity." },
+      { label: "FAQ", description: "Answers to common questions about our services, pricing, and timelines." },
+      { label: "Support", description: "Need help? Reach out to our support team for quick assistance." },
+    ]},
   ],
 };
