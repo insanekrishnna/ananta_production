@@ -4,32 +4,35 @@ import brandLogo from "@/assets/brand-logo.png";
 
 const FooterSection = () => {
   return (
-    <footer className="border-t border-input px-4 md:px-10 pt-12 pb-8">
-      <div className="max-w-canvas mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+    <footer className="px-4 md:px-10 pt-12 pb-8">
+      <div className="max-w-[900px] mx-auto">
+        {/* Thin separator */}
+        <div className="w-full h-px bg-[#e8e8e8] mb-10" />
+
+        <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1fr_1fr_1fr] gap-8 mb-10">
           {/* Brand col */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-2">
-              <img src={brandLogo} alt="Craft Studio" className="w-8 h-8 object-contain" />
-              <span className="text-lg font-bold text-text-primary">Craft Studio</span>
+            <div className="flex items-center gap-2 mb-3">
+              <img src={brandLogo} alt="Craft Studio" className="w-7 h-7 object-contain" />
+              <span className="text-[15px] font-semibold text-[#1a1a1a] tracking-tight">Craft Studio</span>
             </div>
-            <p className="text-sm text-muted-foreground mt-2">{FOOTER.tagline}</p>
-            <div className="flex gap-4 mt-6">
-              <Twitter size={20} className="text-muted-foreground hover:text-text-primary cursor-pointer transition-colors" />
-              <Linkedin size={20} className="text-muted-foreground hover:text-text-primary cursor-pointer transition-colors" />
-              <Github size={20} className="text-muted-foreground hover:text-text-primary cursor-pointer transition-colors" />
+            <p className="text-[12px] text-[#999] leading-relaxed max-w-[200px]">{FOOTER.tagline}</p>
+            <div className="flex gap-3.5 mt-5">
+              <Twitter size={16} strokeWidth={1.5} className="text-[#bbb] hover:text-[#1a1a1a] cursor-pointer transition-colors duration-200" />
+              <Linkedin size={16} strokeWidth={1.5} className="text-[#bbb] hover:text-[#1a1a1a] cursor-pointer transition-colors duration-200" />
+              <Github size={16} strokeWidth={1.5} className="text-[#bbb] hover:text-[#1a1a1a] cursor-pointer transition-colors duration-200" />
             </div>
           </div>
 
           {FOOTER.columns.map((col) => (
             <div key={col.heading}>
-              <div className="text-[13px] font-semibold uppercase tracking-[0.08em] text-muted-foreground mb-4">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#1a1a1a] mb-4">
                 {col.heading}
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <a href="#" className="text-sm text-text-secondary hover:text-text-primary transition-colors">
+                    <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors duration-200">
                       {link}
                     </a>
                   </li>
@@ -39,11 +42,13 @@ const FooterSection = () => {
           ))}
         </div>
 
-        <div className="border-t border-input pt-8 flex flex-col sm:flex-row justify-between text-sm text-muted-foreground">
+        {/* Bottom bar */}
+        <div className="w-full h-px bg-[#e8e8e8] mb-6" />
+        <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-[#bbb]">
           <span>© 2026 Craft Studio</span>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-text-primary transition-colors">Terms of Service</a>
+          <div className="flex gap-5 mt-2 sm:mt-0">
+            <a href="#" className="hover:text-[#1a1a1a] transition-colors duration-200">Privacy Policy</a>
+            <a href="#" className="hover:text-[#1a1a1a] transition-colors duration-200">Terms of Service</a>
           </div>
         </div>
       </div>
