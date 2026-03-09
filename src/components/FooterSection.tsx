@@ -33,7 +33,7 @@ const FooterLink = ({ link, isOpen, onToggle }: { link: { label: string; descrip
 };
 
 const FooterSection = () => {
-  return (
+  const [openLink, setOpenLink] = useState<string | null>(null);
     <footer className="px-4 md:px-10 pt-12 pb-8">
       <div className="max-w-[900px] mx-auto">
         {/* Thin separator */}
