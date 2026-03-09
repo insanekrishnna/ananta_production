@@ -70,7 +70,8 @@ const ExpertiseMapSection = () => {
             const rad = (angle * Math.PI) / 180;
             const rx = 22;
             const ry = 28;
-            const cx = 50 + rx * Math.cos(rad);
+            const offsetX = service.label === "data integrations" ? 6 : 0;
+            const cx = 50 + rx * Math.cos(rad) + offsetX;
             const cy = 50 + ry * Math.sin(rad);
             return (
               <div
