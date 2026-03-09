@@ -1,6 +1,38 @@
+import { useState } from "react";
 import { FOOTER } from "@/data/content";
 import { Twitter, Linkedin, Github } from "lucide-react";
 import brandLogo from "@/assets/brand-logo.png";
+
+const FooterLink = ({ link }: { link: { label: string; description?: string } }) => {
+  const [showCard, setShowCard] = useState(false);
+
+  if (!link.description) {
+    return (
+      <li>
+        <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors duration-200">
+          {link.label}
+        </a>
+      </li>
+    );
+  }
+
+  return (
+    <li className="relative">
+      <button
+        onClick={() => setShowCard((prev) => !prev)}
+        className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors duration-200 text-left"
+      >
+        {link.label}
+      </button>
+      {showCard && (
+        <div className="absolute left-0 bottom-full mb-2 z-50 w-[220px] bg-background border border-input rounded-[12px] shadow-[0_8px_30px_rgba(0,0,0,0.10)] p-3 animate-in fade-in-0 zoom-in-95 duration-200">
+          <p className="text-[11px] font-semibold text-text-primary mb-1">{link.label}</p>
+          <p className="text-[11px] text-text-secondary leading-relaxed">{link.description}</p>
+        </div>
+      )}
+    </li>
+  );
+};
 
 const FooterSection = () => {
   return (
@@ -13,8 +45,8 @@ const FooterSection = () => {
           {/* Brand col */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-3">
-              <img src={brandLogo} alt="Craft Studio" className="w-7 h-7 object-contain" />
-              <span className="text-[15px] font-semibold text-[#1a1a1a] tracking-tight">Craft Studio</span>
+              <img src={brandLogo} alt="Ananta Production" className="w-7 h-7 object-contain" />
+              <span className="text-[15px] font-semibold text-[#1a1a1a] tracking-tight">Ananta Production</span>
             </div>
             <p className="text-[12px] text-[#999] leading-relaxed max-w-[200px]">{FOOTER.tagline}</p>
             <div className="flex gap-3.5 mt-5">
@@ -31,11 +63,7 @@ const FooterSection = () => {
               </div>
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-[12px] text-[#999] hover:text-[#1a1a1a] transition-colors duration-200">
-                      {link}
-                    </a>
-                  </li>
+                  <FooterLink key={link.label} link={link} />
                 ))}
               </ul>
             </div>
@@ -45,7 +73,7 @@ const FooterSection = () => {
         {/* Bottom bar */}
         <div className="w-full h-px bg-[#e8e8e8] mb-6" />
         <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-[#bbb]">
-          <span>© 2026 Craft Studio</span>
+          <span>© 2026 Ananta Production</span>
           <div className="flex gap-5 mt-2 sm:mt-0">
             <a href="#" className="hover:text-[#1a1a1a] transition-colors duration-200">Privacy Policy</a>
             <a href="#" className="hover:text-[#1a1a1a] transition-colors duration-200">Terms of Service</a>
