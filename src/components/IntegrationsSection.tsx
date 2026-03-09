@@ -26,7 +26,7 @@ const IntegrationsSection = () => {
           <h2 className="text-[32px] md:text-[36px] text-text-primary leading-[1.2] mb-4 font-medium">
             {INTEGRATIONS.heading}
           </h2>
-          <p className="text-base text-text-secondary leading-[1.65]">{INTEGRATIONS.body}</p>
+          
         </div>
 
         {/* Horizontal Flow */}
