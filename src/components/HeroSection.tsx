@@ -139,7 +139,7 @@ const HeroSection = () => {
       )}
 
       {/* Content */}
-      <div ref={containerRef} className="relative z-10 text-center px-[16px] py-[100px] items-center justify-start flex flex-col gap-0">
+      <div ref={containerRef} className="relative z-10 text-center px-[16px] items-center justify-start flex flex-col gap-0 py-[10px]">
         <h1
           className="text-[36px] md:text-[56px] font-extrabold leading-[1.1] tracking-[-0.02em] text-text-primary max-w-[960px] animate-hero-fade">
           
