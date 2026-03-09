@@ -3,7 +3,7 @@ import { NAV_LINKS } from "@/data/content";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/brand-logo.png";
-import ThemeToggle from "@/components/ThemeToggle";
+
 
 const sectionMap: Record<string, string> = {
   Home: "hero",
@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50">
       <div className="h-16 flex items-center justify-between px-4 md:px-10 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <img src={logo} alt="Ananta Production" className="w-[22px] h-[22px] object-contain" />
         </div>
 
@@ -45,8 +45,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+        <div className="flex items-center gap-3">
           <a href="https://calendly.com/iiprathamyadav/30min" target="_blank" rel="noopener noreferrer">
             <Button variant="default" size="default" className="hidden md:inline-flex">
               Book a Call

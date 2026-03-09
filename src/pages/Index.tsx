@@ -3,7 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import LogoStrip from "@/components/LogoStrip";
 import InteractiveHeadline from "@/components/InteractiveHeadline";
 import AnalyticsSection from "@/components/AnalyticsSection";
-import ExpertiseMapSection from "@/components/ExpertiseMapSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -20,7 +19,6 @@ const Index = () => {
         <InteractiveHeadline />
         <AnalyticsSection />
         <LogoStrip />
-        <ExpertiseMapSection />
         <IntegrationsSection />
         <FeaturesSection />
         <TestimonialsSection />
