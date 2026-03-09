@@ -40,10 +40,10 @@ const FooterSection = () => {
   };
 
   return (
-    <footer className="px-4 md:px-10 pt-16 pb-10">
+    <footer className="px-4 md:px-10 pt-10 pb-6">
       <div className="max-w-[900px] mx-auto">
-        {/* Two-column: brand left, form right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="w-full h-px bg-border mb-8" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {/* Left: Brand info */}
           <div className="flex flex-col items-start">
             <img src={brandLogo} alt="Ananta Production" className="w-10 h-10 object-contain mb-4" />
