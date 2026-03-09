@@ -20,9 +20,6 @@ const IntegrationsSection = () => {
       <div className="max-w-canvas mx-auto">
         {/* Header */}
         <div ref={header.ref} className={`mb-12 max-w-2xl ${header.className}`}>
-          <span className="bg-primary/10 text-primary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] inline-block mb-4">
-            {INTEGRATIONS.tag}
-          </span>
           <h2 className="text-[32px] md:text-[36px] text-text-primary leading-[1.2] font-medium">
             {INTEGRATIONS.heading}
           </h2>
