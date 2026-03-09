@@ -112,7 +112,7 @@ export const PRICING_PLANS = [
   {
     name: "Studio",
     price: "$999",
-    annualPrice: "$799",
+    annualPrice: "$899",
     period: "/month",
     annualPeriod: "/month",
     description: "For brands that need ongoing creative partnership",
