@@ -44,7 +44,7 @@ export const FEATURES = [
     body: "Human-centered interfaces crafted for clarity and delight. From wireframes to pixel-perfect design systems.",
   },
   {
-    icon: "Sparkles" as const,
+    icon: "Earth" as const,
     iconBg: "rgba(245,158,11,0.08)",
     iconColor: "#F59E0B",
     title: "Web & Motion Design",
