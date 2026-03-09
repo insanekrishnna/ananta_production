@@ -40,15 +40,15 @@ const FooterSection = () => {
   };
 
   return (
-    <footer className="px-4 md:px-10 pt-16 pb-10">
+    <footer className="px-4 md:px-10 pt-10 pb-6">
       <div className="max-w-[900px] mx-auto">
-        {/* Two-column: brand left, form right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="w-full h-px bg-border mb-8" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           {/* Left: Brand info */}
           <div className="flex flex-col items-start">
-            <img src={brandLogo} alt="Ananta Production" className="w-10 h-10 object-contain mb-4" />
-            <span className="text-[16px] font-semibold text-text-primary tracking-tight mb-2">Ananta Production</span>
-            <p className="text-[13px] text-muted-foreground leading-relaxed max-w-[260px] mb-6">
+            <img src={brandLogo} alt="Ananta Production" className="w-8 h-8 object-contain mb-3" />
+            <span className="text-[15px] font-semibold text-text-primary tracking-tight mb-1.5">Ananta Production</span>
+            <p className="text-[12px] text-muted-foreground leading-relaxed max-w-[240px] mb-4">
               {FOOTER.tagline}
             </p>
             <div className="flex gap-4">
@@ -100,7 +100,7 @@ const FooterSection = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="w-full h-px bg-border mb-8" />
+        <div className="w-full h-px bg-border mb-5" />
         <div className="flex flex-col sm:flex-row justify-between items-center text-[11px] text-muted-foreground">
           <span>© 2026 Ananta Production</span>
           <div className="flex gap-6 mt-2 sm:mt-0">
