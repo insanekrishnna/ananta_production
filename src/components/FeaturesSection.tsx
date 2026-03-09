@@ -11,9 +11,6 @@ const FeaturesSection = () => {
     <section id="features" className="py-16 px-4 md:px-10">
       <div className="max-w-canvas mx-auto">
         <div ref={header.ref} className={`flex flex-col items-center mb-10 ${header.className}`}>
-          <span className="bg-secondary text-text-secondary rounded-pill px-4 py-1 text-[13px] font-semibold uppercase tracking-[0.08em] mb-4">
-            Features
-          </span>
           <h2 className="text-[32px] md:text-[36px] font-bold text-text-primary max-w-[560px] leading-[1.2] text-left">
             Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results.
           </h2>
