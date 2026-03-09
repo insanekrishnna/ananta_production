@@ -23,9 +23,6 @@ const IntegrationsSection = () => {
           <h2 className="text-[28px] md:text-[36px] text-text-primary leading-[1.2] font-medium mb-3">
             {INTEGRATIONS.heading}
           </h2>
-          <p className="text-base text-text-secondary leading-[1.65]">
-            Our cross-disciplinary team combines strategy, branding, UX design, and technology for swift, impactful results.
-          </p>
         </div>
 
         {/* Single-row flow with connecting line */}
