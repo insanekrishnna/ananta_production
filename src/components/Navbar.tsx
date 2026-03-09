@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50">
       <div className="h-16 flex items-center justify-between px-4 md:px-10 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="Stacker logo" className="w-7 h-7 object-contain" />
+          <img src={logo} alt="Stacker logo" className="w-[22px] h-[22px] object-contain" />
           
         </div>
 
