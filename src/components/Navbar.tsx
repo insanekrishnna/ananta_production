@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NAV_LINKS } from "@/data/content";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/brand-logo.png";
 
@@ -26,10 +25,9 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50">
-      <div className="h-16 flex items-center justify-between px-4 md:px-10 backdrop-blur-[12px] bg-canvas/85 border-b border-input">
+      <div className="h-16 flex items-center justify-between px-4 md:px-10 backdrop-blur-[12px] bg-canvas/85 border-b border-[#e8e8e8]">
         <div className="flex items-center gap-2">
           <img src={logo} alt="Stacker logo" className="w-7 h-7 object-contain" />
-          
         </div>
 
         <div className="hidden md:flex items-center gap-10">
@@ -38,7 +36,7 @@ const Navbar = () => {
               key={link}
               href={`#${sectionMap[link]}`}
               onClick={(e) => handleClick(e, link)}
-              className="text-[15px] font-medium text-text-nav hover:text-primary transition-colors duration-150"
+              className="text-[14px] font-medium text-[#666] hover:text-[#1a1a1a] transition-colors duration-150"
             >
               {link}
             </a>
@@ -46,12 +44,12 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button variant="default" size="default" className="hidden md:inline-flex">
-            
-          </Button>
+          <button className="hidden md:inline-flex bg-[#1a1a1a] text-white rounded-pill px-5 py-2 text-[13px] font-semibold hover:bg-black transition-colors">
+            Get Started
+          </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-text-primary"
+            className="md:hidden p-2 text-[#1a1a1a]"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -60,20 +58,20 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden backdrop-blur-[12px] bg-canvas/95 border-b border-input px-4 pb-4 pt-2 flex flex-col gap-3">
+        <div className="md:hidden backdrop-blur-[12px] bg-canvas/95 border-b border-[#e8e8e8] px-4 pb-4 pt-2 flex flex-col gap-3">
           {NAV_LINKS.map((link) => (
             <a
               key={link}
               href={`#${sectionMap[link]}`}
               onClick={(e) => handleClick(e, link)}
-              className="text-[15px] font-medium text-text-nav hover:text-primary transition-colors duration-150 py-2"
+              className="text-[14px] font-medium text-[#666] hover:text-[#1a1a1a] transition-colors duration-150 py-2"
             >
               {link}
             </a>
           ))}
-          <Button variant="default" size="default" className="w-full mt-2">
+          <button className="w-full mt-2 bg-[#1a1a1a] text-white rounded-pill px-5 py-2.5 text-[13px] font-semibold">
             Get Started
-          </Button>
+          </button>
         </div>
       )}
     </nav>
