@@ -1,8 +1,8 @@
 import { FEATURES } from "@/data/content";
-import { Compass, PenTool, Sparkles } from "lucide-react";
+import { Compass, PenTool, Earth } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const iconMap = { Compass, PenTool, Sparkles } as const;
+const iconMap = { Compass, PenTool, Earth } as const;
 
 const FeaturesSection = () => {
   const header = useScrollReveal(0);
