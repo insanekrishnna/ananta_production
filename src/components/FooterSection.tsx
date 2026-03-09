@@ -61,7 +61,12 @@ const FooterSection = () => {
               </div>
               <ul className="space-y-2.5">
                 {col.links.map((link) => (
-                  <FooterLink key={link.label} link={link} />
+                  <FooterLink
+                    key={link.label}
+                    link={link}
+                    isOpen={openLink === link.label}
+                    onToggle={() => setOpenLink((prev) => prev === link.label ? null : link.label)}
+                  />
                 ))}
               </ul>
             </div>
