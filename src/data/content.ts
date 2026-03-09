@@ -100,7 +100,7 @@ export const TESTIMONIALS = [
 export const PRICING_PLANS = [
   {
     name: "Sprint",
-    price: "$4,900",
+    price: "$99",
     period: "/project",
     description: "Ideal for startups needing a strong visual foundation",
     features: ["Brand identity design", "Logo & color system", "1 landing page", "Social media kit"],
@@ -109,7 +109,7 @@ export const PRICING_PLANS = [
   },
   {
     name: "Studio",
-    price: "$12,500",
+    price: "$999",
     period: "/month",
     description: "For brands that need ongoing creative partnership",
     features: ["Unlimited design requests", "Brand strategy", "UI/UX design", "Motion & animation", "Dedicated art director"],
