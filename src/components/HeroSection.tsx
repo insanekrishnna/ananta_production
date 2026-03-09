@@ -8,6 +8,7 @@ import pinterestLogo from "@/assets/pinterest-logo.png";
 import dribbbleLogo from "@/assets/dribbble-logo-new.png";
 import samukCard from "@/assets/samuk-card.png";
 import brandLogo from "@/assets/sidebar-logo.png";
+import VideoModal from "@/components/VideoModal";
 
 const iconMap: Record<string, LucideIcon> = {
   Browser: Globe,
