@@ -40,7 +40,7 @@ const FeatureCard = ({
   return (
     <div
       ref={reveal.ref}
-      className={`bg-canvas border border-input rounded-card p-6 hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300 group ${reveal.className}`}
+      className={`bg-canvas border border-input rounded-card p-5 hover:shadow-float-hover hover:-translate-y-1 transition-all duration-300 group ${reveal.className}`}
     >
       <div className="w-10 h-10 rounded-full bg-muted/40 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors duration-300">
         <Icon size={18} strokeWidth={1.2} className="text-text-primary" />
