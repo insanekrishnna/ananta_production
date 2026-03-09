@@ -1,22 +1,14 @@
-import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette, Circle } from "lucide-react";
+import { Users, CheckCircle2, Video, ChevronDown, ThumbsUp, Repeat, Clock, TrendingUp, Palette } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-
-const barData = {
-  labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-  purple: [30, 45, 60, 35, 70, 90, 50],
-  green: [20, 35, 50, 30, 45, 65, 40]
-};
-
-
+import { useCountUp } from "@/hooks/useCountUp";
 
 const tasks = [
-{ title: "Concept Sketching", completed: true },
-{ title: "Grid Alignment", completed: true },
-{ title: "Brand Audit & Research", completed: true },
-{ title: "Final Mark", completed: true },
-{ title: "Final Identity Delivery", completed: true }];
-
-
+  { title: "Concept Sketching", completed: true },
+  { title: "Grid Alignment", completed: true },
+  { title: "Brand Audit & Research", completed: true },
+  { title: "Final Mark", completed: true },
+  { title: "Final Identity Delivery", completed: true },
+];
 
 const AnalyticsSection = () => {
   const header = useScrollReveal(0);
@@ -24,6 +16,14 @@ const AnalyticsSection = () => {
   const card2 = useScrollReveal(150);
   const card3 = useScrollReveal(300);
   const card4 = useScrollReveal(450);
+
+  const satisfaction = useCountUp(96, 2000, "%");
+  const happyClients = useCountUp(20, 1500, "+");
+  const repeatRate = useCountUp(78, 1800, "%");
+  const mainPercent = useCountUp(84, 2000, "%");
+  const delivered = useCountUp(62, 1800, "%");
+  const inProgress = useCountUp(22, 1600, "%");
+  const growth = useCountUp(34, 1800, "%");
 
   return (
     <section id="analytics" className="pt-0 pb-3 px-4 md:px-[40px]">
@@ -50,19 +50,19 @@ const AnalyticsSection = () => {
                   <circle cx="50" cy="50" r="38" fill="none" stroke="hsl(var(--primary))" strokeWidth="12" strokeDasharray={`${0.62 * 238.76} ${238.76}`} strokeLinecap="round" />
                   <circle cx="50" cy="50" r="38" fill="none" stroke="hsl(200 80% 55%)" strokeWidth="12" strokeDasharray={`${0.12 * 238.76} ${238.76}`} strokeDashoffset={`${-0.62 * 238.76}`} strokeLinecap="round" />
                 </svg>
-                <div className="absolute inset-0 flex items-center justify-center text-accent">
-                  <span className="text-[24px] font-bold text-text-primary leading-none text-card-foreground">84%</span>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span ref={mainPercent.ref} className="text-[24px] font-bold text-text-primary leading-none">{mainPercent.display}</span>
                 </div>
               </div>
             </div>
             <div className="flex justify-between text-center px-2">
               <div>
                 <p className="text-[11px] text-text-secondary">Delivered</p>
-                <p className="text-[20px] font-bold text-text-primary">62%</p>
+                <span ref={delivered.ref} className="block text-[20px] font-bold text-text-primary">{delivered.display}</span>
               </div>
               <div>
                 <p className="text-[11px] text-text-secondary">In progress</p>
-                <p className="text-[20px] font-bold text-text-primary">22%</p>
+                <span ref={inProgress.ref} className="block text-[20px] font-bold text-text-primary">{inProgress.display}</span>
               </div>
             </div>
           </div>
@@ -77,30 +77,28 @@ const AnalyticsSection = () => {
               <span className="text-white/40 text-xl leading-none self-start">•••</span>
             </div>
             <div className="flex flex-col gap-3">
-              {tasks.map((task) =>
-              <div key={task.title} className="flex items-center gap-2.5">
+              {tasks.map((task) => (
+                <div key={task.title} className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-white/70 flex-shrink-0" />
-                  <span className="text-[13px] text-white/90 font-medium">
-                    {task.title}
-                  </span>
+                  <span className="text-[13px] text-white/90 font-medium">{task.title}</span>
                 </div>
-              )}
+              ))}
             </div>
           </div>
 
           {/* Card 3: Client Satisfaction */}
           <div ref={card3.ref} className={`bg-canvas border border-input rounded-[16px] p-6 shadow-float ${card3.className}`}>
-            <p className="text-[40px] font-extrabold text-text-primary leading-none tracking-tight">96%</p>
+            <span ref={satisfaction.ref} className="block text-[40px] font-extrabold text-text-primary leading-none tracking-tight">{satisfaction.display}</span>
             <p className="text-text-secondary mt-1 font-sans text-sm font-medium">
               Client satisfaction rate
             </p>
             <div className="flex flex-col gap-3 mt-5">
               {[
-              { icon: ThumbsUp, label: "Happy clients", value: "20+" },
-              { icon: Repeat, label: "Repeat rate", value: "78%" },
-              { icon: Clock, label: "Avg. delivery", value: "12 days" },
-              { icon: TrendingUp, label: "YoY growth", value: "+34%" }].
-              map((item) => {
+                { icon: ThumbsUp, label: "Happy clients", ref: happyClients.ref, value: happyClients.display },
+                { icon: Repeat, label: "Repeat rate", ref: repeatRate.ref, value: repeatRate.display },
+                { icon: Clock, label: "Avg. delivery", value: "12 days" },
+                { icon: TrendingUp, label: "YoY growth", ref: growth.ref, value: `+${growth.display}` },
+              ].map((item) => {
                 const Icon = item.icon;
                 return (
                   <div key={item.label} className="flex items-center justify-between">
@@ -108,9 +106,9 @@ const AnalyticsSection = () => {
                       <Icon size={15} strokeWidth={1.5} className="text-text-secondary opacity-100 shadow-none" />
                       <span className="text-[13px] text-text-secondary font-medium">{item.label}</span>
                     </div>
-                    <span className="text-[13px] font-semibold text-text-primary">{item.value}</span>
-                  </div>);
-
+                    <span ref={item.ref} className="text-[13px] font-semibold text-text-primary">{item.value}</span>
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -120,21 +118,17 @@ const AnalyticsSection = () => {
             <div className="bg-canvas border border-input rounded-[16px] p-4 shadow-float flex-1">
               <div className="flex items-center justify-between mb-2">
                 <h3 className="text-[14px] font-bold text-text-primary">Rebrand Campaign</h3>
-                <span className="text-[11px] font-semibold text-destructive bg-destructive/10 rounded-pill px-2 py-0.5">
-                  ↑ Priority
-                </span>
+                <span className="text-[11px] font-semibold text-destructive bg-destructive/10 rounded-pill px-2 py-0.5">↑ Priority</span>
               </div>
               <p className="text-[12px] text-text-secondary leading-[1.5] mb-3">
                 Complete visual overhaul for Samuk - logo, typography, color system, and brand guidelines.
               </p>
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
-                  {["hsl(var(--primary))", "hsl(160 84% 39%)", "hsl(32 95% 44%)"].map((bg, i) =>
-                  <div key={i} className="w-6 h-6 rounded-full border-2 border-canvas" style={{ backgroundColor: bg }} />
-                  )}
-                  <div className="w-6 h-6 rounded-full border-2 border-canvas bg-muted text-[8px] font-bold text-text-secondary flex items-center justify-center">
-                    +2
-                  </div>
+                  {["hsl(var(--primary))", "hsl(160 84% 39%)", "hsl(32 95% 44%)"].map((bg, i) => (
+                    <div key={i} className="w-6 h-6 rounded-full border-2 border-canvas" style={{ backgroundColor: bg }} />
+                  ))}
+                  <div className="w-6 h-6 rounded-full border-2 border-canvas bg-muted text-[8px] font-bold text-text-secondary flex items-center justify-center">+2</div>
                 </div>
                 <div className="flex-1 h-1.5 bg-secondary rounded-pill overflow-hidden">
                   <div className="h-full bg-primary rounded-pill" style={{ width: "72%" }} />
@@ -147,8 +141,7 @@ const AnalyticsSection = () => {
               <div className="flex items-center justify-between mb-3">
                 <h3 className="text-[14px] font-bold text-text-primary">Creative Sync</h3>
                 <button className="flex items-center gap-1 text-[11px] font-semibold text-primary border border-primary/20 rounded-pill px-2.5 py-1 hover:bg-primary/5 transition-colors">
-                  <Users className="w-3 h-3" />
-                  Join
+                  <Users className="w-3 h-3" />Join
                 </button>
               </div>
               <div className="flex items-center gap-2.5">
@@ -166,8 +159,8 @@ const AnalyticsSection = () => {
           Trusted by 20+ Brands Worldwide
         </p>
       </div>
-    </section>);
-
+    </section>
+  );
 };
 
 export default AnalyticsSection;

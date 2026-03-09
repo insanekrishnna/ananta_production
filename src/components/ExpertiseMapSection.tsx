@@ -1,123 +1,101 @@
-import { Users, ContactRound, LayoutDashboard, Database, Workflow, Blocks, ShieldCheck } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
-import brandLogo from "@/assets/brand-logo.png";
+import { useRef } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-const CORE_SERVICES: { label: string; icon: LucideIcon }[] = [
-  { label: "client portals", icon: Users },
-  { label: "CRM tools", icon: ContactRound },
-  { label: "internal dashboards", icon: LayoutDashboard },
-  { label: "data integrations", icon: Database },
-  { label: "workflow automation", icon: Workflow },
-  { label: "no-code apps", icon: Blocks },
-  { label: "custom permissions", icon: ShieldCheck },
-];
-
-const SECONDARY_SERVICES_LEFT = [
-  { label: "airtable sync", top: "8%", left: "8%" },
-  { label: "google sheets", top: "30%", left: "1%" },
-  { label: "form builders", top: "56%", left: "1%" },
-  { label: "email notifications", top: "78%", left: "8%" },
-];
-
-const SECONDARY_SERVICES_RIGHT = [
-  { label: "REST APIs", top: "8%", right: "8%" },
-  { label: "role-based access", top: "30%", right: "1%" },
-  { label: "custom domains", top: "56%", right: "1%" },
-  { label: "SSO", top: "42%", right: "14%" },
-  { label: "embedded analytics", top: "78%", right: "6%" },
+const CASE_STUDIES = [
+  {
+    title: "Samuk",
+    category: "Brand Identity",
+    color: "hsl(var(--primary))",
+    gradient: "from-[hsl(243,75%,59%)] to-[hsl(243,75%,40%)]",
+  },
+  {
+    title: "Avtar®",
+    category: "Visual System",
+    color: "hsl(160, 84%, 39%)",
+    gradient: "from-[hsl(160,84%,39%)] to-[hsl(160,84%,25%)]",
+  },
+  {
+    title: "Twinkle",
+    category: "Motion Design",
+    color: "hsl(32, 95%, 44%)",
+    gradient: "from-[hsl(32,95%,44%)] to-[hsl(32,95%,30%)]",
+  },
+  {
+    title: "Rabbit",
+    category: "Product Design",
+    color: "hsl(0, 84%, 60%)",
+    gradient: "from-[hsl(0,84%,60%)] to-[hsl(0,84%,40%)]",
+  },
+  {
+    title: "Cont.",
+    category: "Web Experience",
+    color: "hsl(220, 13%, 26%)",
+    gradient: "from-[hsl(220,13%,26%)] to-[hsl(220,13%,14%)]",
+  },
 ];
 
 const ExpertiseMapSection = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const header = useScrollReveal(0);
+
   return (
-    <section id="expertise" className="py-8 px-4 bg-canvas">
-      <div className="max-w-[760px] mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
-          What We Build
-        </h2>
-
-        {/* Mobile: 2-column grid */}
-        <div className="grid grid-cols-2 gap-3 md:hidden">
-          {CORE_SERVICES.map((service) => (
-            <CorePill key={service.label} Icon={service.icon} label={service.label} />
-          ))}
-        </div>
-
-        {/* Desktop: SVG circle map */}
-        <div className="relative w-full hidden md:block" style={{ aspectRatio: "5 / 3" }}>
-          <svg
-            className="absolute inset-0 w-full h-full"
-            viewBox="0 0 500 300"
-            fill="none"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <circle cx="250" cy="150" r="140" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
-            <circle cx="250" cy="150" r="85" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" fill="none" />
-            <line x1="30" y1="150" x2="470" y2="150" stroke="#dcdcdc" strokeWidth="1" strokeDasharray="4 6" />
-            <circle cx="38" cy="150" r="2.5" fill="#1a1a1a" />
-            <circle cx="462" cy="150" r="2.5" fill="#1a1a1a" />
-          </svg>
-
-          {/* Center logo */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-            <img src={brandLogo} alt="Brand logo" className="w-10 h-10 object-contain" />
+    <section id="expertise" className="py-12 px-0">
+      <div className="max-w-canvas mx-auto px-4 md:px-10">
+        <div ref={header.ref} className={`flex items-end justify-between mb-8 ${header.className}`}>
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-2">Selected Work</p>
+            <h2 className="text-[28px] md:text-[36px] font-bold text-text-primary leading-[1.1] tracking-tight">
+              Case Studies
+            </h2>
           </div>
+          <button
+            onClick={() => scrollRef.current?.scrollBy({ left: 340, behavior: "smooth" })}
+            className="hidden md:flex items-center gap-1 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Scroll →
+          </button>
+        </div>
+      </div>
 
-          {/* Axis labels */}
-          <span className="absolute left-1 top-1/2 -translate-y-1/2 text-xs font-semibold text-text-primary">
-            Data
-          </span>
-          <span className="absolute right-1 top-1/2 -translate-y-1/2 text-xs font-semibold text-text-primary">
-            Tools
-          </span>
+      {/* Horizontal scroll container */}
+      <div
+        ref={scrollRef}
+        className="flex gap-5 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 md:px-10 pb-4"
+        style={{ scrollbarWidth: "none" }}
+      >
+        {CASE_STUDIES.map((study, i) => (
+          <div
+            key={study.title}
+            className={`shrink-0 w-[280px] md:w-[340px] h-[420px] rounded-2xl bg-gradient-to-br ${study.gradient} snap-start relative overflow-hidden group cursor-pointer`}
+          >
+            {/* Minimal text overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+              <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-white/50 mb-1">
+                {study.category}
+              </p>
+              <h3 className="text-[28px] font-bold text-white leading-none tracking-tight">
+                {study.title}
+              </h3>
+            </div>
 
-          {/* Core service pills */}
-          {CORE_SERVICES.map((service, i) => {
-            const total = CORE_SERVICES.length;
-            const angle = -90 + (i * 360) / total;
-            const rad = (angle * Math.PI) / 180;
-            const rx = 22;
-            const ry = 28;
-            const offsetX = service.label === "data integrations" ? 6 : 0;
-            const cx = 50 + rx * Math.cos(rad) + offsetX;
-            const cy = 50 + ry * Math.sin(rad);
-            return (
-              <div
-                key={service.label}
-                className="absolute -translate-x-1/2 -translate-y-1/2"
-                style={{ top: `${cy}%`, left: `${cx}%` }}
-              >
-                <CorePill Icon={service.icon} label={service.label} />
-              </div>
-            );
-          })}
+            {/* Hover overlay */}
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
 
-          {/* Secondary pills */}
-          {SECONDARY_SERVICES_LEFT.map((s) => (
-            <SecondaryPill key={s.label} label={s.label} style={{ top: s.top, left: s.left }} />
-          ))}
-          {SECONDARY_SERVICES_RIGHT.map((s) => (
-            <SecondaryPill key={s.label} label={s.label} style={{ top: s.top, right: s.right }} />
-          ))}
+            {/* Number */}
+            <span className="absolute top-5 right-6 text-[11px] font-semibold text-white/30">
+              0{i + 1}
+            </span>
+          </div>
+        ))}
+
+        {/* CTA card */}
+        <div className="shrink-0 w-[280px] md:w-[340px] h-[420px] rounded-2xl border border-input bg-canvas snap-start flex flex-col items-center justify-center gap-3 group cursor-pointer hover:border-primary/30 transition-colors duration-300">
+          <span className="text-[36px] font-extralight text-text-secondary group-hover:text-primary transition-colors duration-300">→</span>
+          <span className="text-[13px] font-medium text-text-secondary group-hover:text-text-primary transition-colors">View all work</span>
         </div>
       </div>
     </section>
   );
 };
-
-const CorePill = ({ Icon, label }: { Icon: LucideIcon; label: string }) => (
-  <span className="inline-flex items-center gap-1.5 bg-[#1a1a1a] text-white rounded-[999px] px-4 py-2 text-[13px] font-medium cursor-default transition-transform duration-200 hover:scale-105 hover:shadow-lg">
-    <Icon size={14} className="text-white" />
-    {label}
-  </span>
-);
-
-const SecondaryPill = ({ label, style }: { label: string; style: React.CSSProperties }) => (
-  <span
-    className="absolute hidden md:inline-flex items-center rounded-[999px] border border-[#e0e0e0] bg-white/60 px-3 py-1 text-[11px] font-medium text-muted-foreground opacity-50 cursor-default transition-all duration-200 hover:opacity-100 hover:border-[#c0c0c0] hover:shadow-sm"
-    style={style}
-  >
-    {label}
-  </span>
-);
 
 export default ExpertiseMapSection;
