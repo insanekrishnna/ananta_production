@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Users, LayoutGrid, Database, GitBranch, AppWindow, ShieldCheck } from "lucide-react";
+import brandLogo from "@/assets/brand-logo.png";
 
 const CORE_SERVICES = [
   { icon: Users, label: "Client Portals" },
@@ -11,17 +12,19 @@ const CORE_SERVICES = [
   { icon: ShieldCheck, label: "Custom Permissions" },
 ];
 
-const SECONDARY_SERVICES = [
-  { label: "Airtable Sync", top: "8%", left: "10%" },
-  { label: "REST APIs", top: "8%", right: "10%" },
-  { label: "Google Sheets", top: "28%", left: "4%" },
-  { label: "Role-based Access", top: "28%", right: "4%" },
-  { label: "Form Builders", top: "50%", left: "4%" },
-  { label: "SSO", top: "38%", right: "12%" },
-  { label: "Custom Domains", top: "54%", right: "4%" },
-  { label: "Email Notifications", top: "74%", left: "10%" },
-  { label: "Embedded Analytics", top: "74%", right: "8%" },
+const SECONDARY = [
+  "Airtable Sync", "REST APIs", "Google Sheets", "Role-based Access",
+  "Form Builders", "SSO", "Custom Domains", "Email Notifications", "Embedded Analytics",
 ];
+
+// Angles for placing items around a circle (in degrees)
+const coreAngles = [-90, -40, 10, 50, 90, 140, 190];    // 7 core pills on inner orbit
+const secAngles  = [-110, -60, -20, 20, 60, 100, 145, 190, 235]; // 9 secondary on outer orbit
+
+const placeOnOrbit = (angleDeg: number, rx: number, ry: number) => {
+  const rad = (angleDeg * Math.PI) / 180;
+  return { x: 50 + rx * Math.cos(rad), y: 50 + ry * Math.sin(rad) };
+};
 
 const ExpertiseMapSection = () => {
   const header = useScrollReveal(0);
@@ -37,48 +40,51 @@ const ExpertiseMapSection = () => {
         </div>
 
         <div ref={map.ref} className={`relative mt-4 ${map.className}`}>
-          <div className="relative w-full max-w-[520px] mx-auto" style={{ aspectRatio: "1 / 0.85" }}>
-            {/* Circle SVG */}
-            <svg viewBox="0 0 520 440" className="absolute inset-0 w-full h-full" fill="none">
-              <ellipse cx="260" cy="220" rx="210" ry="200" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="6 6" />
-              <line x1="30" y1="220" x2="490" y2="220" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="4 4" />
-              <circle cx="50" cy="220" r="3.5" fill="hsl(var(--text-primary))" />
-              <circle cx="470" cy="220" r="3.5" fill="hsl(var(--text-primary))" />
+          {/* Square container for circular layout */}
+          <div className="relative w-full max-w-[500px] mx-auto" style={{ aspectRatio: "1" }}>
+
+            {/* Dashed orbit circles */}
+            <svg viewBox="0 0 500 500" className="absolute inset-0 w-full h-full" fill="none">
+              {/* Outer orbit (secondary) */}
+              <circle cx="250" cy="250" r="230" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="6 6" />
+              {/* Inner orbit (core) */}
+              <circle cx="250" cy="250" r="155" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="4 4" opacity="0.6" />
             </svg>
 
-            {/* Axis labels */}
-            <span className="absolute left-0 top-[50%] -translate-y-1/2 text-[12px] md:text-[13px] font-semibold text-text-primary">Data</span>
-            <span className="absolute right-0 top-[50%] -translate-y-1/2 text-[12px] md:text-[13px] font-semibold text-text-primary">Tools</span>
-
-            {/* Core pills – diamond layout */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 md:gap-2.5 pointer-events-none">
-              <div className="flex justify-center">
-                <CorePill icon={CORE_SERVICES[0].icon} label={CORE_SERVICES[0].label} />
-              </div>
-              <div className="flex justify-center gap-2">
-                <CorePill icon={CORE_SERVICES[1].icon} label={CORE_SERVICES[1].label} />
-                <CorePill icon={CORE_SERVICES[2].icon} label={CORE_SERVICES[2].label} />
-              </div>
-              <div className="flex justify-center gap-2">
-                <CorePill icon={CORE_SERVICES[3].icon} label={CORE_SERVICES[3].label} />
-                <CorePill icon={CORE_SERVICES[4].icon} label={CORE_SERVICES[4].label} />
-                <CorePill icon={CORE_SERVICES[5].icon} label={CORE_SERVICES[5].label} />
-              </div>
-              <div className="flex justify-center">
-                <CorePill icon={CORE_SERVICES[6].icon} label={CORE_SERVICES[6].label} />
+            {/* Center logo */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-canvas border border-border shadow-card flex items-center justify-center">
+                <img src={brandLogo} alt="Logo" className="w-7 h-7 md:w-9 md:h-9 object-contain" />
               </div>
             </div>
 
-            {/* Secondary tags */}
-            {SECONDARY_SERVICES.map((s) => (
-              <span
-                key={s.label}
-                className="absolute text-[9px] md:text-[11px] font-medium text-text-secondary/40 border border-border rounded-full px-2.5 py-0.5 bg-canvas whitespace-nowrap"
-                style={{ top: s.top, left: s.left, right: s.right }}
-              >
-                {s.label}
-              </span>
-            ))}
+            {/* Core services – inner orbit (black pills) */}
+            {CORE_SERVICES.map((s, i) => {
+              const pos = placeOnOrbit(coreAngles[i], 30, 30);
+              return (
+                <div
+                  key={s.label}
+                  className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
+                  style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                >
+                  <CorePill icon={s.icon} label={s.label} />
+                </div>
+              );
+            })}
+
+            {/* Secondary services – outer orbit (white tags) */}
+            {SECONDARY.map((label, i) => {
+              const pos = placeOnOrbit(secAngles[i], 44, 44);
+              return (
+                <span
+                  key={label}
+                  className="absolute z-10 -translate-x-1/2 -translate-y-1/2 text-[8px] md:text-[11px] font-medium text-text-secondary/40 border border-border rounded-full px-2 py-0.5 md:px-2.5 md:py-0.5 bg-canvas whitespace-nowrap"
+                  style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
+                >
+                  {label}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -87,8 +93,8 @@ const ExpertiseMapSection = () => {
 };
 
 const CorePill = ({ icon: Icon, label }: { icon: React.ComponentType<any>; label: string }) => (
-  <div className="pointer-events-auto flex items-center gap-1.5 bg-text-primary text-canvas rounded-full px-3 py-1.5 text-[10px] md:text-[12px] font-medium whitespace-nowrap shadow-card hover:scale-105 transition-transform duration-200">
-    <Icon size={13} strokeWidth={1.5} className="text-canvas shrink-0" />
+  <div className="flex items-center gap-1 bg-text-primary text-canvas rounded-full px-2 py-1 md:px-3 md:py-1.5 text-[9px] md:text-[12px] font-medium whitespace-nowrap shadow-card hover:scale-105 transition-transform duration-200">
+    <Icon size={12} strokeWidth={1.5} className="text-canvas shrink-0" />
     <span>{label}</span>
   </div>
 );
