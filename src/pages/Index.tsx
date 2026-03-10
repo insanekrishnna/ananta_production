@@ -5,6 +5,7 @@ import InteractiveHeadline from "@/components/InteractiveHeadline";
 import AnalyticsSection from "@/components/AnalyticsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
+import ExpertiseMapSection from "@/components/ExpertiseMapSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import CtaBanner from "@/components/CtaBanner";
@@ -19,6 +20,7 @@ const Index = () => {
         <InteractiveHeadline />
         <AnalyticsSection />
         <LogoStrip />
+        <ExpertiseMapSection />
         <IntegrationsSection />
         <FeaturesSection />
         <TestimonialsSection />

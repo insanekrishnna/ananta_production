@@ -1,101 +1,113 @@
-import { useRef } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { Users, LayoutGrid, Database, GitBranch, AppWindow, ShieldCheck } from "lucide-react";
 
-const CASE_STUDIES = [
-  {
-    title: "Samuk",
-    category: "Brand Identity",
-    color: "hsl(var(--primary))",
-    gradient: "from-[hsl(243,75%,59%)] to-[hsl(243,75%,40%)]",
-  },
-  {
-    title: "Avtar®",
-    category: "Visual System",
-    color: "hsl(160, 84%, 39%)",
-    gradient: "from-[hsl(160,84%,39%)] to-[hsl(160,84%,25%)]",
-  },
-  {
-    title: "Twinkle",
-    category: "Motion Design",
-    color: "hsl(32, 95%, 44%)",
-    gradient: "from-[hsl(32,95%,44%)] to-[hsl(32,95%,30%)]",
-  },
-  {
-    title: "Rabbit",
-    category: "Product Design",
-    color: "hsl(0, 84%, 60%)",
-    gradient: "from-[hsl(0,84%,60%)] to-[hsl(0,84%,40%)]",
-  },
-  {
-    title: "Cont.",
-    category: "Web Experience",
-    color: "hsl(220, 13%, 26%)",
-    gradient: "from-[hsl(220,13%,26%)] to-[hsl(220,13%,14%)]",
-  },
+const CORE_SERVICES = [
+  { icon: Users, label: "Client Portals" },
+  { icon: Database, label: "CRM Tools" },
+  { icon: LayoutGrid, label: "Internal Dashboards" },
+  { icon: Database, label: "Data Integrations" },
+  { icon: GitBranch, label: "Workflow Automation" },
+  { icon: AppWindow, label: "No-code Apps" },
+  { icon: ShieldCheck, label: "Custom Permissions" },
+];
+
+const SECONDARY_SERVICES = [
+  { label: "Airtable Sync", position: "top-[12%] left-[8%] md:left-[10%]" },
+  { label: "REST APIs", position: "top-[12%] right-[8%] md:right-[10%]" },
+  { label: "Google Sheets", position: "top-[32%] left-[2%] md:left-[4%]" },
+  { label: "Role-based Access", position: "top-[32%] right-[2%] md:right-[4%]" },
+  { label: "Form Builders", position: "top-[52%] left-[2%] md:left-[4%]" },
+  { label: "SSO", position: "top-[40%] right-[12%] md:right-[14%]" },
+  { label: "Custom Domains", position: "top-[56%] right-[2%] md:right-[4%]" },
+  { label: "Email Notifications", position: "top-[76%] left-[8%] md:left-[12%]" },
+  { label: "Embedded Analytics", position: "top-[76%] right-[8%] md:right-[10%]" },
 ];
 
 const ExpertiseMapSection = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const header = useScrollReveal(0);
+  const map = useScrollReveal(200);
 
   return (
-    <section id="expertise" className="py-12 px-0">
-      <div className="max-w-canvas mx-auto px-4 md:px-10">
-        <div ref={header.ref} className={`flex items-end justify-between mb-8 ${header.className}`}>
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-2">Selected Work</p>
-            <h2 className="text-[28px] md:text-[36px] font-bold text-text-primary leading-[1.1] tracking-tight">
-              Case Studies
-            </h2>
-          </div>
-          <button
-            onClick={() => scrollRef.current?.scrollBy({ left: 340, behavior: "smooth" })}
-            className="hidden md:flex items-center gap-1 text-[13px] font-medium text-text-secondary hover:text-text-primary transition-colors"
-          >
-            Scroll →
-          </button>
+    <section id="expertise" className="py-8 px-4 md:px-10">
+      <div className="max-w-[760px] mx-auto">
+        {/* Header */}
+        <div ref={header.ref} className={header.className}>
+          <h2 className="text-[28px] md:text-[36px] font-medium text-text-primary leading-[1.1] tracking-tight mb-2">
+            What We Build
+          </h2>
         </div>
-      </div>
 
-      {/* Horizontal scroll container */}
-      <div
-        ref={scrollRef}
-        className="flex gap-5 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 md:px-10 pb-4"
-        style={{ scrollbarWidth: "none" }}
-      >
-        {CASE_STUDIES.map((study, i) => (
-          <div
-            key={study.title}
-            className={`shrink-0 w-[280px] md:w-[340px] h-[420px] rounded-2xl bg-gradient-to-br ${study.gradient} snap-start relative overflow-hidden group cursor-pointer`}
-          >
-            {/* Minimal text overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-              <p className="text-[11px] font-medium uppercase tracking-[0.12em] text-white/50 mb-1">
-                {study.category}
-              </p>
-              <h3 className="text-[28px] font-bold text-white leading-none tracking-tight">
-                {study.title}
-              </h3>
+        {/* Map */}
+        <div ref={map.ref} className={`relative mt-6 ${map.className}`}>
+          {/* Circle SVG */}
+          <div className="relative w-full aspect-square max-w-[600px] mx-auto">
+            <svg
+              viewBox="0 0 600 600"
+              className="absolute inset-0 w-full h-full"
+              fill="none"
+            >
+              <circle cx="300" cy="300" r="250" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="6 6" />
+              <circle cx="300" cy="300" r="170" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="4 4" opacity="0.5" />
+              {/* Horizontal axis */}
+              <line x1="30" y1="300" x2="570" y2="300" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="4 4" />
+              <circle cx="50" cy="300" r="4" fill="hsl(var(--text-primary))" />
+              <circle cx="550" cy="300" r="4" fill="hsl(var(--text-primary))" />
+            </svg>
+
+            {/* Axis labels */}
+            <span className="absolute left-0 top-1/2 -translate-y-1/2 text-[13px] md:text-[14px] font-semibold text-text-primary">
+              Data
+            </span>
+            <span className="absolute right-0 top-1/2 -translate-y-1/2 text-[13px] md:text-[14px] font-semibold text-text-primary">
+              Tools
+            </span>
+
+            {/* Core services – diamond-ish layout inside circle */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative w-[75%] h-[65%]">
+                {/* Row 1 – top center */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 flex gap-2">
+                  <CorePill icon={CORE_SERVICES[0].icon} label={CORE_SERVICES[0].label} />
+                </div>
+                {/* Row 2 – two items */}
+                <div className="absolute top-[25%] left-1/2 -translate-x-1/2 flex gap-2">
+                  <CorePill icon={CORE_SERVICES[1].icon} label={CORE_SERVICES[1].label} />
+                  <CorePill icon={CORE_SERVICES[2].icon} label={CORE_SERVICES[2].label} />
+                </div>
+                {/* Row 3 – three items (middle, widest) */}
+                <div className="absolute top-[50%] left-1/2 -translate-x-1/2 flex gap-2">
+                  <CorePill icon={CORE_SERVICES[3].icon} label={CORE_SERVICES[3].label} />
+                  <CorePill icon={CORE_SERVICES[4].icon} label={CORE_SERVICES[4].label} />
+                  <CorePill icon={CORE_SERVICES[5].icon} label={CORE_SERVICES[5].label} />
+                </div>
+                {/* Row 4 – bottom center */}
+                <div className="absolute top-[75%] left-1/2 -translate-x-1/2 flex gap-2">
+                  <CorePill icon={CORE_SERVICES[6].icon} label={CORE_SERVICES[6].label} />
+                </div>
+              </div>
             </div>
 
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
-
-            {/* Number */}
-            <span className="absolute top-5 right-6 text-[11px] font-semibold text-white/30">
-              0{i + 1}
-            </span>
+            {/* Secondary services – scattered around */}
+            {SECONDARY_SERVICES.map((s) => (
+              <span
+                key={s.label}
+                className={`absolute ${s.position} text-[10px] md:text-[12px] font-medium text-text-secondary/50 border border-border rounded-full px-3 py-1 bg-canvas whitespace-nowrap`}
+              >
+                {s.label}
+              </span>
+            ))}
           </div>
-        ))}
-
-        {/* CTA card */}
-        <div className="shrink-0 w-[280px] md:w-[340px] h-[420px] rounded-2xl border border-input bg-canvas snap-start flex flex-col items-center justify-center gap-3 group cursor-pointer hover:border-primary/30 transition-colors duration-300">
-          <span className="text-[36px] font-extralight text-text-secondary group-hover:text-primary transition-colors duration-300">→</span>
-          <span className="text-[13px] font-medium text-text-secondary group-hover:text-text-primary transition-colors">View all work</span>
         </div>
       </div>
     </section>
   );
 };
+
+const CorePill = ({ icon: Icon, label }: { icon: React.ComponentType<any>; label: string }) => (
+  <div className="flex items-center gap-1.5 bg-text-primary text-canvas rounded-full px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-[13px] font-medium whitespace-nowrap shadow-card">
+    <Icon size={14} strokeWidth={1.5} className="text-canvas shrink-0" />
+    <span>{label}</span>
+  </div>
+);
 
 export default ExpertiseMapSection;
