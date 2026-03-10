@@ -103,7 +103,7 @@ const ExpertiseMapSection = () => {
   );
 };
 
-const CorePill = ({ icon: Icon, label }: { icon: React.ComponentType<{ size?: number; strokeWidth?: number; className?: string }>; label: string }) => (
+const CorePill = ({ icon: Icon, label }: { icon: React.ComponentType<any>; label: string }) => (
   <div className="flex items-center gap-1.5 bg-text-primary text-canvas rounded-full px-3 py-1.5 md:px-4 md:py-2 text-[11px] md:text-[13px] font-medium whitespace-nowrap shadow-card">
     <Icon size={14} strokeWidth={1.5} className="text-canvas shrink-0" />
     <span>{label}</span>
