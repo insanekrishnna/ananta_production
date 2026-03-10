@@ -26,7 +26,7 @@ export const FLOATING_ICONS = [
   { name: "Figma", letter: "F", bg: "#A259FF", top: "68%", right: "3%", delay: "2.4s" },
 ] as const;
 
-export const LOGOS = ["avtar®", "Samuk", "Twinkle artist", "Cont.", "Rabbit"];
+export const LOGOS = ["avtar®", "Samuk", "Artist", "Aartist", "Cont.", "Rabbit"];
 
 export const FEATURES = [
   {
