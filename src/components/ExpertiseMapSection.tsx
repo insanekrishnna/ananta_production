@@ -5,33 +5,24 @@ import brandLogo from "@/assets/brand-logo.png";
 const CORE_SERVICES = [
   { icon: Users, label: "Client Portals" },
   { icon: Database, label: "CRM Tools" },
-  { icon: LayoutGrid, label: "Internal Dashboards" },
-  { icon: Database, label: "Data Integrations" },
-  { icon: GitBranch, label: "Workflow Automation" },
+  { icon: LayoutGrid, label: "Dashboards" },
+  { icon: Database, label: "Integrations" },
+  { icon: GitBranch, label: "Automation" },
   { icon: AppWindow, label: "No-code Apps" },
-  { icon: ShieldCheck, label: "Custom Permissions" },
+  { icon: ShieldCheck, label: "Permissions" },
 ];
 
 const SECONDARY = [
   "Airtable Sync", "REST APIs", "Google Sheets", "Role-based Access",
-  "Form Builders", "SSO", "Custom Domains", "Email Notifications", "Embedded Analytics",
+  "Form Builders", "SSO", "Custom Domains", "Email Alerts", "Analytics",
 ];
-
-// Angles for placing items around a circle (in degrees)
-const coreAngles = [-90, -40, 10, 50, 90, 140, 190];    // 7 core pills on inner orbit
-const secAngles  = [-110, -60, -20, 20, 60, 100, 145, 190, 235]; // 9 secondary on outer orbit
-
-const placeOnOrbit = (angleDeg: number, rx: number, ry: number) => {
-  const rad = (angleDeg * Math.PI) / 180;
-  return { x: 50 + rx * Math.cos(rad), y: 50 + ry * Math.sin(rad) };
-};
 
 const ExpertiseMapSection = () => {
   const header = useScrollReveal(0);
   const map = useScrollReveal(150);
 
   return (
-    <section id="expertise" className="py-6 px-4 md:px-10">
+    <section id="expertise" className="py-4 px-4 md:px-10">
       <div className="max-w-[760px] mx-auto">
         <div ref={header.ref} className={header.className}>
           <h2 className="text-[28px] md:text-[36px] font-medium text-text-primary leading-[1.1] tracking-tight mb-1">
@@ -39,48 +30,43 @@ const ExpertiseMapSection = () => {
           </h2>
         </div>
 
-        <div ref={map.ref} className={`relative mt-4 ${map.className}`}>
-          {/* Square container for circular layout */}
-          <div className="relative w-full max-w-[500px] mx-auto" style={{ aspectRatio: "1" }}>
-
-            {/* Dashed orbit circles */}
-            <svg viewBox="0 0 500 500" className="absolute inset-0 w-full h-full" fill="none">
-              {/* Outer orbit (secondary) */}
-              <circle cx="250" cy="250" r="230" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="6 6" />
-              {/* Inner orbit (core) */}
-              <circle cx="250" cy="250" r="155" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="4 4" opacity="0.6" />
+        <div ref={map.ref} className={`relative mt-3 ${map.className}`}>
+          <div className="relative w-full max-w-[420px] mx-auto" style={{ aspectRatio: "1" }}>
+            {/* Dashed orbits */}
+            <svg viewBox="0 0 420 420" className="absolute inset-0 w-full h-full pointer-events-none" fill="none">
+              <circle cx="210" cy="210" r="195" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="5 5" />
+              <circle cx="210" cy="210" r="120" stroke="hsl(var(--border))" strokeWidth="1" strokeDasharray="4 4" opacity="0.5" />
             </svg>
 
-            {/* Center logo */}
+            {/* Center logo – no border, transparent, just the logo */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-canvas border border-border shadow-card flex items-center justify-center">
-                <img src={brandLogo} alt="Logo" className="w-7 h-7 md:w-9 md:h-9 object-contain" />
-              </div>
+              <img src={brandLogo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
             </div>
 
-            {/* Core services – inner orbit (black pills) */}
+            {/* Core (black) pills – inner orbit r≈28% */}
             {CORE_SERVICES.map((s, i) => {
-              const pos = placeOnOrbit(coreAngles[i], 30, 30);
+              const angle = (i * 360) / CORE_SERVICES.length - 90;
+              const r = 28;
+              const x = 50 + r * Math.cos((angle * Math.PI) / 180);
+              const y = 50 + r * Math.sin((angle * Math.PI) / 180);
               return (
-                <div
-                  key={s.label}
-                  className="absolute z-10 -translate-x-1/2 -translate-y-1/2"
-                  style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
-                >
-                  <CorePill icon={s.icon} label={s.label} />
+                <div key={s.label} className="absolute z-10 -translate-x-1/2 -translate-y-1/2" style={{ left: `${x}%`, top: `${y}%` }}>
+                  <div className="flex items-center gap-1 bg-text-primary text-canvas rounded-full px-2 py-1 md:px-3 md:py-1.5 text-[8px] md:text-[11px] font-medium whitespace-nowrap shadow-card">
+                    <s.icon size={11} strokeWidth={1.5} className="text-canvas shrink-0" />
+                    <span>{s.label}</span>
+                  </div>
                 </div>
               );
             })}
 
-            {/* Secondary services – outer orbit (white tags) */}
+            {/* Secondary (white) tags – outer orbit r≈46% */}
             {SECONDARY.map((label, i) => {
-              const pos = placeOnOrbit(secAngles[i], 44, 44);
+              const angle = (i * 360) / SECONDARY.length - 70;
+              const r = 46;
+              const x = 50 + r * Math.cos((angle * Math.PI) / 180);
+              const y = 50 + r * Math.sin((angle * Math.PI) / 180);
               return (
-                <span
-                  key={label}
-                  className="absolute z-10 -translate-x-1/2 -translate-y-1/2 text-[8px] md:text-[11px] font-medium text-text-secondary/40 border border-border rounded-full px-2 py-0.5 md:px-2.5 md:py-0.5 bg-canvas whitespace-nowrap"
-                  style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
-                >
+                <span key={label} className="absolute z-10 -translate-x-1/2 -translate-y-1/2 text-[7px] md:text-[10px] font-medium text-text-secondary/40 border border-border rounded-full px-1.5 py-0.5 md:px-2.5 md:py-0.5 bg-canvas whitespace-nowrap" style={{ left: `${x}%`, top: `${y}%` }}>
                   {label}
                 </span>
               );
@@ -91,12 +77,5 @@ const ExpertiseMapSection = () => {
     </section>
   );
 };
-
-const CorePill = ({ icon: Icon, label }: { icon: React.ComponentType<any>; label: string }) => (
-  <div className="flex items-center gap-1 bg-text-primary text-canvas rounded-full px-2 py-1 md:px-3 md:py-1.5 text-[9px] md:text-[12px] font-medium whitespace-nowrap shadow-card hover:scale-105 transition-transform duration-200">
-    <Icon size={12} strokeWidth={1.5} className="text-canvas shrink-0" />
-    <span>{label}</span>
-  </div>
-);
 
 export default ExpertiseMapSection;
