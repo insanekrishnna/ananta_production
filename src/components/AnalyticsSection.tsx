@@ -3,12 +3,12 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useCountUp } from "@/hooks/useCountUp";
 
 const tasks = [
-  { title: "Concept Sketching", completed: true },
-  { title: "Grid Alignment", completed: true },
-  { title: "Brand Audit & Research", completed: true },
-  { title: "Final Mark", completed: true },
-  { title: "Final Identity Delivery", completed: true },
-];
+{ title: "Concept Sketching", completed: true },
+{ title: "Grid Alignment", completed: true },
+{ title: "Brand Audit & Research", completed: true },
+{ title: "Final Mark", completed: true },
+{ title: "Final Identity Delivery", completed: true }];
+
 
 const AnalyticsSection = () => {
   const header = useScrollReveal(0);
@@ -77,12 +77,12 @@ const AnalyticsSection = () => {
               <span className="text-white/40 text-xl leading-none self-start">•••</span>
             </div>
             <div className="flex flex-col gap-3">
-              {tasks.map((task) => (
-                <div key={task.title} className="flex items-center gap-2.5">
+              {tasks.map((task) =>
+              <div key={task.title} className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-white/70 flex-shrink-0" />
                   <span className="text-[13px] text-white/90 font-medium">{task.title}</span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -94,11 +94,11 @@ const AnalyticsSection = () => {
             </p>
             <div className="flex flex-col gap-3 mt-5">
               {[
-                { icon: ThumbsUp, label: "Happy clients", ref: happyClients.ref, value: happyClients.display },
-                { icon: Repeat, label: "Repeat rate", ref: repeatRate.ref, value: repeatRate.display },
-                { icon: Clock, label: "Avg. delivery", value: "12 days" },
-                { icon: TrendingUp, label: "YoY growth", ref: growth.ref, value: `+${growth.display}` },
-              ].map((item) => {
+              { icon: ThumbsUp, label: "Happy clients", ref: happyClients.ref, value: happyClients.display },
+              { icon: Repeat, label: "Repeat rate", ref: repeatRate.ref, value: repeatRate.display },
+              { icon: Clock, label: "Avg. delivery", value: "12 days" },
+              { icon: TrendingUp, label: "YoY growth", ref: growth.ref, value: `+${growth.display}` }].
+              map((item) => {
                 const Icon = item.icon;
                 return (
                   <div key={item.label} className="flex items-center justify-between">
@@ -107,8 +107,8 @@ const AnalyticsSection = () => {
                       <span className="text-[13px] text-text-secondary font-medium">{item.label}</span>
                     </div>
                     <span ref={item.ref} className="text-[13px] font-semibold text-text-primary">{item.value}</span>
-                  </div>
-                );
+                  </div>);
+
               })}
             </div>
           </div>
@@ -125,9 +125,9 @@ const AnalyticsSection = () => {
               </p>
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
-                  {["hsl(var(--primary))", "hsl(160 84% 39%)", "hsl(32 95% 44%)"].map((bg, i) => (
-                    <div key={i} className="w-6 h-6 rounded-full border-2 border-canvas" style={{ backgroundColor: bg }} />
-                  ))}
+                  {["hsl(var(--primary))", "hsl(160 84% 39%)", "hsl(32 95% 44%)"].map((bg, i) =>
+                  <div key={i} className="w-6 h-6 rounded-full border-2 border-canvas" style={{ backgroundColor: bg }} />
+                  )}
                   <div className="w-6 h-6 rounded-full border-2 border-canvas bg-muted text-[8px] font-bold text-text-secondary flex items-center justify-center">+2</div>
                 </div>
                 <div className="flex-1 h-1.5 bg-secondary rounded-pill overflow-hidden">
@@ -148,7 +148,7 @@ const AnalyticsSection = () => {
                 <Video className="w-5 h-5 text-text-secondary flex-shrink-0" />
                 <div>
                   <p className="text-[12px] font-semibold text-text-primary">Design Review</p>
-                  <p className="text-[11px] text-text-secondary">Weekly creative standup</p>
+                  <p className="text-[11px] text-text-secondary">Weekly Update </p>
                 </div>
               </div>
             </div>
@@ -159,8 +159,8 @@ const AnalyticsSection = () => {
           Trusted by 20+ Brands Worldwide
         </p>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AnalyticsSection;
